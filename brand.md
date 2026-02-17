@@ -33,6 +33,23 @@ Courte, directe, mémorable. Cette phrase est l'ancre de toutes les communicatio
 
 ## 2. Identité visuelle
 
+### 2.0 Logo
+
+| Variante | Fichier | Usage |
+|---|---|---|
+| **Logo noir** | `assets/Logo-noir.png` | Fonds clairs (blanc, gris `#F5F5F5`) |
+| **Logo blanc** | `assets/logo-blanc.png` | Fonds sombres (bleu `#26447E`, noir) |
+
+#### Règles d'utilisation du logo
+
+- Toujours utiliser le **logo blanc** sur les sections à fond bleu ou noir.
+- Toujours utiliser le **logo noir** sur les sections à fond blanc ou gris clair.
+- Ne jamais déformer, étirer ou recolorer le logo.
+- Zone de protection : conserver un espace minimum équivalent à la hauteur du logo autour de lui.
+- Ne jamais superposer le logo sur une image sans zone de contraste suffisante.
+
+---
+
 ### 2.1 Palette de couleurs
 
 | Rôle | Nom | Hex | Usage |
