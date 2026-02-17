@@ -37,8 +37,8 @@ Courte, directe, mémorable. Cette phrase est l'ancre de toutes les communicatio
 
 | Variante | Fichier | Usage |
 |---|---|---|
-| **Logo noir** | `assets/Logo-noir.png` | Fonds clairs (blanc, gris `#F5F5F5`) |
-| **Logo blanc** | `assets/logo-blanc.png` | Fonds sombres (bleu `#26447E`, noir) |
+| **Logo noir** | `Logo-noir.png` | Fonds clairs (blanc, gris `#F5F5F5`) |
+| **Logo blanc** | `logo-blanc.png` | Fonds sombres (bleu `#26447E`, noir) |
 
 #### Règles d'utilisation du logo
 
