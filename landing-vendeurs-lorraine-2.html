@@ -134,7 +134,7 @@
       display: grid;
       grid-template-columns: 1fr 420px;
       gap: 60px;
-      align-items: center;
+      align-items: stretch;
     }
 
     .hero__eyebrow {
@@ -192,19 +192,54 @@
 
     /* Hero video 9:16 */
     .hero__video {
+      position: relative;
       display: flex;
       justify-content: center;
       align-items: center;
     }
 
     .hero__video video {
-      height: min(calc(100svh - 200px), 580px);
+      height: 100%;
       width: auto;
       aspect-ratio: 9 / 16;
       border-radius: var(--r-xl);
       object-fit: cover;
       box-shadow: 0 24px 64px rgba(0,0,0,0.5);
+      display: block;
     }
+
+    .hero__video-placeholder {
+      position: absolute;
+      inset: 0;
+      border-radius: var(--r-xl);
+      background: linear-gradient(160deg, #1a2a4a 0%, #0d1a30 100%);
+      border: 2px dashed rgba(139,163,212,0.4);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 14px;
+      color: #8ba3d4;
+      pointer-events: none;
+      text-align: center;
+      padding: 24px;
+    }
+
+    .hero__video-placeholder svg { opacity: 0.6; }
+
+    .hero__video-placeholder p {
+      font-size: 14px;
+      font-weight: 600;
+      line-height: 1.5;
+    }
+
+    .hero__video-placeholder small {
+      font-size: 12px;
+      opacity: 0.6;
+      font-family: monospace;
+    }
+
+    .hero__video-placeholder.hidden { display: none; }
 
     /* Hero form card */
     .hero__form-card {
@@ -958,7 +993,8 @@
     /* ─── RESPONSIVE ───────────────────────────────────────── */
     @media (max-width: 960px) {
       .hero__inner { grid-template-columns: 1fr; }
-      .hero__video video { height: auto; width: 100%; max-width: 340px; }
+      .hero__video { min-height: 420px; }
+      .hero__video video { height: 100%; width: auto; max-width: 340px; }
       .hero__form-card { max-width: 520px; margin: 0 auto; }
       .proof-bar__grid { grid-template-columns: repeat(2, 1fr); }
       .problem__inner { grid-template-columns: 1fr; }
@@ -1009,13 +1045,20 @@
     <div class="hero__inner">
       <div class="hero__video reveal">
         <video
+          id="hero-vid"
           src="hero-video.mp4"
+          poster="lorraine3.jpg"
           autoplay
           muted
           loop
           playsinline
           controls
         ></video>
+        <div class="hero__video-placeholder" id="hero-vid-placeholder">
+          <svg width="52" height="52" viewBox="0 0 24 24" fill="#8ba3d4"><path d="M8 5v14l11-7z"/></svg>
+          <p>Uploadez votre vidéo<br />et nommez-la :</p>
+          <small>hero-video.mp4</small>
+        </div>
       </div>
 
       <!-- FORM CARD -->
@@ -1433,6 +1476,14 @@
 
 <!-- ════════════════════════ SCRIPTS ════════════════════════ -->
 <script>
+  // ── Hero video placeholder ─────────────────────────────────
+  const heroVid = document.getElementById('hero-vid');
+  const heroPlaceholder = document.getElementById('hero-vid-placeholder');
+  if (heroVid && heroPlaceholder) {
+    heroVid.addEventListener('playing', () => heroPlaceholder.classList.add('hidden'));
+    heroVid.addEventListener('error', () => { /* keep placeholder visible */ });
+  }
+
   // ── Scroll Reveal ──────────────────────────────────────────
   const revealEls = document.querySelectorAll('.reveal');
   const observer = new IntersectionObserver((entries) => {
