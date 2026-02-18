@@ -318,7 +318,7 @@
       display: grid;
       grid-template-columns: 1fr 420px;
       gap: 60px;
-      align-items: stretch;
+      align-items: center;
     }
 
     .hero__eyebrow {
@@ -383,13 +383,12 @@
     }
 
     .hero__video video {
-      height: 100%;
+      height: min(calc(100svh - 200px), 580px);
       width: auto;
       aspect-ratio: 9 / 16;
       border-radius: var(--r-xl);
       object-fit: cover;
       box-shadow: 0 24px 64px rgba(0,0,0,0.5);
-      display: block;
     }
 
     .hero__video-placeholder {
@@ -1233,7 +1232,6 @@
           src="hero-video.mp4"
           poster="lorraine3.jpg"
           autoplay
-          muted
           loop
           playsinline
           controls
@@ -1660,12 +1658,20 @@
 
 <!-- ════════════════════════ SCRIPTS ════════════════════════ -->
 <script>
-  // ── Hero video placeholder ─────────────────────────────────
+  // ── Hero video – autoplay avec son (fallback muted si bloqué) ──
   const heroVid = document.getElementById('hero-vid');
   const heroPlaceholder = document.getElementById('hero-vid-placeholder');
-  if (heroVid && heroPlaceholder) {
-    heroVid.addEventListener('playing', () => heroPlaceholder.classList.add('hidden'));
-    heroVid.addEventListener('error', () => { /* keep placeholder visible */ });
+  if (heroVid) {
+    heroVid.muted = false;
+    heroVid.play().catch(() => {
+      // Le navigateur bloque l'autoplay avec son → on démarre muet
+      heroVid.muted = true;
+      heroVid.play();
+    });
+    if (heroPlaceholder) {
+      heroVid.addEventListener('playing', () => heroPlaceholder.classList.add('hidden'));
+      heroVid.addEventListener('error', () => { /* keep placeholder visible */ });
+    }
   }
 
   // ── Scroll Reveal ──────────────────────────────────────────
