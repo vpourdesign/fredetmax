@@ -1,0 +1,1499 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Vendez votre propriété à Lorraine — Fred et Max, courtiers immobiliers</title>
+  <meta name="description" content="Vendez votre maison à Lorraine avec les experts locaux. Estimation gratuite, réponse en 24h. Fred et Max, l'équipe de courtage de référence dans les Laurentides." />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;1,400&family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet" />
+
+  <style>
+    /* ─── Reset & Base ─────────────────────────────────────── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --blue:   #26447E;
+      --red:    #C83C34;
+      --red-dk: #A82E27;
+      --black:  #0D0D0D;
+      --white:  #FFFFFF;
+      --gray:   #F5F5F5;
+      --text2:  #6B7280;
+      --r-sm:   10px;
+      --r-md:   16px;
+      --r-lg:   24px;
+      --r-xl:   32px;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 17px;
+      line-height: 1.65;
+      color: var(--black);
+      background: var(--white);
+      overflow-x: hidden;
+    }
+
+    h1, h2, h3 { font-family: 'Playfair Display', serif; }
+
+    img { display: block; max-width: 100%; }
+
+    a { color: inherit; text-decoration: none; }
+
+    /* ─── Utility ──────────────────────────────────────────── */
+    .container {
+      width: 100%;
+      max-width: 1140px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    .tag {
+      display: inline-block;
+      background: var(--blue);
+      color: var(--white);
+      font-family: 'Montserrat', sans-serif;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      padding: 6px 16px;
+      border-radius: 100px;
+      margin-bottom: 18px;
+    }
+
+    .tag--red { background: var(--red); }
+
+    .star-row { display: flex; gap: 4px; margin-bottom: 10px; }
+    .star-row span { color: #F5A623; font-size: 18px; }
+
+    /* ─── Animations ───────────────────────────────────────── */
+    .reveal {
+      opacity: 0;
+      transform: translateY(28px);
+      transition: opacity 0.65s ease, transform 0.65s ease;
+    }
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* ─── NAV ──────────────────────────────────────────────── */
+    .nav {
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      padding: 24px 0;
+    }
+    .nav__inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .nav__logo img { height: 40px; }
+    .nav__phone {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--white);
+      font-size: 15px;
+      font-weight: 600;
+      letter-spacing: 0.03em;
+    }
+    .nav__phone svg { width: 18px; height: 18px; fill: var(--white); }
+
+    /* ─── HERO ─────────────────────────────────────────────── */
+    .hero {
+      position: relative;
+      min-height: 100svh;
+      display: flex;
+      align-items: center;
+      background: var(--black);
+      overflow: hidden;
+      padding: 120px 0 80px;
+    }
+
+    .hero__bg {
+      position: absolute;
+      inset: 0;
+      background-image: url('lorraine3.jpg');
+      background-size: cover;
+      background-position: center 40%;
+      opacity: 0.25;
+    }
+
+    .hero__inner {
+      position: relative;
+      z-index: 2;
+      display: grid;
+      grid-template-columns: 1fr 420px;
+      gap: 60px;
+      align-items: center;
+    }
+
+    .hero__eyebrow {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: #8ba3d4;
+      margin-bottom: 20px;
+    }
+
+    .hero__h1 {
+      font-size: clamp(34px, 5vw, 58px);
+      font-weight: 700;
+      line-height: 1.1;
+      color: var(--white);
+      margin-bottom: 24px;
+    }
+
+    .hero__h1 em {
+      font-style: normal;
+      color: #8ba3d4;
+    }
+
+    .hero__sub {
+      font-size: 18px;
+      color: #c9d3e8;
+      max-width: 480px;
+      margin-bottom: 36px;
+      line-height: 1.6;
+    }
+
+    .hero__trust {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .hero__trust-item {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      color: #8ba3d4;
+      font-size: 14px;
+      font-weight: 600;
+    }
+
+    .hero__trust-item svg {
+      width: 16px; height: 16px;
+      fill: #8ba3d4;
+      flex-shrink: 0;
+    }
+
+    /* Hero video 9:16 */
+    .hero__video {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .hero__video video {
+      height: min(calc(100svh - 200px), 580px);
+      width: auto;
+      aspect-ratio: 9 / 16;
+      border-radius: var(--r-xl);
+      object-fit: cover;
+      box-shadow: 0 24px 64px rgba(0,0,0,0.5);
+    }
+
+    /* Hero form card */
+    .hero__form-card {
+      background: var(--white);
+      border-radius: var(--r-xl);
+      padding: 40px 36px;
+      box-shadow: 0 24px 64px rgba(0,0,0,0.45);
+    }
+
+    .form-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 22px;
+      font-weight: 700;
+      color: var(--black);
+      margin-bottom: 6px;
+    }
+    .form-sub {
+      font-size: 14px;
+      color: var(--text2);
+      margin-bottom: 28px;
+    }
+
+    .form-group { margin-bottom: 16px; }
+
+    .form-group label {
+      display: block;
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--black);
+      margin-bottom: 6px;
+      letter-spacing: 0.02em;
+    }
+
+    .form-group input,
+    .form-group textarea {
+      width: 100%;
+      padding: 14px 16px;
+      border: 1.5px solid #D1D5DB;
+      border-radius: var(--r-sm);
+      font-family: 'Montserrat', sans-serif;
+      font-size: 15px;
+      color: var(--black);
+      background: var(--white);
+      transition: border-color 0.2s;
+      outline: none;
+    }
+
+    .form-group input:focus,
+    .form-group textarea:focus {
+      border-color: var(--blue);
+    }
+
+    .form-group textarea { resize: none; height: 90px; }
+
+    .btn-cta {
+      display: block;
+      width: 100%;
+      padding: 17px 24px;
+      background: var(--red);
+      color: var(--white);
+      font-family: 'Montserrat', sans-serif;
+      font-size: 16px;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      text-align: center;
+      border: none;
+      border-radius: var(--r-sm);
+      cursor: pointer;
+      transition: background 0.2s, transform 0.15s;
+      margin-top: 20px;
+    }
+
+    .btn-cta:hover { background: var(--red-dk); transform: translateY(-1px); }
+
+    .form-privacy {
+      margin-top: 12px;
+      text-align: center;
+      font-size: 12px;
+      color: var(--text2);
+    }
+
+    /* ─── PROOF BAR ────────────────────────────────────────── */
+    .proof-bar {
+      background: var(--blue);
+      padding: 52px 0;
+    }
+
+    .proof-bar__grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 32px;
+      text-align: center;
+    }
+
+    .proof-item__num {
+      font-family: 'Playfair Display', serif;
+      font-size: 48px;
+      font-weight: 700;
+      color: var(--white);
+      line-height: 1;
+      margin-bottom: 8px;
+    }
+
+    .proof-item__label {
+      font-size: 14px;
+      font-weight: 600;
+      color: #8ba3d4;
+      letter-spacing: 0.04em;
+    }
+
+    /* ─── PROBLÈME ─────────────────────────────────────────── */
+    .problem {
+      background: var(--white);
+      padding: 96px 0;
+    }
+
+    .problem__inner {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: center;
+    }
+
+    .section-label {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--blue);
+      margin-bottom: 16px;
+    }
+
+    .section-h2 {
+      font-size: clamp(26px, 3.5vw, 40px);
+      font-weight: 700;
+      line-height: 1.2;
+      color: var(--black);
+      margin-bottom: 24px;
+    }
+
+    .section-body {
+      font-size: 17px;
+      color: #374151;
+      line-height: 1.7;
+      margin-bottom: 32px;
+    }
+
+    .pain-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .pain-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+      font-size: 15px;
+      color: #374151;
+      line-height: 1.5;
+    }
+
+    .pain-list li .icon {
+      flex-shrink: 0;
+      width: 22px;
+      height: 22px;
+      border-radius: 50%;
+      background: #FEE2E2;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-top: 2px;
+    }
+
+    .pain-list li .icon svg {
+      width: 12px; height: 12px;
+      fill: var(--red);
+    }
+
+    .solution-box {
+      background: var(--gray);
+      border-radius: var(--r-xl);
+      padding: 48px 40px;
+    }
+
+    .solution-box h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 26px;
+      font-weight: 700;
+      color: var(--blue);
+      margin-bottom: 20px;
+    }
+
+    .benefit-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+
+    .benefit-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      font-size: 15px;
+      color: #374151;
+    }
+
+    .benefit-list li .check {
+      flex-shrink: 0;
+      width: 22px;
+      height: 22px;
+      border-radius: 50%;
+      background: var(--blue);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-top: 2px;
+    }
+
+    .benefit-list li .check svg {
+      width: 12px; height: 12px;
+      fill: var(--white);
+    }
+
+    /* ─── ÉQUIPE ───────────────────────────────────────────── */
+    .team {
+      background: var(--black);
+      padding: 96px 0;
+    }
+
+    .team__header { text-align: center; margin-bottom: 60px; }
+
+    .team__header .section-label { color: #8ba3d4; }
+
+    .team__header .section-h2 { color: var(--white); }
+
+    .team__grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 32px;
+    }
+
+    .team-card {
+      background: #1a1a1a;
+      border-radius: var(--r-xl);
+      overflow: hidden;
+      transition: transform 0.3s;
+    }
+
+    .team-card:hover { transform: translateY(-6px); }
+
+    .team-card__photo {
+      width: 100%;
+      aspect-ratio: 4/3;
+      object-fit: cover;
+      object-position: top center;
+    }
+
+    .team-card__body { padding: 32px; }
+
+    .team-card__name {
+      font-family: 'Playfair Display', serif;
+      font-size: 26px;
+      font-weight: 700;
+      color: var(--white);
+      margin-bottom: 4px;
+    }
+
+    .team-card__title {
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: #8ba3d4;
+      margin-bottom: 16px;
+    }
+
+    .team-card__bio {
+      font-size: 15px;
+      color: #9ca3af;
+      line-height: 1.65;
+      margin-bottom: 20px;
+    }
+
+    .team-card__tag {
+      display: inline-block;
+      background: var(--blue);
+      color: var(--white);
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      padding: 5px 14px;
+      border-radius: 100px;
+    }
+
+    /* ─── PROCESSUS ────────────────────────────────────────── */
+    .process {
+      background: var(--white);
+      padding: 96px 0;
+    }
+
+    .process__header { text-align: center; margin-bottom: 64px; }
+
+    .process__grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 32px;
+    }
+
+    .step-card {
+      background: var(--gray);
+      border-radius: var(--r-xl);
+      padding: 40px 36px;
+      position: relative;
+    }
+
+    .step-card__num {
+      font-family: 'Playfair Display', serif;
+      font-size: 64px;
+      font-weight: 700;
+      color: var(--blue);
+      opacity: 0.15;
+      line-height: 1;
+      margin-bottom: 16px;
+    }
+
+    .step-card__title {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--black);
+      margin-bottom: 12px;
+    }
+
+    .step-card__text {
+      font-size: 15px;
+      color: var(--text2);
+      line-height: 1.65;
+    }
+
+    .step-card__badge {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 36px;
+      height: 36px;
+      background: var(--blue);
+      color: var(--white);
+      font-size: 14px;
+      font-weight: 700;
+      border-radius: 50%;
+      position: absolute;
+      top: 36px;
+      right: 36px;
+    }
+
+    /* ─── LORRAINE ─────────────────────────────────────────── */
+    .lorraine {
+      background: var(--blue);
+      padding: 96px 0;
+    }
+
+    .lorraine__header { text-align: center; margin-bottom: 60px; }
+    .lorraine__header .section-label { color: #8ba3d4; }
+    .lorraine__header .section-h2 { color: var(--white); }
+    .lorraine__header .section-body { color: #c9d3e8; max-width: 580px; margin: 0 auto; }
+
+    .lorraine__stats {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+      margin-bottom: 52px;
+    }
+
+    .stat-card {
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.12);
+      border-radius: var(--r-lg);
+      padding: 32px 28px;
+      text-align: center;
+      transition: background 0.25s;
+    }
+
+    .stat-card:hover { background: rgba(255,255,255,0.14); }
+
+    .stat-card__icon {
+      font-size: 28px;
+      margin-bottom: 14px;
+    }
+
+    .stat-card__num {
+      font-family: 'Playfair Display', serif;
+      font-size: 36px;
+      font-weight: 700;
+      color: var(--white);
+      line-height: 1;
+      margin-bottom: 8px;
+    }
+
+    .stat-card__desc {
+      font-size: 13px;
+      color: #8ba3d4;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+    }
+
+    .lorraine__photos {
+      display: grid;
+      grid-template-columns: 3fr 2fr;
+      gap: 20px;
+      border-radius: var(--r-xl);
+      overflow: hidden;
+    }
+
+    .lorraine__photos img {
+      width: 100%;
+      height: 320px;
+      object-fit: cover;
+      border-radius: var(--r-lg);
+    }
+
+    /* ─── AVIS GOOGLE ──────────────────────────────────────── */
+    .reviews {
+      background: var(--black);
+      padding: 96px 0;
+    }
+
+    .reviews__header { text-align: center; margin-bottom: 20px; }
+    .reviews__header .section-label { color: #8ba3d4; }
+    .reviews__header .section-h2 { color: var(--white); }
+
+    .reviews__google-badge {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      margin-bottom: 52px;
+    }
+
+    .reviews__google-badge img { height: 28px; }
+
+    .reviews__score {
+      font-family: 'Playfair Display', serif;
+      font-size: 32px;
+      font-weight: 700;
+      color: var(--white);
+    }
+
+    .reviews__count {
+      font-size: 14px;
+      color: var(--text2);
+    }
+
+    .reviews__grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+
+    .review-card {
+      background: #1a1a1a;
+      border-radius: var(--r-lg);
+      padding: 32px 28px;
+      border-left: 4px solid var(--blue);
+      transition: transform 0.25s;
+    }
+
+    .review-card:hover { transform: translateY(-4px); }
+    .review-card:nth-child(4) { grid-column: 1 / 2; }
+    .review-card:nth-child(5) { grid-column: 2 / 3; }
+
+    .review-card__quote {
+      font-family: 'Playfair Display', serif;
+      font-style: italic;
+      font-size: 16px;
+      color: #d1d5db;
+      line-height: 1.7;
+      margin-bottom: 24px;
+    }
+
+    .review-card__author {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .review-card__avatar {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background: var(--blue);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      font-size: 16px;
+      color: var(--white);
+      flex-shrink: 0;
+    }
+
+    .review-card__name {
+      font-weight: 700;
+      font-size: 14px;
+      color: var(--white);
+    }
+
+    .review-card__date {
+      font-size: 12px;
+      color: var(--text2);
+    }
+
+    /* ─── CTA MID ──────────────────────────────────────────── */
+    .cta-mid {
+      background: var(--gray);
+      padding: 96px 0;
+    }
+
+    .cta-mid__inner {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 48px;
+      align-items: center;
+    }
+
+    .cta-mid__h2 {
+      font-size: clamp(26px, 3vw, 38px);
+      font-weight: 700;
+      color: var(--black);
+      margin-bottom: 12px;
+    }
+
+    .cta-mid__sub { font-size: 17px; color: var(--text2); }
+
+    .btn-red {
+      display: inline-block;
+      padding: 18px 40px;
+      background: var(--red);
+      color: var(--white);
+      font-family: 'Montserrat', sans-serif;
+      font-size: 16px;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      border-radius: var(--r-sm);
+      white-space: nowrap;
+      transition: background 0.2s, transform 0.15s;
+    }
+
+    .btn-red:hover { background: var(--red-dk); transform: translateY(-2px); }
+
+    /* ─── FAQ ──────────────────────────────────────────────── */
+    .faq {
+      background: var(--white);
+      padding: 96px 0;
+    }
+
+    .faq__header { text-align: center; margin-bottom: 56px; }
+
+    .faq__list {
+      max-width: 780px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .faq-item {
+      background: var(--gray);
+      border-radius: var(--r-md);
+      overflow: hidden;
+    }
+
+    .faq-item__q {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 22px 28px;
+      background: none;
+      border: none;
+      cursor: pointer;
+      text-align: left;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 16px;
+      font-weight: 700;
+      color: var(--black);
+      gap: 16px;
+    }
+
+    .faq-item__q svg {
+      flex-shrink: 0;
+      width: 20px; height: 20px;
+      fill: var(--blue);
+      transition: transform 0.3s;
+    }
+
+    .faq-item.open .faq-item__q svg { transform: rotate(45deg); }
+
+    .faq-item__a {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.4s ease, padding 0.3s;
+      font-size: 15px;
+      color: #374151;
+      line-height: 1.7;
+      padding: 0 28px;
+    }
+
+    .faq-item.open .faq-item__a {
+      max-height: 400px;
+      padding: 0 28px 24px;
+    }
+
+    /* ─── CTA FINAL ────────────────────────────────────────── */
+    .cta-final {
+      background: var(--blue);
+      padding: 100px 0;
+      text-align: center;
+    }
+
+    .cta-final__h2 {
+      font-size: clamp(28px, 4vw, 46px);
+      font-weight: 700;
+      color: var(--white);
+      max-width: 640px;
+      margin: 0 auto 20px;
+      line-height: 1.2;
+    }
+
+    .cta-final__sub {
+      font-size: 18px;
+      color: #8ba3d4;
+      margin-bottom: 44px;
+    }
+
+    .cta-final__btns {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .btn-white {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 17px 36px;
+      background: var(--white);
+      color: var(--blue);
+      font-family: 'Montserrat', sans-serif;
+      font-size: 15px;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      border-radius: var(--r-sm);
+      transition: opacity 0.2s, transform 0.15s;
+    }
+
+    .btn-white:hover { opacity: 0.9; transform: translateY(-2px); }
+
+    .btn-white svg { width: 18px; height: 18px; fill: var(--blue); }
+
+    .cta-final__guarantee {
+      margin-top: 28px;
+      font-size: 14px;
+      color: #8ba3d4;
+    }
+
+    /* ─── FOOTER ───────────────────────────────────────────── */
+    .footer {
+      background: var(--black);
+      padding: 52px 0 36px;
+    }
+
+    .footer__inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 24px;
+      margin-bottom: 36px;
+    }
+
+    .footer__logo img { height: 36px; }
+
+    .footer__contact {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      text-align: right;
+    }
+
+    .footer__contact a {
+      color: #9ca3af;
+      font-size: 14px;
+      font-weight: 600;
+      transition: color 0.2s;
+    }
+
+    .footer__contact a:hover { color: var(--white); }
+
+    .footer__bottom {
+      border-top: 1px solid #1f1f1f;
+      padding-top: 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .footer__legal {
+      font-size: 12px;
+      color: #4b5563;
+    }
+
+    .footer__legal a { color: #4b5563; margin-left: 20px; }
+    .footer__legal a:hover { color: var(--text2); }
+
+    /* ─── MOBILE STICKY CTA ────────────────────────────────── */
+    .sticky-cta {
+      display: none;
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      z-index: 200;
+      background: var(--white);
+      border-top: 1px solid #e5e7eb;
+      padding: 14px 20px;
+      box-shadow: 0 -4px 24px rgba(0,0,0,0.12);
+    }
+
+    .sticky-cta a {
+      display: block;
+      width: 100%;
+      padding: 15px;
+      background: var(--red);
+      color: var(--white);
+      font-family: 'Montserrat', sans-serif;
+      font-size: 15px;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      text-align: center;
+      border-radius: var(--r-sm);
+    }
+
+    /* ─── RESPONSIVE ───────────────────────────────────────── */
+    @media (max-width: 960px) {
+      .hero__inner { grid-template-columns: 1fr; }
+      .hero__video video { height: auto; width: 100%; max-width: 340px; }
+      .hero__form-card { max-width: 520px; margin: 0 auto; }
+      .proof-bar__grid { grid-template-columns: repeat(2, 1fr); }
+      .problem__inner { grid-template-columns: 1fr; }
+      .team__grid { grid-template-columns: 1fr; }
+      .process__grid { grid-template-columns: 1fr; }
+      .lorraine__stats { grid-template-columns: repeat(2, 1fr); }
+      .lorraine__photos { grid-template-columns: 1fr; }
+      .lorraine__photos img { height: 240px; }
+      .reviews__grid { grid-template-columns: 1fr 1fr; }
+      .review-card:nth-child(4) { grid-column: auto; }
+      .review-card:nth-child(5) { grid-column: auto; }
+      .cta-mid__inner { grid-template-columns: 1fr; }
+    }
+
+    @media (max-width: 640px) {
+      .proof-bar__grid { grid-template-columns: repeat(2, 1fr); gap: 24px; }
+      .reviews__grid { grid-template-columns: 1fr; }
+      .lorraine__stats { grid-template-columns: 1fr 1fr; gap: 14px; }
+      .hero { padding: 100px 0 48px; }
+      .nav__phone span { display: none; }
+      .sticky-cta { display: block; }
+      body { padding-bottom: 72px; }
+      .cta-final__btns { flex-direction: column; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ════════════════════════ NAV ════════════════════════ -->
+<nav class="nav">
+  <div class="container">
+    <div class="nav__inner">
+      <a class="nav__logo" href="#">
+        <img src="logo-blanc.png" alt="Fred et Max" />
+      </a>
+      <a class="nav__phone" href="tel:+14501234567">
+        <svg viewBox="0 0 24 24"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1-9.4 0-17-7.6-17-17 0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1L6.6 10.8z"/></svg>
+        <span>Nous appeler</span>
+      </a>
+    </div>
+  </div>
+</nav>
+
+<!-- ════════════════════════ HERO ════════════════════════ -->
+<section class="hero">
+  <div class="hero__bg" aria-hidden="true"></div>
+  <div class="container">
+    <div class="hero__inner">
+      <div class="hero__video reveal">
+        <video
+          src="hero-video.mp4"
+          autoplay
+          muted
+          loop
+          playsinline
+          controls
+        ></video>
+      </div>
+
+      <!-- FORM CARD -->
+      <div class="hero__form-card reveal" style="transition-delay:0.15s">
+        <p class="form-title">Parler à un expert vendeur</p>
+        <p class="form-sub">Dites-nous simplement où vous en êtes — le reste, c'est nous.</p>
+        <form id="hero-form" action="#" method="POST">
+          <div class="form-group">
+            <label for="name">Prénom et nom</label>
+            <input type="text" id="name" name="name" placeholder="Marie Tremblay" required />
+          </div>
+          <div class="form-group">
+            <label for="phone">Téléphone</label>
+            <input type="tel" id="phone" name="phone" placeholder="(450) 123-4567" required />
+          </div>
+          <div class="form-group">
+            <label for="message">Votre situation en quelques mots</label>
+            <textarea id="message" name="message" placeholder="Ex. : Maison unifamiliale à Lorraine, je veux vendre d'ici cet été…"></textarea>
+          </div>
+          <button type="submit" class="btn-cta">Obtenir mon estimation gratuite →</button>
+          <p class="form-privacy">🔒 Vos informations restent confidentielles. Aucun engagement.</p>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════════ PROOF BAR ════════════════════════ -->
+<section class="proof-bar">
+  <div class="container">
+    <div class="proof-bar__grid">
+      <div class="proof-item reveal">
+        <div class="proof-item__num" data-target="200">0</div>
+        <div class="proof-item__label">Propriétés vendues</div>
+      </div>
+      <div class="proof-item reveal" style="transition-delay:0.1s">
+        <div class="proof-item__num" data-target="21">0</div>
+        <div class="proof-item__label">Jours en moyenne pour vendre</div>
+      </div>
+      <div class="proof-item reveal" style="transition-delay:0.2s">
+        <div class="proof-item__num" data-suffix="%">98</div>
+        <div class="proof-item__label">Du prix demandé obtenu</div>
+      </div>
+      <div class="proof-item reveal" style="transition-delay:0.3s">
+        <div class="proof-item__num" data-suffix="★">5</div>
+        <div class="proof-item__label">Note Google de nos clients</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════════ PROBLÈME / SOLUTION ════════════════════════ -->
+<section class="problem">
+  <div class="container">
+    <div class="problem__inner">
+      <div class="reveal">
+        <p class="section-label">On vous comprend</p>
+        <h2 class="section-h2">Vendre seul, c'est risqué. Mal choisir son courtier, encore plus.</h2>
+        <p class="section-body">La vente d'une propriété est l'une des décisions financières les plus importantes de votre vie. Pourtant, beaucoup de vendeurs font face aux mêmes obstacles :</p>
+        <ul class="pain-list">
+          <li>
+            <span class="icon">
+              <svg viewBox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+            </span>
+            <span>Prix de vente trop bas par méconnaissance du marché local</span>
+          </li>
+          <li>
+            <span class="icon">
+              <svg viewBox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+            </span>
+            <span>Délais qui s'étendent et propriété qui reste trop longtemps sur le marché</span>
+          </li>
+          <li>
+            <span class="icon">
+              <svg viewBox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+            </span>
+            <span>Frais imprévus et conditions qui tombent à la dernière minute</span>
+          </li>
+          <li>
+            <span class="icon">
+              <svg viewBox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+            </span>
+            <span>Manque de communication et de suivi de la part du courtier</span>
+          </li>
+        </ul>
+      </div>
+      <div class="solution-box reveal" style="transition-delay:0.15s">
+        <h3>La méthode Fred et Max</h3>
+        <ul class="benefit-list">
+          <li>
+            <span class="check"><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"/></svg></span>
+            <span><strong>Analyse comparative de marché</strong> précise pour fixer le bon prix dès le départ</span>
+          </li>
+          <li>
+            <span class="check"><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"/></svg></span>
+            <span><strong>Mise en marché agressive</strong> : photos professionnelles, vidéo, Centris, réseaux sociaux</span>
+          </li>
+          <li>
+            <span class="check"><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"/></svg></span>
+            <span><strong>Réseau d'acheteurs qualifiés</strong> déjà actifs dans Lorraine et les Laurentides</span>
+          </li>
+          <li>
+            <span class="check"><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"/></svg></span>
+            <span><strong>Négociation experte</strong> pour maximiser votre prix net de vente</span>
+          </li>
+          <li>
+            <span class="check"><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"/></svg></span>
+            <span><strong>Suivi transparent</strong> à chaque étape, de la visite à la signature</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════════ ÉQUIPE ════════════════════════ -->
+<section class="team">
+  <div class="container">
+    <div class="team__header reveal">
+      <p class="section-label">Votre équipe</p>
+      <h2 class="section-h2" style="color:var(--white)">Des experts ancrés dans Lorraine</h2>
+    </div>
+    <div class="team__grid">
+      <div class="team-card reveal">
+        <img class="team-card__photo" src="fred.jpg" alt="Frédéric Gingras, courtier immobilier à Lorraine" />
+        <div class="team-card__body">
+          <p class="team-card__name">Frédéric Gingras</p>
+          <p class="team-card__title">Courtier immobilier agréé</p>
+          <p class="team-card__bio">Passionné de l'immobilier depuis plus de 10 ans, Frédéric connaît chaque rue, chaque quartier de Lorraine. Sa rigueur et sa transparence ont fait sa réputation sur la Rive-Nord.</p>
+          <span class="team-card__tag">Expert vendeur · Lorraine</span>
+        </div>
+      </div>
+      <div class="team-card reveal" style="transition-delay:0.15s">
+        <img class="team-card__photo" src="max.jpg" alt="Maxime Beaulac, courtier immobilier à Lorraine" />
+        <div class="team-card__body">
+          <p class="team-card__name">Maxime Beaulac</p>
+          <p class="team-card__title">Courtier immobilier agréé</p>
+          <p class="team-card__bio">Maxime maîtrise l'art de la négociation et du marketing immobilier. Son réseau d'acheteurs pré-qualifiés lui permet de vendre rapidement, au meilleur prix.</p>
+          <span class="team-card__tag">Expert négociation · Laurentides</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════════ PROCESSUS ════════════════════════ -->
+<section class="process">
+  <div class="container">
+    <div class="process__header reveal">
+      <p class="section-label">Comment ça marche</p>
+      <h2 class="section-h2">Simple. Rapide. Sans stress.</h2>
+    </div>
+    <div class="process__grid">
+      <div class="step-card reveal">
+        <div class="step-card__num">01</div>
+        <div class="step-card__badge">1</div>
+        <p class="step-card__title">On se parle</p>
+        <p class="step-card__text">Un échange rapide pour comprendre votre propriété, votre situation et vos objectifs. Pas de pression, pas de jargon.</p>
+      </div>
+      <div class="step-card reveal" style="transition-delay:0.12s">
+        <div class="step-card__num">02</div>
+        <div class="step-card__badge">2</div>
+        <p class="step-card__title">Estimation précise</p>
+        <p class="step-card__text">Analyse comparative de marché basée sur les ventes récentes à Lorraine. Vous connaissez la vraie valeur de votre propriété en 48h.</p>
+      </div>
+      <div class="step-card reveal" style="transition-delay:0.24s">
+        <div class="step-card__num">03</div>
+        <div class="step-card__badge">3</div>
+        <p class="step-card__title">On vend. Ensemble.</p>
+        <p class="step-card__text">Mise en marché, visites, offres, négociation, notaire — on gère tout. Vous signez au meilleur prix, sans mauvaise surprise.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════════ LORRAINE ════════════════════════ -->
+<section class="lorraine">
+  <div class="container">
+    <div class="lorraine__header reveal">
+      <p class="section-label">Votre marché</p>
+      <h2 class="section-h2" style="color:var(--white)">Lorraine : une ville de prestige dans les Laurentides</h2>
+      <p class="section-body">Lorraine est l'une des municipalités les plus prisées de la Rive-Nord — et Fred et Max en sont les experts de référence.</p>
+    </div>
+    <div class="lorraine__stats">
+      <div class="stat-card reveal">
+        <div class="stat-card__icon">🏘️</div>
+        <div class="stat-card__num">9 500</div>
+        <div class="stat-card__desc">habitants — ville résidentielle exclusive</div>
+      </div>
+      <div class="stat-card reveal" style="transition-delay:0.1s">
+        <div class="stat-card__icon">💰</div>
+        <div class="stat-card__num">129 k$</div>
+        <div class="stat-card__desc">revenu médian des ménages</div>
+      </div>
+      <div class="stat-card reveal" style="transition-delay:0.2s">
+        <div class="stat-card__icon">📈</div>
+        <div class="stat-card__num">+8,3%</div>
+        <div class="stat-card__desc">de ventes immobilières en 2025 au Québec</div>
+      </div>
+      <div class="stat-card reveal" style="transition-delay:0.3s">
+        <div class="stat-card__icon">🏡</div>
+        <div class="stat-card__num">92%</div>
+        <div class="stat-card__desc">des ménages propriétaires — marché stable</div>
+      </div>
+      <div class="stat-card reveal" style="transition-delay:0.4s">
+        <div class="stat-card__icon">🌿</div>
+        <div class="stat-card__num">5,9 km²</div>
+        <div class="stat-card__desc">ville dense et verte — demande constante</div>
+      </div>
+      <div class="stat-card reveal" style="transition-delay:0.5s">
+        <div class="stat-card__icon">🔑</div>
+        <div class="stat-card__num">+27,9%</div>
+        <div class="stat-card__desc">de ventes 500 k$ et + en 2025 au Québec</div>
+      </div>
+    </div>
+    <div class="lorraine__photos reveal">
+      <img src="lorraine1.jpg" alt="Lorraine, Québec — quartier résidentiel" />
+      <img src="lorraine3.jpg" alt="Lorraine, Québec — milieu de vie" />
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════════ AVIS GOOGLE ════════════════════════ -->
+<section class="reviews">
+  <div class="container">
+    <div class="reviews__header reveal">
+      <p class="section-label">Avis clients</p>
+      <h2 class="section-h2" style="color:var(--white)">Ce que nos clients disent de nous</h2>
+    </div>
+    <div class="reviews__google-badge reveal">
+      <!-- Google "G" icon SVG -->
+      <svg height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="14" cy="14" r="14" fill="white"/>
+        <path d="M14.3 13.1h6.4c.1.5.2 1 .2 1.5 0 4.1-2.8 7-6.6 7A7 7 0 0 1 7 14.5a7 7 0 0 1 7-7c1.9 0 3.5.7 4.7 1.8l-1.9 1.9c-.7-.7-1.7-1.1-2.8-1.1a4.5 4.5 0 0 0 0 9c2.3 0 3.9-1.7 4.2-4h-4.2v-2.5z" fill="#4285F4"/>
+      </svg>
+      <div class="reviews__score">5,0</div>
+      <div class="star-row"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
+      <div class="reviews__count">sur Google</div>
+    </div>
+    <!-- ⚠️ REMPLACER par les vrais avis Google de la fiche Fred et Max -->
+    <div class="reviews__grid">
+      <div class="review-card reveal">
+        <div class="star-row"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
+        <p class="review-card__quote">"Fred et Max ont vendu notre maison en 17 jours, au-dessus du prix demandé. Communication parfaite du début à la fin. Je recommande à 100 % !"</p>
+        <div class="review-card__author">
+          <div class="review-card__avatar">MT</div>
+          <div>
+            <p class="review-card__name">Marie-Ève T.</p>
+            <p class="review-card__date">Lorraine · il y a 2 mois</p>
+          </div>
+        </div>
+      </div>
+      <div class="review-card reveal" style="transition-delay:0.1s">
+        <div class="star-row"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
+        <p class="review-card__quote">"Professionnels, disponibles et à l'écoute. Notre propriété à Lorraine a trouvé preneur en moins de 3 semaines. Merci Frédéric pour ta patience !"</p>
+        <div class="review-card__author">
+          <div class="review-card__avatar">JF</div>
+          <div>
+            <p class="review-card__name">Jean-François C.</p>
+            <p class="review-card__date">Lorraine · il y a 3 mois</p>
+          </div>
+        </div>
+      </div>
+      <div class="review-card reveal" style="transition-delay:0.2s">
+        <div class="star-row"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
+        <p class="review-card__quote">"Vendu en 12 jours ! Maxime a géré chaque détail avec un professionnalisme exemplaire. On a obtenu 3 % au-dessus de notre prix demandé. Incroyable."</p>
+        <div class="review-card__author">
+          <div class="review-card__avatar">SL</div>
+          <div>
+            <p class="review-card__name">Sophie L.</p>
+            <p class="review-card__date">Lorraine · il y a 4 mois</p>
+          </div>
+        </div>
+      </div>
+      <div class="review-card reveal" style="transition-delay:0.3s">
+        <div class="star-row"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
+        <p class="review-card__quote">"Une équipe de feu. Ils ont dépassé toutes nos attentes. Le résultat : prix de vente supérieur à notre estimation initiale et transaction sans accroc."</p>
+        <div class="review-card__author">
+          <div class="review-card__avatar">PB</div>
+          <div>
+            <p class="review-card__name">Patrick B.</p>
+            <p class="review-card__date">Lorraine · il y a 5 mois</p>
+          </div>
+        </div>
+      </div>
+      <div class="review-card reveal" style="transition-delay:0.4s">
+        <div class="star-row"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
+        <p class="review-card__quote">"Transparence totale à chaque étape. Fred nous a tenus informés constamment. Je n'aurais pas pu trouver meilleure équipe pour vendre ma propriété à Lorraine."</p>
+        <div class="review-card__author">
+          <div class="review-card__avatar">IG</div>
+          <div>
+            <p class="review-card__name">Isabelle G.</p>
+            <p class="review-card__date">Lorraine · il y a 6 mois</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════════ CTA MID ════════════════════════ -->
+<section class="cta-mid">
+  <div class="container">
+    <div class="cta-mid__inner reveal">
+      <div>
+        <h2 class="cta-mid__h2">Curieux de connaître la valeur de votre propriété ?</h2>
+        <p class="cta-mid__sub">Estimation gratuite, sans engagement. Réponse en moins de 24 heures.</p>
+      </div>
+      <a href="#hero-form" class="btn-red">Estimer mon bien →</a>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════════ FAQ ════════════════════════ -->
+<section class="faq">
+  <div class="container">
+    <div class="faq__header reveal">
+      <p class="section-label">Vos questions</p>
+      <h2 class="section-h2">On répond franchement</h2>
+    </div>
+    <div class="faq__list">
+      <div class="faq-item">
+        <button class="faq-item__q">
+          Combien de temps faut-il pour vendre à Lorraine ?
+          <svg viewBox="0 0 24 24"><path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"/></svg>
+        </button>
+        <div class="faq-item__a">
+          Avec notre méthode, nos propriétés se vendent en moyenne en 21 jours à Lorraine. Le marché de la Rive-Nord reste actif, et avec une mise en marché agressive et un bon positionnement de prix, les délais sont souvent plus courts que la moyenne québécoise.
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-item__q">
+          Est-ce que l'estimation est vraiment gratuite ?
+          <svg viewBox="0 0 24 24"><path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"/></svg>
+        </button>
+        <div class="faq-item__a">
+          Oui, absolument. L'analyse comparative de marché est gratuite et sans engagement. Nous préférons d'abord démontrer notre valeur avant de vous demander quoi que ce soit.
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-item__q">
+          Comment fixez-vous le prix de vente ?
+          <svg viewBox="0 0 24 24"><path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"/></svg>
+        </button>
+        <div class="faq-item__a">
+          Nous analysons les ventes comparables récentes dans votre secteur spécifique de Lorraine, l'état du marché actuel (offres vs. demande), les caractéristiques distinctives de votre propriété, et les tendances à court terme. Vous recevez un rapport clair et justifié, pas un chiffre sorti du chapeau.
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-item__q">
+          Qu'est-ce qui est inclus dans votre service de vente ?
+          <svg viewBox="0 0 24 24"><path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"/></svg>
+        </button>
+        <div class="faq-item__a">
+          Photos professionnelles, vidéo de présentation, inscription sur Centris et les grandes plateformes, diffusion sur les réseaux sociaux, gestion des visites, réception et analyse des offres, négociation, coordination avec le notaire — tout est compris. Vous n'avez pas à courir après quoi que ce soit.
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-item__q">
+          Et si je ne suis pas encore prêt à vendre ?
+          <svg viewBox="0 0 24 24"><path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"/></svg>
+        </button>
+        <div class="faq-item__a">
+          C'est parfait pour commencer. On échange, on vous donne une estimation, et vous avancez à votre rythme. Nous avons accompagné des clients qui ont attendu 6 mois avant de mettre leur propriété sur le marché — et c'était la bonne décision pour eux. On est là pour vous conseiller, pas pour vous presser.
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════════ CTA FINAL ════════════════════════ -->
+<section class="cta-final">
+  <div class="container">
+    <h2 class="cta-final__h2 reveal">Prêt à vendre votre propriété à Lorraine ?</h2>
+    <p class="cta-final__sub reveal">Rejoignez les centaines de propriétaires qui ont fait confiance à Fred et Max.</p>
+    <div class="cta-final__btns reveal">
+      <a href="#hero-form" class="btn-red" style="font-size:17px; padding:20px 48px">Obtenir mon estimation gratuite →</a>
+      <a href="tel:+14501234567" class="btn-white">
+        <svg viewBox="0 0 24 24"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1-9.4 0-17-7.6-17-17 0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1L6.6 10.8z"/></svg>
+        Nous appeler directement
+      </a>
+    </div>
+    <p class="cta-final__guarantee reveal">✓ Réponse garantie en moins de 24h &nbsp;·&nbsp; ✓ Sans engagement &nbsp;·&nbsp; ✓ Estimation gratuite</p>
+  </div>
+</section>
+
+<!-- ════════════════════════ FOOTER ════════════════════════ -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer__inner">
+      <div class="footer__logo">
+        <img src="logo-blanc.png" alt="Fred et Max" />
+      </div>
+      <div class="footer__contact">
+        <a href="tel:+14501234567">(450) 123-4567</a>
+        <a href="mailto:info@fredetmax.com">info@fredetmax.com</a>
+        <span style="color:#4b5563;font-size:13px;">Lorraine, Québec</span>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <p class="footer__legal">
+        © 2026 Fred et Max — Courtiers immobiliers agréés. Tous droits réservés.
+        <a href="#">Politique de confidentialité</a>
+        <a href="#">Mentions légales</a>
+      </p>
+      <p class="footer__legal">Membre de l'OACIQ</p>
+    </div>
+  </div>
+</footer>
+
+<!-- ════════════════════════ STICKY MOBILE CTA ════════════════════════ -->
+<div class="sticky-cta">
+  <a href="#hero-form">Obtenir mon estimation gratuite →</a>
+</div>
+
+<!-- ════════════════════════ SCRIPTS ════════════════════════ -->
+<script>
+  // ── Scroll Reveal ──────────────────────────────────────────
+  const revealEls = document.querySelectorAll('.reveal');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.12 });
+  revealEls.forEach(el => observer.observe(el));
+
+  // ── Animated counters ──────────────────────────────────────
+  const counters = document.querySelectorAll('[data-target]');
+  const counterObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (!entry.isIntersecting) return;
+      const el = entry.target;
+      const target = +el.dataset.target;
+      const suffix = el.dataset.suffix || '+';
+      let current = 0;
+      const step = Math.ceil(target / 60);
+      const timer = setInterval(() => {
+        current = Math.min(current + step, target);
+        el.textContent = current + suffix;
+        if (current >= target) clearInterval(timer);
+      }, 25);
+      counterObserver.unobserve(el);
+    });
+  }, { threshold: 0.5 });
+  counters.forEach(el => counterObserver.observe(el));
+
+  // static suffix stats (no animation needed)
+  document.querySelectorAll('[data-suffix]').forEach(el => {
+    if (!el.dataset.target) return; // already handled above
+  });
+
+  // ── FAQ accordion ──────────────────────────────────────────
+  document.querySelectorAll('.faq-item__q').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const item = btn.closest('.faq-item');
+      const isOpen = item.classList.contains('open');
+      document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+      if (!isOpen) item.classList.add('open');
+    });
+  });
+
+  // ── Smooth scroll for anchor links ────────────────────────
+  document.querySelectorAll('a[href^="#"]').forEach(a => {
+    a.addEventListener('click', e => {
+      const target = document.querySelector(a.getAttribute('href'));
+      if (target) {
+        e.preventDefault();
+        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        // Focus first input in form if scrolling to form
+        const input = target.querySelector('input');
+        if (input) setTimeout(() => input.focus(), 600);
+      }
+    });
+  });
+</script>
+
+</body>
+</html>
