@@ -288,12 +288,12 @@
     /* ─── HERO ─────────────────────────────────────────────── */
     .hero {
       position: relative;
-      min-height: 100svh;
+      min-height: auto;
       display: flex;
       align-items: center;
       background: var(--black);
       overflow: hidden;
-      padding: 120px 0 80px;
+      padding: 200px 0 100px;
     }
 
     .hero__bg {
@@ -1174,7 +1174,7 @@
     }
 
     @media (max-width: 768px) {
-      .hero { padding: 100px 0 48px; }
+      .hero { padding: 140px 0 60px; min-height: auto; }
       .problem, .team, .testimonials, .process, .local, .cta-secondary, .faq { padding: 64px 0; }
       .cta-final { padding: 72px 0; }
       .proof-bar__grid { grid-template-columns: repeat(2, 1fr); gap: 24px; }
