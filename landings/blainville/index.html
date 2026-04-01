@@ -1,0 +1,923 @@
+<!DOCTYPE html>
+<html lang="fr-CA">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Courtier Immobilier à Blainville | Estimation Gratuite — Fred & Max</title>
+    <meta name="description" content="Courtiers Immobiliers de Blainville. 500+ ventes, 21 jours en moyenne, 98% du prix demandé. Estimation gratuite en 24h. Fred & Max.">
+    <link rel="canonical" href="https://www.fredmax.ca/blainville">
+    <meta name="robots" content="index, follow">
+    <meta name="geo.region" content="CA-QC">
+    <meta name="geo.placename" content="Blainville, Québec">
+    <meta name="geo.position" content="45.6723;-73.8794">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="fr_CA">
+    <meta property="og:url" content="https://www.fredmax.ca/blainville">
+    <meta property="og:title" content="Courtier Immobilier à Blainville | Estimation Gratuite — Fred & Max">
+    <meta property="og:description" content="Vendez votre propriété à Blainville au meilleur prix. 500+ ventes, 98% du prix demandé. Estimation gratuite en 24h.">
+    <meta property="og:site_name" content="Fred & Max — Courtiers immobiliers">
+
+    <script type="application/ld+json">
+    {"@context":"https://schema.org","@type":"RealEstateAgent","name":"Fred & Max — Courtiers immobiliers","url":"https://www.fredmax.ca/blainville","telephone":"+15142193383","address":{"@type":"PostalAddress","addressLocality":"Blainville","addressRegion":"QC","addressCountry":"CA"},"areaServed":[{"@type":"City","name":"Blainville"},{"@type":"City","name":"Lorraine"},{"@type":"City","name":"Rosemère"},{"@type":"City","name":"Sainte-Thérèse"}],"aggregateRating":{"@type":"AggregateRating","ratingValue":"5","reviewCount":"47"}}
+    </script>
+    <script type="application/ld+json">
+    {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Combien coûte la commission d'un courtier à Blainville?","acceptedAnswer":{"@type":"Answer","text":"Entre 4% et 6% du prix de vente (+ TPS/TVQ). L'estimation est gratuite."}},{"@type":"Question","name":"Combien de temps pour vendre à Blainville?","acceptedAnswer":{"@type":"Answer","text":"21 jours en moyenne avec Fred & Max."}},{"@type":"Question","name":"Quelles villes couvrez-vous?","acceptedAnswer":{"@type":"Answer","text":"Blainville, Lorraine, Rosemère, Sainte-Thérèse et toute la Rive-Nord."}},{"@type":"Question","name":"Qu'est-ce qu'une ACM?","acceptedAnswer":{"@type":"Answer","text":"Évaluation du prix basée sur les ventes récentes. Gratuite et sans engagement."}}]}
+    </script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3/dist/gsap.min.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3/dist/ScrollTrigger.min.js" defer></script>
+
+    <style>
+        :root {
+            --blue: #26447E;
+            --blue-light: #EEF1F7;
+            --blue-200: #8ba3d4;
+            --red: #C83C34;
+            --red-h: #A82E27;
+            --black: #0D0D0D;
+            --white: #FFFFFF;
+            --off: #FAFAF9;
+            --text: #1a1a2e;
+            --text2: #6B7280;
+            --border: #E8E8E4;
+            --serif: 'Playfair Display', Georgia, serif;
+            --sans: 'Montserrat', system-ui, sans-serif;
+            --ease: cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        body {
+            font-family: var(--sans); font-size: 16px; line-height: 1.65;
+            color: var(--text); background: var(--white);
+            overflow-x: hidden; -webkit-font-smoothing: antialiased;
+        }
+        @media (min-width: 768px) { body { font-size: 17px; } }
+        img { max-width: 100%; height: auto; display: block; }
+        a { text-decoration: none; color: inherit; }
+
+        .w { max-width: 1280px; margin: 0 auto; padding-inline: 20px; }
+        @media (min-width: 768px) { .w { padding-inline: 40px; } }
+
+        h1, h2 { font-family: var(--serif); letter-spacing: -0.03em; line-height: 1.05; }
+        h1 { font-size: clamp(40px, 7vw, 80px); font-weight: 700; }
+        h2 { font-size: clamp(28px, 4.5vw, 52px); font-weight: 600; }
+        h3 { font-family: var(--sans); font-weight: 700; font-size: clamp(18px, 2vw, 22px); line-height: 1.3; }
+
+        .pill {
+            display: inline-flex; align-items: center; gap: 6px;
+            font-family: var(--sans); font-size: 12px; font-weight: 700;
+            letter-spacing: 0.08em; text-transform: uppercase;
+            padding: 8px 18px; border-radius: 100px;
+        }
+        .pill--dark { background: var(--black); color: var(--white); }
+        .pill--blue { background: var(--blue); color: var(--white); }
+        .pill--outline { background: transparent; border: 1.5px solid var(--border); color: var(--text); }
+
+        .btn {
+            display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+            font-family: var(--sans); font-weight: 600; font-size: 15px;
+            padding: 16px 36px; border-radius: 100px; border: none; cursor: pointer;
+            transition: transform 0.4s var(--ease), box-shadow 0.4s var(--ease), background 0.25s;
+        }
+        .btn:active { transform: translateY(0) !important; }
+        .btn--red { background: var(--red); color: var(--white); }
+        .btn--red:hover { background: var(--red-h); transform: translateY(-2px); box-shadow: 0 8px 28px rgba(200,60,52,0.2); }
+        .btn--white { background: var(--white); color: var(--text); border: 1.5px solid var(--border); }
+        .btn--white:hover { border-color: var(--blue); color: var(--blue); transform: translateY(-2px); }
+        .btn--dark { background: var(--black); color: var(--white); }
+        .btn--dark:hover { background: #222; transform: translateY(-2px); }
+
+        .arrow-btn {
+            width: 52px; height: 52px; border-radius: 50%;
+            border: 1.5px solid var(--border); background: var(--white);
+            display: inline-flex; align-items: center; justify-content: center;
+            cursor: pointer; transition: background 0.3s, border-color 0.3s, transform 0.3s;
+        }
+        .arrow-btn:hover { background: var(--black); border-color: var(--black); }
+        .arrow-btn svg { width: 20px; height: 20px; fill: var(--black); transition: fill 0.3s; }
+        .arrow-btn:hover svg { fill: var(--white); }
+
+        .rv { opacity: 0; transform: translateY(30px); }
+
+        /* ═══ NAV ═══ */
+        .nav {
+            position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
+            padding: 20px 0;
+            background: rgba(255,255,255,0.92);
+            backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px);
+            border-bottom: 1px solid rgba(0,0,0,0.04);
+        }
+        .nav__inner { display: flex; align-items: center; justify-content: space-between; }
+        .nav__logo img { height: 60px; }
+        .nav__center { display: none; align-items: center; gap: 6px; font-size: 13px; font-weight: 500; color: var(--text2); }
+        @media (min-width: 768px) { .nav__center { display: flex; } }
+        .nav__center span { font-weight: 700; color: var(--text); }
+        .nav__right { display: flex; align-items: center; gap: 12px; }
+        .nav__phone { font-size: 13px; font-weight: 600; color: var(--text); display: none; }
+        @media (min-width: 768px) { .nav__phone { display: block; } }
+
+        /* ═══ HERO — Rounded container like trvvrat ═══ */
+        .hero {
+            margin-top: 110px;
+            padding: 8px 16px 0;
+            position: relative;
+        }
+        @media (min-width: 768px) { .hero { padding: 8px 24px 0; } }
+
+        .hero__container {
+            position: relative;
+            border-radius: 28px;
+            overflow: hidden;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+        @media (min-width: 768px) { .hero__container { border-radius: 36px; } }
+
+        .hero__img {
+            width: 100%;
+            aspect-ratio: 16/7;
+            object-fit: cover;
+        }
+        @media (max-width: 767px) { .hero__img { aspect-ratio: 3/4; } }
+
+        .hero__overlay {
+            position: absolute; inset: 0;
+            background: linear-gradient(160deg, rgba(0,0,0,0.15) 0%, rgba(0,0,0,0.55) 100%);
+            display: flex; flex-direction: column; justify-content: flex-end;
+            padding: 32px 28px 36px;
+        }
+        @media (min-width: 768px) { .hero__overlay { padding: 48px 56px 52px; } }
+
+        .hero__eyebrow {
+            display: inline-flex; align-items: center; gap: 6px;
+            background: rgba(255,255,255,0.12); backdrop-filter: blur(8px);
+            border: 1px solid rgba(255,255,255,0.15);
+            border-radius: 100px; padding: 8px 18px;
+            font-size: 12px; font-weight: 600; color: rgba(255,255,255,0.8);
+            letter-spacing: 0.04em; margin-bottom: 20px; width: fit-content;
+        }
+        .hero__overlay h1 { color: var(--white); max-width: 650px; margin-bottom: 16px; }
+        .hero__overlay p { color: rgba(255,255,255,0.65); font-size: 17px; max-width: 460px; margin-bottom: 28px; line-height: 1.6; }
+        .hero__btns { display: flex; gap: 12px; flex-wrap: wrap; }
+
+        /* Scroll arrow inside hero — like trvvrat's down arrow */
+        .hero__scroll {
+            position: absolute; bottom: 28px; left: 50%; transform: translateX(-50%);
+            width: 44px; height: 44px; border-radius: 50%;
+            background: rgba(255,255,255,0.12); backdrop-filter: blur(8px);
+            border: 1px solid rgba(255,255,255,0.15);
+            display: flex; align-items: center; justify-content: center;
+            cursor: pointer; transition: background 0.3s;
+        }
+        @media (min-width: 768px) { .hero__scroll { bottom: 48px; left: 50%; } }
+        .hero__scroll:hover { background: rgba(255,255,255,0.25); }
+        .hero__scroll svg { width: 18px; height: 18px; fill: var(--white); }
+
+        /* Floating card — breaks out of hero rounded container */
+        .hero__float {
+            position: absolute; bottom: -48px; right: 24px;
+            background: var(--white); border-radius: 20px;
+            padding: 24px 22px; width: 240px; z-index: 10;
+            box-shadow: 0 4px 24px rgba(0,0,0,0.1), 0 12px 48px rgba(0,0,0,0.08);
+            display: none;
+        }
+        @media (min-width: 1024px) { .hero__float { display: block; right: 56px; bottom: -56px; width: 260px; } }
+        .hero__float-stat { font-family: var(--serif); font-size: 36px; font-weight: 700; color: var(--blue); line-height: 1; }
+        .hero__float-label { font-size: 13px; color: var(--text2); margin-top: 4px; }
+        .hero__float p { font-size: 13px; color: var(--text2); line-height: 1.5; margin-top: 10px; }
+        .hero__float-src { font-size: 10px; color: #b0b0b0; margin-top: 4px; }
+
+        /* Second floating element — pill tag overlapping top-right */
+        .hero__tag-float {
+            position: absolute; top: 16px; right: 80px;
+            display: none;
+        }
+        @media (min-width: 1024px) { .hero__tag-float { display: block; } }
+
+        /* Spacer for the float overflow */
+        .hero__spacer { height: 0; }
+
+        /* ═══ EDITORIAL HEADLINE ═══ */
+        .editorial {
+            padding: 80px 0;
+        }
+        @media (min-width: 768px) { .editorial { padding: 100px 0; } }
+        .editorial__inner {
+            display: flex; align-items: flex-end; justify-content: space-between;
+            gap: 32px; flex-wrap: wrap;
+        }
+        .editorial h2 { max-width: 900px; }
+        .editorial h2 em { font-style: italic; color: var(--blue); }
+
+        /* ═══ CONTENT GRID — Asymmetric like trvvrat ═══ */
+        .grid-section { padding: 80px 0; }
+        @media (min-width: 768px) { .grid-section { padding: 100px 0; } }
+
+        .asym-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 20px;
+        }
+        @media (min-width: 768px) {
+            .asym-grid {
+                grid-template-columns: 1.2fr 0.8fr;
+                grid-template-rows: auto auto;
+                gap: 20px;
+            }
+        }
+
+        .asym-card {
+            border-radius: 24px;
+            overflow: hidden;
+            position: relative;
+            transition: transform 0.4s var(--ease);
+        }
+        .asym-card:hover { transform: translateY(-4px); }
+        /* trvvrat-style mixed radii */
+        .asym-card:nth-child(1) { border-radius: 28px; }
+        .asym-card:nth-child(2) { border-radius: 20px 20px 28px 20px; }
+        .asym-card:nth-child(3) { border-radius: 32px; }
+
+        .asym-card--img {
+            aspect-ratio: 4/3;
+        }
+        .asym-card--img img {
+            width: 100%; height: 100%; object-fit: cover;
+        }
+        .asym-card--img .asym-card__content {
+            position: absolute; bottom: 0; left: 0; right: 0;
+            padding: 28px;
+            background: linear-gradient(to top, rgba(0,0,0,0.6) 0%, transparent 100%);
+        }
+        .asym-card--img .asym-card__content p { color: var(--white); font-weight: 600; font-size: 15px; }
+        .asym-card--img .asym-card__content span { color: rgba(255,255,255,0.6); font-size: 13px; }
+
+        .asym-card--stat {
+            background: var(--off);
+            padding: 36px 32px;
+            display: flex; flex-direction: column; justify-content: space-between;
+        }
+        .asym-card--stat .big-num {
+            font-family: var(--serif);
+            font-size: clamp(48px, 8vw, 72px);
+            font-weight: 700; color: var(--blue);
+            line-height: 0.9;
+        }
+        .asym-card--stat .big-label { font-size: 14px; color: var(--text2); margin-top: 8px; }
+        .asym-card--stat .big-src { font-size: 11px; color: #b0b0b0; margin-top: 4px; }
+
+        .asym-card--duo {
+            background: var(--black);
+            padding: 0;
+        }
+        @media (min-width: 768px) { .asym-card--duo { grid-column: span 2; } }
+        .asym-card--duo-inner {
+            display: grid; grid-template-columns: 1fr; align-items: center;
+        }
+        @media (min-width: 768px) { .asym-card--duo-inner { grid-template-columns: 1fr 1fr; } }
+        .asym-card--duo img {
+            width: 100%; aspect-ratio: 16/10; object-fit: cover;
+        }
+        .asym-card--duo-text {
+            padding: 36px 32px;
+        }
+        .asym-card--duo-text h3 { color: var(--white); margin-bottom: 12px; font-family: var(--serif); font-size: 24px; font-weight: 600; }
+        .asym-card--duo-text p { color: rgba(255,255,255,0.5); font-size: 15px; line-height: 1.65; }
+
+        /* ═══ SHOWCASE — Large image with tags ═══ */
+        .showcase { padding: 80px 20px; background: var(--blue); }
+        @media (min-width: 768px) { .showcase { padding: 100px 40px; } }
+        .showcase__heading { max-width: 1280px; margin: 0 auto 32px; }
+        .showcase__heading h2 { font-size: clamp(28px, 4vw, 44px); color: var(--white); }
+        .showcase__grid {
+            display: grid; grid-template-columns: 1fr;
+            gap: 16px; max-width: 1280px; margin: 0 auto;
+        }
+        @media (min-width: 768px) { .showcase__grid { grid-template-columns: 1fr 1fr; gap: 20px; } }
+        .showcase__card {
+            position: relative; border-radius: 24px;
+            overflow: hidden;
+        }
+        .showcase__card img { width: 100%; aspect-ratio: 4/3; object-fit: cover; display: block; }
+        .showcase__tags { position: absolute; top: 24px; left: 24px; display: flex; gap: 8px; }
+
+        /* ═══ FORM — Editorial ═══ */
+        .form-section { padding: 80px 0; background: var(--off); }
+        @media (min-width: 768px) { .form-section { padding: 120px 0; } }
+        .form-section__grid {
+            display: grid; grid-template-columns: 1fr; gap: 48px; align-items: center;
+        }
+        @media (min-width: 1024px) { .form-section__grid { grid-template-columns: 1fr 1fr; gap: 80px; } }
+
+        .form-section__text h2 { margin-bottom: 20px; }
+        .form-section__text p { color: var(--text2); font-size: 17px; line-height: 1.7; margin-bottom: 32px; max-width: 440px; }
+        .form-section__trust { display: flex; flex-direction: column; gap: 14px; }
+        .form-section__trust-item { display: flex; align-items: center; gap: 10px; font-size: 14px; font-weight: 500; color: var(--text); }
+        .form-section__trust-item .dot { width: 8px; height: 8px; border-radius: 50%; background: var(--blue); flex-shrink: 0; }
+
+        .form-card {
+            background: var(--white); border-radius: 28px; padding: 40px 32px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.03), 0 8px 32px rgba(38,68,126,0.06);
+        }
+        .form-card__title { font-family: var(--serif); font-size: 24px; font-weight: 700; margin-bottom: 4px; }
+        .form-card__sub { font-size: 14px; color: var(--text2); margin-bottom: 28px; }
+        .field { margin-bottom: 16px; }
+        .field label { display: block; font-size: 13px; font-weight: 600; margin-bottom: 6px; }
+        .field input {
+            width: 100%; padding: 14px 16px; border: 1.5px solid var(--border);
+            border-radius: 12px; font-family: var(--sans); font-size: 15px;
+            color: var(--text); background: var(--off); outline: none;
+            transition: border-color 0.25s, box-shadow 0.25s;
+        }
+        .field input:focus { border-color: var(--blue); box-shadow: 0 0 0 3px rgba(38,68,126,0.08); background: var(--white); }
+        .field input::placeholder { color: #9ca3af; }
+        .form-card .btn--red { width: 100%; padding: 16px; border-radius: 100px; margin-top: 4px; }
+        .form-card__privacy { text-align: center; font-size: 11px; color: var(--text2); margin-top: 12px; }
+
+        /* ═══ TESTIMONIALS — Asymmetric like trvvrat ═══ */
+        .reviews {
+            padding: 80px 0;
+        }
+        @media (min-width: 768px) { .reviews { padding: 120px 0; } }
+        .reviews__header { margin-bottom: 48px; }
+        .reviews__header h2 { margin-bottom: 8px; }
+        .reviews__header p { color: var(--text2); }
+
+        .reviews__grid {
+            display: grid; grid-template-columns: 1fr; gap: 20px;
+        }
+        @media (min-width: 768px) { .reviews__grid { grid-template-columns: 1fr 1fr; gap: 24px; } }
+
+        .tcard {
+            background: var(--off); border-radius: 24px; padding: 36px 32px;
+            transition: transform 0.4s var(--ease);
+            position: relative;
+        }
+        .tcard:hover { transform: translateY(-4px); }
+        .tcard__quote-mark {
+            font-family: var(--serif); font-size: 64px; font-weight: 700;
+            color: var(--blue); opacity: 0.15; line-height: 1;
+            position: absolute; top: 20px; right: 28px;
+        }
+        .tcard__stars { display: flex; gap: 2px; margin-bottom: 16px; }
+        .tcard__stars span { color: #F5A623; font-size: 14px; }
+        .tcard__quote {
+            font-family: var(--serif); font-style: italic; font-weight: 400;
+            font-size: clamp(16px, 2vw, 18px); color: var(--text);
+            line-height: 1.55; margin-bottom: 24px;
+        }
+        .tcard__author { display: flex; align-items: center; gap: 12px; }
+        .tcard__avatar { width: 48px; height: 48px; border-radius: 50%; object-fit: cover; }
+        .tcard__name { font-weight: 600; font-size: 14px; color: var(--text); }
+        .tcard__role { font-size: 12px; color: var(--text2); }
+
+        /* ═══ BENTO FEATURES ═══ */
+        .bento { padding: 80px 0; background: var(--off); }
+        @media (min-width: 768px) { .bento { padding: 120px 0; } }
+        .bento__header { margin-bottom: 48px; }
+        .bento__header h2 { margin-bottom: 8px; }
+        .bento__header p { color: var(--text2); }
+
+        .bento__grid {
+            display: grid; grid-template-columns: 1fr; gap: 16px;
+        }
+        @media (min-width: 600px) { .bento__grid { grid-template-columns: 1fr 1fr; } }
+        @media (min-width: 900px) { .bento__grid { grid-template-columns: 1fr 1fr 1fr; } }
+
+        .bento-card {
+            background: var(--white); border-radius: 20px; padding: 32px 28px;
+            transition: transform 0.4s var(--ease);
+        }
+        .bento-card:hover { transform: translateY(-4px); }
+        .bento-card h3 { margin-bottom: 8px; font-size: 17px; }
+        .bento-card p { font-size: 14px; color: var(--text2); line-height: 1.6; }
+        .bento-card__icon {
+            width: 44px; height: 44px; border-radius: 12px;
+            background: var(--blue-light); display: flex; align-items: center;
+            justify-content: center; margin-bottom: 20px;
+        }
+        .bento-card__icon svg { width: 22px; height: 22px; fill: var(--blue); }
+
+        /* ═══ CREW ═══ */
+        .crew { padding: 80px 0; background: var(--black); overflow: hidden; }
+        @media (min-width: 768px) { .crew { padding: 100px 0; } }
+        .crew__header { text-align: center; margin-bottom: 48px; }
+        .crew__header h2 { color: var(--white); }
+        .crew__header p { color: rgba(255,255,255,0.4); font-size: 14px; margin-top: 8px; }
+        .crew__strip { display: grid; grid-template-columns: repeat(2, 1fr); gap: 4px; }
+        @media (min-width: 768px) { .crew__strip { grid-template-columns: repeat(4, 1fr); } }
+        .crew__member { position: relative; overflow: hidden; aspect-ratio: 3/4; }
+        .crew__member img { width: 100%; height: 100%; object-fit: cover; object-position: top; transition: transform 0.6s var(--ease); }
+        .crew__member:hover img { transform: scale(1.05); }
+        .crew__member-info {
+            position: absolute; bottom: 0; left: 0; right: 0; padding: 20px;
+            background: linear-gradient(to top, rgba(0,0,0,0.7) 0%, transparent 100%);
+        }
+        .crew__member-name { font-family: var(--serif); font-size: 18px; font-weight: 600; color: var(--white); }
+        .crew__member-role { font-size: 12px; color: rgba(255,255,255,0.5); }
+
+        /* ═══ LOCAL ═══ */
+        .local { padding: 80px 0; background: var(--white); }
+        @media (min-width: 768px) { .local { padding: 120px 0; } }
+        .local__grid { display: grid; grid-template-columns: 1fr; gap: 48px; }
+        @media (min-width: 1024px) { .local__grid { grid-template-columns: 1.2fr 1fr; gap: 72px; } }
+        .local h2 { margin-bottom: 20px; }
+        .local__text { color: var(--text2); line-height: 1.75; font-size: 16px; }
+        .local__source { font-size: 12px; color: #b0b0b0; margin-top: 16px; }
+        .local__stats { display: grid; grid-template-columns: 1fr; gap: 16px; }
+        .lstat { background: var(--off); border-radius: 16px; padding: 28px 24px; text-align: center; transition: transform 0.3s; }
+        .lstat:hover { transform: translateY(-4px); }
+        .lstat__num { font-family: var(--serif); font-size: clamp(28px, 4vw, 40px); font-weight: 700; color: var(--blue); line-height: 1; margin-bottom: 4px; }
+        .lstat__label { font-size: 13px; color: var(--text2); }
+        .lstat__src { font-size: 11px; color: #b0b0b0; margin-top: 4px; }
+
+        /* ═══ FAQ ═══ */
+        .faq { padding: 80px 0; background: var(--off); }
+        @media (min-width: 768px) { .faq { padding: 120px 0; } }
+        .faq__header { margin-bottom: 48px; }
+        .faq__list { max-width: 720px; }
+        .faq-item { border-bottom: 1px solid var(--border); }
+        .faq-item__q {
+            width: 100%; padding: 22px 0; background: none; border: none; cursor: pointer;
+            display: flex; justify-content: space-between; align-items: center; gap: 16px;
+            font-family: var(--sans); font-size: 16px; font-weight: 600; color: var(--text); text-align: left;
+            transition: color 0.2s;
+        }
+        .faq-item__q:hover { color: var(--blue); }
+        .faq-item__q svg { width: 20px; height: 20px; fill: var(--text2); flex-shrink: 0; transition: transform 0.4s var(--ease); }
+        .faq-item.on .faq-item__q svg { transform: rotate(45deg); }
+        .faq-item__a { max-height: 0; overflow: hidden; transition: max-height 0.5s var(--ease), opacity 0.3s; opacity: 0; }
+        .faq-item.on .faq-item__a { opacity: 1; }
+        .faq-item__a-inner { padding-bottom: 22px; font-size: 15px; color: var(--text2); line-height: 1.7; }
+
+        /* ═══ CTA FINAL ═══ */
+        .cta-final { padding: 80px 20px; }
+        @media (min-width: 768px) { .cta-final { padding: 100px 40px; } }
+        .cta-final__inner {
+            max-width: 1280px; margin: 0 auto;
+            background: var(--black); border-radius: 28px;
+            padding: 64px 32px; text-align: center;
+            position: relative; overflow: hidden;
+        }
+        @media (min-width: 768px) { .cta-final__inner { padding: 80px 64px; } }
+        .cta-final h2 { color: var(--white); margin-bottom: 12px; position: relative; }
+        .cta-final p { color: rgba(255,255,255,0.5); max-width: 420px; margin: 0 auto 32px; position: relative; }
+        .cta-final__btns { display: flex; flex-wrap: wrap; justify-content: center; gap: 12px; position: relative; }
+        .cta-final__note { font-size: 13px; color: rgba(255,255,255,0.25); margin-top: 20px; position: relative; }
+
+        /* ═══ FOOTER ═══ */
+        .footer { padding: 48px 0 24px; border-top: 1px solid var(--border); }
+        .footer__top { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: flex-start; gap: 32px; padding-bottom: 32px; }
+        .footer__brand img { height: 48px; width: auto; max-height: 48px; display: block; }
+        .footer__brand p { font-size: 13px; color: var(--text2); margin-top: 10px; max-width: 280px; line-height: 1.6; }
+        .footer__links { display: flex; gap: 40px; }
+        .footer__col-title { font-size: 12px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: var(--text2); margin-bottom: 12px; }
+        .footer__col a { display: block; font-size: 14px; color: var(--text2); padding: 3px 0; transition: color 0.2s; }
+        .footer__col a:hover { color: var(--blue); }
+        .footer__bottom { border-top: 1px solid var(--border); padding-top: 20px; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 8px; }
+        .footer__copy { font-size: 12px; color: var(--text2); }
+
+        /* ═══ MOBILE CTA ═══ */
+        .mob-cta {
+            display: block; position: fixed; bottom: 0; left: 0; right: 0; z-index: 900;
+            padding: 10px 16px; background: var(--white); border-top: 1px solid var(--border);
+            transform: translateY(100%); transition: transform 0.5s var(--ease);
+        }
+        .mob-cta.on { transform: translateY(0); }
+        .mob-cta .btn--red { width: 100%; padding: 14px; border-radius: 100px; font-size: 14px; }
+        @media (min-width: 1024px) { .mob-cta { display: none; } }
+
+        /* ═══ BLAINVILLE EN IMAGES ═══ */
+        .city-gallery {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 16px;
+            margin-top: 40px;
+            margin-bottom: 12px;
+        }
+        @media (min-width: 768px) {
+            .city-gallery {
+                grid-template-columns: 1.5fr 1fr;
+                gap: 20px;
+            }
+        }
+        .city-gallery__item {
+            position: relative;
+            border-radius: 16px;
+            overflow: hidden;
+        }
+        .city-gallery__item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.4s var(--ease);
+        }
+        .city-gallery__item:hover img {
+            transform: scale(1.03);
+        }
+        .city-gallery__item--left img {
+            aspect-ratio: 16/10;
+        }
+        .city-gallery__item--right img {
+            aspect-ratio: 16/10;
+        }
+        @media (min-width: 768px) {
+            .city-gallery__item--right img {
+                aspect-ratio: 3/4;
+            }
+        }
+        .city-gallery__caption {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            padding: 32px 20px 16px;
+            background: linear-gradient(to top, rgba(0,0,0,0.6) 0%, transparent 100%);
+            color: var(--white);
+            font-family: var(--sans);
+            font-size: 13px;
+            font-weight: 600;
+            letter-spacing: 0.01em;
+        }
+    </style>
+</head>
+<body>
+
+<!-- ═══ NAV ═══ -->
+<nav class="nav">
+    <div class="w nav__inner">
+        <a href="#" class="nav__logo"><img src="../images/Logo-noir.png" alt="Fred & Max" height="60"></a>
+        <div class="nav__center">
+            <span>Blainville</span> · Rive-Nord de Montréal
+        </div>
+        <div class="nav__right">
+            <a href="tel:+15142193383" class="nav__phone">514 219-3383</a>
+            <a href="#estimation" class="btn btn--dark btn--sm" style="padding:10px 20px;font-size:12px;border-radius:100px;">Estimation gratuite</a>
+        </div>
+    </div>
+</nav>
+
+<!-- ═══ HERO ═══ -->
+<section class="hero">
+    <div class="hero__container">
+        <img class="hero__img" src="../images/blainville/hoteldeville.jpg" alt="Hôtel de ville de Blainville, Québec — centre administratif de la ville">
+        <div class="hero__overlay">
+            <div class="hero__eyebrow rv">Courtiers · Blainville</div>
+            <h1 class="rv">Votre courtier immobilier de confiance à Blainville</h1>
+            <p class="rv">Experts du marché de Blainville et de la Rive-Nord. Estimation gratuite, réponse en 24h.</p>
+            <div class="hero__btns rv">
+                <a href="#estimation" class="btn btn--red">Obtenir mon estimation</a>
+                <a href="tel:+15142193383" class="btn" style="background:rgba(255,255,255,0.12);color:white;border:1.5px solid rgba(255,255,255,0.2);backdrop-filter:blur(8px);">Nous appeler</a>
+            </div>
+        </div>
+        <a href="#estimation" class="hero__scroll rv" aria-label="Défiler vers le bas">
+            <svg viewBox="0 0 24 24"><path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6z"/></svg>
+        </a>
+        <!-- Tag floating over top edge -->
+        <div class="hero__tag-float">
+            <span class="pill pill--dark" style="box-shadow: 0 4px 16px rgba(0,0,0,0.15);">★ 5.0 — 47 avis Google</span>
+        </div>
+    </div>
+    <div class="hero__spacer"></div>
+</section>
+
+<!-- ═══ EDITORIAL HEADLINE ═══ -->
+<section class="editorial">
+    <div class="w">
+        <div class="editorial__inner rv">
+            <h2>Chaque propriété est <em>unique.</em></h2>
+            <a href="#estimation" class="btn" style="background:var(--blue);color:var(--white);white-space:nowrap;display:inline-flex;align-items:center;gap:8px;">Estimation gratuite <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12l7 7 7-7"/></svg></a>
+        </div>
+    </div>
+</section>
+
+<!-- ═══ SHOWCASE ═══ -->
+<section class="showcase">
+    <div class="showcase__heading rv">
+        <h2>De belles ventes à Blainville.</h2>
+    </div>
+    <div class="showcase__grid">
+        <div class="showcase__card rv">
+            <img src="../images/blainville/blainville1.jpg" alt="Propriété vendue à Blainville" loading="lazy">
+        </div>
+        <div class="showcase__card rv">
+            <img src="../images/blainville/blainville2.png" alt="Propriété vendue à Blainville" loading="lazy">
+        </div>
+    </div>
+</section>
+
+<!-- ═══ FORM ═══ -->
+<section class="form-section" id="estimation">
+    <div class="w">
+        <div class="form-section__grid">
+            <div class="form-section__text rv">
+                <span class="pill pill--blue" style="margin-bottom:20px;">Estimation gratuite</span>
+                <h2>Combien vaut votre propriété?</h2>
+                <p>Recevez une analyse comparative de marché complète en 24h, basée sur les ventes récentes à Blainville.</p>
+                <div class="form-section__trust">
+                    <div class="form-section__trust-item"><span class="dot"></span> Réponse garantie en moins de 24h</div>
+                    <div class="form-section__trust-item"><span class="dot"></span> 100% confidentiel, sans engagement</div>
+                    <div class="form-section__trust-item"><span class="dot"></span> Courtiers</div>
+                </div>
+            </div>
+            <div class="form-card rv" id="hero-form">
+                <p class="form-card__title">Estimation gratuite en 24h</p>
+                <p class="form-card__sub">Sans engagement. Réponse garantie.</p>
+                <form onsubmit="event.preventDefault();this.querySelector('.btn--red').textContent='Merci! On vous contacte sous 24h.';this.querySelector('.btn--red').disabled=true;">
+                    <div class="field"><label for="name">Prénom et nom</label><input type="text" id="name" name="name" placeholder="Marie Tremblay" required></div>
+                    <div class="field"><label for="phone">Téléphone</label><input type="tel" id="phone" name="phone" placeholder="514 219-3383" required></div>
+                    <div class="field"><label for="address">Adresse de la propriété</label><input type="text" id="address" name="address" placeholder="123 rue des Érables, Blainville" required></div>
+                    <button type="submit" class="btn btn--red">OBTENIR MON ESTIMATION GRATUITE</button>
+                </form>
+                <p class="form-card__privacy">Vos informations restent 100% confidentielles.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ═══ TESTIMONIALS ═══ -->
+<section class="reviews">
+    <div class="w">
+        <div class="reviews__header rv">
+            <span class="pill pill--outline" style="margin-bottom:16px;">Témoignages</span>
+            <h2>Ce que nos clients disent</h2>
+        </div>
+        <div class="reviews__grid">
+            <div class="tcard rv">
+                <span class="tcard__quote-mark">"</span>
+                <div class="tcard__stars"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
+                <p class="tcard__quote">« On hésitait entre vendre seuls ou avec un courtier. Fred et Max nous ont convaincus dès la première rencontre. Notre maison à Blainville s'est vendue en 15 jours, au prix demandé. »</p>
+                <div class="tcard__author">
+                    <div><p class="tcard__name">Carl Bhérer</p><p class="tcard__role">Vendeur à Blainville</p></div>
+                </div>
+            </div>
+            <div class="tcard rv">
+                <span class="tcard__quote-mark">"</span>
+                <div class="tcard__stars"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
+                <p class="tcard__quote">« La connaissance du marché de Blainville par Fred et Max est impressionnante. Ils ont su positionner notre propriété parfaitement et attirer des acheteurs sérieux dès la première semaine. »</p>
+                <div class="tcard__author">
+                    <div><p class="tcard__name">Marie Delcourt</p><p class="tcard__role">Vendeuse à Blainville</p></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ═══ BENTO FEATURES ═══ -->
+<section class="bento">
+    <div class="w">
+        <div class="bento__header rv">
+            <span class="pill pill--outline" style="margin-bottom:16px;">Nos services</span>
+            <h2>On s'occupe de tout.</h2>
+            <p>De l'estimation à la signature, chaque étape est couverte.</p>
+        </div>
+        <div class="bento__grid">
+            <div class="bento-card rv">
+                <div class="bento-card__icon"><svg viewBox="0 0 24 24"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-7 3c1.93 0 3.5 1.57 3.5 3.5S13.93 13 12 13s-3.5-1.57-3.5-3.5S10.07 6 12 6zm7 13H5v-.23c0-.62.28-1.2.76-1.58C7.47 15.82 9.64 15 12 15s4.53.82 6.24 2.19c.48.38.76.97.76 1.58V19z"/></svg></div>
+                <h3>Estimation précise</h3>
+                <p>Analyse comparative basée sur les ventes récentes à Blainville. Résultat en 24h.</p>
+            </div>
+            <div class="bento-card rv">
+                <div class="bento-card__icon"><svg viewBox="0 0 24 24"><path d="M21 3H3c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h18c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H3V5h18v14zm-5-7l-4 4.33L9 13l-3 4h12l-2-5z"/></svg></div>
+                <h3>Photos & vidéo HD</h3>
+                <p>Mise en valeur professionnelle pour attirer les acheteurs qualifiés.</p>
+            </div>
+            <div class="bento-card rv">
+                <div class="bento-card__icon"><svg viewBox="0 0 24 24"><path d="M3.5 18.49l6-6.01 4 4L22 6.92l-1.41-1.41-7.09 7.97-4-4L2 16.99z"/></svg></div>
+                <h3>Négociation experte</h3>
+                <p>Filtrage des offres et négociation pour maximiser votre prix de vente.</p>
+            </div>
+            <div class="bento-card rv">
+                <div class="bento-card__icon"><svg viewBox="0 0 24 24"><path d="M16 11c1.66 0 3-1.34 3-3s-1.34-3-3-3-3 1.34-3 3 1.34 3 3 3zm-8 0c1.66 0 3-1.34 3-3S9.66 5 8 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5z"/></svg></div>
+                <h3>Réseau d'acheteurs</h3>
+                <p>Accès à notre réseau pré-qualifié actif sur toute la Rive-Nord.</p>
+            </div>
+            <div class="bento-card rv">
+                <div class="bento-card__icon"><svg viewBox="0 0 24 24"><path d="M18 2H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zM6 4h5v8l-2.5-1.5L6 12V4z"/></svg></div>
+                <h3>Visibilité Centris</h3>
+                <p>Inscription optimisée et campagnes ciblées sur les réseaux sociaux.</p>
+            </div>
+            <div class="bento-card rv">
+                <div class="bento-card__icon"><svg viewBox="0 0 24 24"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm-2 16l-4-4 1.41-1.41L10 14.17l6.59-6.59L18 9l-8 8z"/></svg></div>
+                <h3>Accompagnement notaire</h3>
+                <p>Suivi complet jusqu'à la signature, sans stress ni surprise.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ═══ CREW ═══ -->
+<section class="crew">
+    <div class="w">
+        <div class="crew__header rv">
+            <h2>Une équipe de professionnels pour bien vous servir</h2>
+            <p>Des courtiers dédiés à votre succès</p>
+        </div>
+    </div>
+    <div class="crew__strip rv">
+        <div class="crew__member"><img src="../images/team1.jpg" alt="Frédéric Gingras" loading="lazy"><div class="crew__member-info"><p class="crew__member-name">Frédéric Gingras</p><p class="crew__member-role">Courtier immobilier résidentiel</p></div></div>
+        <div class="crew__member"><img src="../images/team2.jpg" alt="Marie Côté" loading="lazy"><div class="crew__member-info"><p class="crew__member-name">Marie Côté</p><p class="crew__member-role">Courtier immobilier résidentiel</p></div></div>
+        <div class="crew__member"><img src="../images/team3.jpg" alt="Carl Jobin-Shaw" loading="lazy"><div class="crew__member-info"><p class="crew__member-name">Carl Jobin-Shaw</p><p class="crew__member-role">Courtier immobilier résidentiel et commercial</p></div></div>
+        <div class="crew__member"><img src="../images/team4.jpg" alt="Maxime Beaulac" loading="lazy"><div class="crew__member-info"><p class="crew__member-name">Maxime Beaulac</p><p class="crew__member-role">Courtier immobilier résidentiel et commercial</p></div></div>
+    </div>
+</section>
+
+<!-- ═══ LOCAL ═══ -->
+<section class="local">
+    <div class="w">
+        <div class="local__grid">
+            <div class="rv">
+                <span class="pill pill--blue" style="margin-bottom:20px;">Blainville en chiffres</span>
+                <h2>L'une des villes les plus dynamiques des Laurentides</h2>
+                <p class="local__text" style="margin-top:20px;">Blainville est l'une des villes à la croissance la plus rapide de la Rive-Nord de Montréal. Avec une population dépassant 60 000 habitants (Statistique Canada, Recensement 2021), elle fait partie de la MRC Thérèse-De Blainville et offre un mélange attrayant de quartiers établis et de développements récents. La ville est reconnue pour son centre équestre, ses nombreux parcs, ses écoles de qualité et son accès rapide à l'autoroute 15 vers Montréal.</p>
+                <p class="local__text" style="margin-top:12px;">Le marché immobilier de Blainville attire particulièrement les jeunes familles et les professionnels. Du Vieux-Blainville aux nouveaux développements du secteur est, Fred et Max connaissent chaque coin de la ville.</p>
+                <p class="local__source">Sources : APCIQ / Centris, baromètre 2024. Population : Statistique Canada, Recensement 2021.</p>
+            </div>
+            <div class="local__stats rv" style="margin-bottom:0;">
+                <div class="lstat"><div class="lstat__num">~550 000 $</div><div class="lstat__label">Prix médian</div><div class="lstat__src">APCIQ / Centris, 2024</div></div>
+                <div class="lstat"><div class="lstat__num">+5,1%</div><div class="lstat__label">Croissance annuelle</div><div class="lstat__src">APCIQ / Centris, 2024</div></div>
+                <div class="lstat"><div class="lstat__num">480</div><div class="lstat__label">Transactions en 2024</div><div class="lstat__src">APCIQ / Centris, 2024</div></div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ═══ BLAINVILLE EN IMAGES ═══ -->
+<section class="local" style="padding-top:0;">
+    <div class="w">
+        <div class="rv">
+            <span class="pill pill--outline" style="margin-bottom:20px;">Blainville en images</span>
+        </div>
+        <div class="city-gallery reveal">
+            <div class="city-gallery__item city-gallery__item--left">
+                <img src="../images/blainville/hoteldeville.jpg" alt="Hôtel de ville de Blainville, Québec — centre administratif de la ville" loading="lazy">
+                <div class="city-gallery__caption">Hôtel de ville de Blainville</div>
+            </div>
+            <div class="city-gallery__item city-gallery__item--right">
+                <img src="../images/blainville/eglise.jpg" alt="Église historique de Blainville, patrimoine architectural des Laurentides" loading="lazy">
+                <div class="city-gallery__caption">Patrimoine architectural de Blainville</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ═══ VIVRE À BLAINVILLE ═══ -->
+<section class="local" style="padding-top:0;">
+    <div class="w">
+        <div class="rv">
+            <span class="pill pill--blue" style="margin-bottom:20px;">Vivre à Blainville</span>
+            <h2>Vivre à Blainville — Le guide complet</h2>
+        </div>
+        <div class="rv" style="margin-top:24px;">
+            <h3 style="margin-bottom:10px;">Les quartiers prisés</h3>
+            <p class="local__text">Blainville se démarque par des quartiers variés : le Vieux-Blainville avec son charme patrimonial, Fontainebleau et ses propriétés haut de gamme, le secteur du Domaine Vert pour les amoureux de la nature, et les nouveaux développements à l'est pour les jeunes familles.</p>
+        </div>
+        <div class="rv" style="margin-top:24px;">
+            <h3 style="margin-bottom:10px;">Écoles et familles</h3>
+            <p class="local__text">Les écoles primaires de la CSSMI (du Harfang, de l'Envolée, Le Tournesol) sont réputées. L'école secondaire des Érables et le Séminaire Sainte-Thérèse offrent un enseignement de qualité. Le Collège Lionel-Groulx est à 10 minutes.</p>
+        </div>
+        <div class="rv" style="margin-top:24px;">
+            <h3 style="margin-bottom:10px;">Transport et accessibilité</h3>
+            <p class="local__text">L'autoroute 15 traverse Blainville du nord au sud, et l'autoroute 640 d'est en ouest. La gare de train exo de Blainville offre un service régulier vers Montréal. Le futur prolongement du REM pourrait desservir le secteur.</p>
+        </div>
+        <div class="rv" style="margin-top:24px;">
+            <h3 style="margin-bottom:10px;">Qualité de vie</h3>
+            <p class="local__text">Le Centre équestre de Blainville, le parc régional du Domaine Vert (600 hectares), les sentiers de vélo et de randonnée, ainsi qu'une vie commerciale dynamique sur le boulevard du Curé-Labelle font de Blainville une ville complète.</p>
+        </div>
+    </div>
+</section>
+
+<!-- ═══ FAQ ═══ -->
+<section class="faq">
+    <div class="w">
+        <div class="faq__header rv">
+            <span class="pill pill--outline" style="margin-bottom:16px;">Questions fréquentes</span>
+            <h2>Tout ce que vous devez savoir</h2>
+        </div>
+        <div class="faq__list">
+            <div class="faq-item rv"><button class="faq-item__q">Combien coûte la commission d'un courtier à Blainville?<svg viewBox="0 0 24 24"><path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"/></svg></button><div class="faq-item__a"><div class="faq-item__a-inner">Entre 4% et 6% du prix de vente (+ TPS/TVQ). L'estimation initiale est toujours gratuite et sans engagement.</div></div></div>
+            <div class="faq-item rv"><button class="faq-item__q">Combien de temps pour vendre à Blainville?<svg viewBox="0 0 24 24"><path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"/></svg></button><div class="faq-item__a"><div class="faq-item__a-inner">21 jours en moyenne avec Fred & Max. Le marché de Blainville est très actif — une mise en marché professionnelle et un bon prix font la différence.</div></div></div>
+            <div class="faq-item rv"><button class="faq-item__q">Comment obtenez-vous une estimation précise?<svg viewBox="0 0 24 24"><path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"/></svg></button><div class="faq-item__a"><div class="faq-item__a-inner">Analyse comparative de marché basée sur les ventes récentes de propriétés similaires à Blainville. Emplacement, état du bien, rénovations et tendances locales sont pris en compte.</div></div></div>
+            <div class="faq-item rv"><button class="faq-item__q">Pourquoi un courtier plutôt que vendre seul?<svg viewBox="0 0 24 24"><path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"/></svg></button><div class="faq-item__a"><div class="faq-item__a-inner">Les courtiers obtiennent des prix supérieurs grâce à leur réseau, leur expertise en négociation et leur mise en marché. Fred & Max obtiennent 98% du prix demandé.</div></div></div>
+            <div class="faq-item rv"><button class="faq-item__q">Quelles villes couvrez-vous?<svg viewBox="0 0 24 24"><path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"/></svg></button><div class="faq-item__a"><div class="faq-item__a-inner">Blainville, Lorraine, Rosemère, Sainte-Thérèse, Bois-des-Filion, Boisbriand et toute la Rive-Nord.</div></div></div>
+            <div class="faq-item rv"><button class="faq-item__q">Qui paie le courtier immobilier?<svg viewBox="0 0 24 24"><path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"/></svg></button><div class="faq-item__a"><div class="faq-item__a-inner">Le vendeur paie la commission, déduite du produit de la vente à la signature chez le notaire. L'acheteur n'a aucuns frais de courtage.</div></div></div>
+        </div>
+    </div>
+</section>
+
+<!-- ═══ CTA FINAL ═══ -->
+<section class="cta-final">
+    <div class="cta-final__inner">
+        <h2 class="rv">Votre propriété à Blainville mérite le meilleur</h2>
+        <p class="rv" style="color:white;font-weight:700;">Estimation gratuite. Réponse en 24h. Sans engagement.</p>
+        <div class="cta-final__btns rv">
+            <a href="#estimation" class="btn btn--red" style="padding:18px 44px;font-size:16px;">Obtenir mon estimation gratuite</a>
+            <a href="tel:+15142193383" class="btn" style="background:white;color:var(--blue);font-weight:700;padding:18px 44px;font-size:16px;">514 219-3383</a>
+        </div>
+    </div>
+</section>
+
+<!-- ═══ FOOTER ═══ -->
+<footer class="footer">
+    <div class="w">
+        <div class="footer__top">
+            <div class="footer__brand">
+                <a href="#"><img src="../images/Logo-noir.png" alt="Fred & Max" height="24" loading="lazy"></a>
+                <p>Courtiers Immobiliers. Experts de la Rive-Nord de Montréal.</p>
+            </div>
+            <div class="footer__links">
+                <div class="footer__col">
+                    <p class="footer__col-title">Secteurs</p>
+                    <a href="../lorraine/">Lorraine</a>
+                    <a href="../rosemere/">Rosemère</a>
+                    <a href="../sainte-therese/">Sainte-Thérèse</a>
+                    <a href="../boisbriand/">Boisbriand</a>
+                </div>
+                <div class="footer__col">
+                    <p class="footer__col-title">Services</p>
+                    <a href="../../evaluation-gratuite.html">Évaluation gratuite</a>
+                    <a href="../../vendre.html">Vendre votre propriété</a>
+                    <a href="../../acheter.html">Acheter une propriété</a>
+                </div>
+                <div class="footer__col">
+                    <p class="footer__col-title">Contact</p>
+                    <a href="tel:+15142193383">514 219-3383</a>
+                    <a href="mailto:info@fredmax.ca">info@fredmax.ca</a>
+                </div>
+            </div>
+        </div>
+        <div class="footer__bottom">
+            <p class="footer__copy">© 2026 Fred & Max. Tous droits réservés.</p>
+            <p class="footer__copy">Informations à titre indicatif.</p>
+        </div>
+    </div>
+</footer>
+
+<div class="mob-cta" id="mobCta"><a href="#estimation" class="btn btn--red">Estimation gratuite →</a></div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    if (typeof gsap !== 'undefined' && typeof ScrollTrigger !== 'undefined') {
+        gsap.registerPlugin(ScrollTrigger);
+        gsap.utils.toArray('.rv').forEach(function(el, i) {
+            gsap.fromTo(el, { opacity: 0, y: 36 }, {
+                opacity: 1, y: 0, duration: 0.9, ease: 'power3.out',
+                scrollTrigger: { trigger: el, start: 'top 88%', once: true },
+                delay: (i % 4) * 0.06
+            });
+        });
+        /* Float the hero card — breaks out of rounded container */
+        if (document.querySelector('.hero__float')) {
+            gsap.fromTo('.hero__float', { y: 20, opacity: 0 }, { y: 0, opacity: 1, duration: 1, ease: 'power3.out', delay: 0.6 });
+            gsap.to('.hero__float', { y: -6, duration: 2.8, ease: 'sine.inOut', yoyo: true, repeat: -1, delay: 1.6 });
+        }
+        /* Float the tag pill above hero */
+        if (document.querySelector('.hero__tag-float')) {
+            gsap.fromTo('.hero__tag-float', { y: -30, opacity: 0 }, { y: 0, opacity: 1, duration: 0.8, ease: 'power3.out', delay: 0.4 });
+        }
+        /* Parallax hero image */
+        gsap.to('.hero__img', {
+            yPercent: 15, ease: 'none',
+            scrollTrigger: { trigger: '.hero', start: 'top top', end: 'bottom top', scrub: true }
+        });
+    } else {
+        var io = new IntersectionObserver(function(entries) {
+            entries.forEach(function(e) {
+                if (e.isIntersecting) {
+                    e.target.style.opacity = '1'; e.target.style.transform = 'translateY(0)';
+                    e.target.style.transition = 'opacity 0.7s cubic-bezier(0.16,1,0.3,1), transform 0.7s cubic-bezier(0.16,1,0.3,1)';
+                    io.unobserve(e.target);
+                }
+            });
+        }, { threshold: 0.1 });
+        document.querySelectorAll('.rv').forEach(function(el) { io.observe(el); });
+    }
+
+    var mobCta = document.getElementById('mobCta');
+    window.addEventListener('scroll', function() {
+        if (window.scrollY > 500) { mobCta.classList.add('on'); } else { mobCta.classList.remove('on'); }
+    }, { passive: true });
+
+    document.querySelectorAll('.faq-item__q').forEach(function(btn) {
+        btn.addEventListener('click', function() {
+            var item = this.closest('.faq-item');
+            var ans = item.querySelector('.faq-item__a');
+            var open = item.classList.contains('on');
+            document.querySelectorAll('.faq-item.on').forEach(function(o) { o.classList.remove('on'); o.querySelector('.faq-item__a').style.maxHeight = '0'; });
+            if (!open) { item.classList.add('on'); ans.style.maxHeight = ans.scrollHeight + 'px'; }
+        });
+    });
+
+    document.querySelectorAll('a[href^="#"]').forEach(function(a) {
+        a.addEventListener('click', function(e) {
+            var t = document.querySelector(this.getAttribute('href'));
+            if (t) { e.preventDefault(); t.scrollIntoView({ behavior: 'smooth', block: 'start' }); }
+        });
+    });
+});
+</script>
+</body>
+</html>

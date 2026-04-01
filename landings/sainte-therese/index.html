@@ -1,0 +1,1142 @@
+<!DOCTYPE html>
+<html lang="fr-CA">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Courtier Immobilier à Sainte-Thérèse | Estimation Gratuite — Fred & Max</title>
+    <meta name="description" content="Courtiers Immobiliers de Sainte-Thérèse. 500+ ventes, 21 jours en moyenne, 98% du prix demandé. Estimation gratuite en 24h.">
+    <link rel="canonical" href="https://www.fredmax.ca/sainte-therese">
+    <meta name="robots" content="index, follow">
+    <meta name="geo.region" content="CA-QC">
+    <meta name="geo.placename" content="Sainte-Thérèse, Québec">
+    <meta name="geo.position" content="45.6428;-73.8450">
+    <meta name="ICBM" content="45.6428, -73.8450">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="fr_CA">
+    <meta property="og:url" content="https://www.fredmax.ca/sainte-therese">
+    <meta property="og:title" content="Courtier Immobilier à Sainte-Thérèse | Estimation Gratuite — Fred & Max">
+    <meta property="og:description" content="Vendez votre propriété à Sainte-Thérèse au meilleur prix. 500+ ventes, 98% du prix demandé. Estimation gratuite en 24h.">
+    <meta property="og:site_name" content="Fred & Max — Courtiers immobiliers">
+
+    <script type="application/ld+json">
+    {"@context":"https://schema.org","@type":"RealEstateAgent","name":"Fred & Max — Courtiers immobiliers","url":"https://www.fredmax.ca/sainte-therese","telephone":"+15142193383","address":{"@type":"PostalAddress","addressLocality":"Sainte-Thérèse","addressRegion":"QC","addressCountry":"CA"},"areaServed":[{"@type":"City","name":"Sainte-Thérèse"},{"@type":"City","name":"Lorraine"},{"@type":"City","name":"Blainville"},{"@type":"City","name":"Rosemère"}],"aggregateRating":{"@type":"AggregateRating","ratingValue":"5","reviewCount":"47"},"employee":[{"@type":"Person","name":"Frédéric Gingras","jobTitle":"Courtier immobilier agréé"},{"@type":"Person","name":"Maxime Beaulac","jobTitle":"Courtier immobilier agréé"}]}
+    </script>
+    <script type="application/ld+json">
+    {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Combien coûte la commission d'un courtier à Sainte-Thérèse?","acceptedAnswer":{"@type":"Answer","text":"Entre 4% et 6% du prix de vente (+ TPS/TVQ). L'estimation est gratuite et sans engagement."}},{"@type":"Question","name":"Combien de temps pour vendre à Sainte-Thérèse?","acceptedAnswer":{"@type":"Answer","text":"21 jours en moyenne avec Fred & Max."}},{"@type":"Question","name":"Quelles villes couvrez-vous?","acceptedAnswer":{"@type":"Answer","text":"Sainte-Thérèse, Lorraine, Blainville, Rosemère, Bois-des-Filion et toute la Rive-Nord."}},{"@type":"Question","name":"Qu'est-ce qu'une ACM?","acceptedAnswer":{"@type":"Answer","text":"Évaluation du prix basée sur les ventes récentes de propriétés comparables. Gratuite."}}]}
+    </script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3/dist/gsap.min.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3/dist/ScrollTrigger.min.js" defer></script>
+
+    <style>
+        :root {
+            --blue: #26447E;
+            --blue-dark: #1a3262;
+            --blue-deep: #0f2240;
+            --blue-50: #EEF1F7;
+            --blue-100: #D6DEEC;
+            --blue-200: #8ba3d4;
+            --red: #C83C34;
+            --red-h: #A82E27;
+            --black: #0D0D0D;
+            --white: #FFFFFF;
+            --cream: #F8F7F4;
+            --text: #1a1a2e;
+            --text2: #5c6370;
+            --border: #E2E6EE;
+            --display: 'Playfair Display', Georgia, serif;
+            --sans: 'Montserrat', system-ui, sans-serif;
+            --ease: cubic-bezier(0.16, 1, 0.3, 1);
+            --r: 14px;
+            --r-lg: 20px;
+        }
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        body {
+            font-family: var(--sans); font-size: 16px; line-height: 1.65;
+            color: var(--text); background: var(--cream);
+            overflow-x: hidden; -webkit-font-smoothing: antialiased;
+        }
+        @media (min-width: 768px) { body { font-size: 17px; } }
+        img { max-width: 100%; height: auto; display: block; }
+        a { text-decoration: none; color: inherit; }
+        ul { list-style: none; }
+
+        .w { max-width: 1200px; margin: 0 auto; padding-inline: 20px; }
+        @media (min-width: 768px) { .w { padding-inline: 32px; } }
+        @media (min-width: 1200px) { .w { padding-inline: 0; } }
+
+        .eyebrow {
+            font-family: var(--sans); font-size: 12px; font-weight: 700;
+            letter-spacing: 0.14em; text-transform: uppercase;
+            margin-bottom: 14px; display: block;
+        }
+        h1, h2 { font-family: var(--display); letter-spacing: -0.03em; line-height: 1.08; }
+        h1 { font-size: clamp(36px, 5.5vw, 60px); font-weight: 700; }
+        h2 { font-size: clamp(28px, 4vw, 44px); font-weight: 600; }
+        h3 { font-family: var(--sans); font-weight: 700; font-size: clamp(18px, 2vw, 22px); line-height: 1.3; }
+
+        /* Buttons */
+        .btn {
+            display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+            font-family: var(--sans); font-weight: 600; font-size: 15px; letter-spacing: 0.03em;
+            padding: 14px 32px; border-radius: 50px; border: none; cursor: pointer;
+            transition: transform 0.4s var(--ease), box-shadow 0.4s var(--ease), background 0.25s;
+        }
+        .btn:active { transform: translateY(0) !important; }
+        .btn--red { background: var(--red); color: var(--white); }
+        .btn--red:hover { background: var(--red-h); transform: translateY(-2px); box-shadow: 0 8px 28px rgba(200,60,52,0.25); }
+        .btn--red:focus-visible { outline: 3px solid var(--red); outline-offset: 3px; }
+        .btn--outline-w { background: transparent; color: var(--white); border: 1.5px solid rgba(255,255,255,0.3); }
+        .btn--outline-w:hover { background: rgba(255,255,255,0.1); border-color: rgba(255,255,255,0.5); transform: translateY(-2px); }
+        .btn--ghost { background: transparent; color: var(--blue); border: 1.5px solid var(--border); }
+        .btn--ghost:hover { border-color: var(--blue); background: var(--blue-50); transform: translateY(-2px); }
+        .btn--white { background: var(--white); color: var(--blue); }
+        .btn--white:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(0,0,0,0.12); }
+        .btn--sm { padding: 10px 22px; font-size: 13px; }
+
+        .rv { opacity: 0; transform: translateY(30px); }
+        .rv.on { opacity: 1; transform: translateY(0); transition: opacity 0.7s var(--ease), transform 0.7s var(--ease); }
+
+        /* ═══ NAV — Dark like Prodmast ═══ */
+        .nav {
+            position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
+            padding: 14px 0;
+            background: rgba(15, 34, 64, 0.92);
+            backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px);
+            border-bottom: 1px solid rgba(255,255,255,0.06);
+        }
+        .nav__inner { display: flex; align-items: center; justify-content: space-between; }
+        .nav__logo img { height: 60px; }
+        .nav__links { display: none; gap: 28px; }
+        @media (min-width: 768px) { .nav__links { display: flex; } }
+        .nav__links a { font-size: 14px; font-weight: 500; color: rgba(255,255,255,0.6); transition: color 0.2s; }
+        .nav__links a:hover { color: var(--white); }
+        .nav__right { display: flex; align-items: center; gap: 16px; }
+        .nav__phone { display: none; align-items: center; gap: 6px; font-size: 14px; font-weight: 600; color: rgba(255,255,255,0.7); }
+        @media (min-width: 768px) { .nav__phone { display: flex; } }
+        .nav__phone svg { width: 16px; height: 16px; fill: var(--blue-200); }
+
+        /* ═══ HERO — Dark centered like Prodmast ═══ */
+        .hero {
+            background: var(--blue-deep);
+            background-image: linear-gradient(to bottom, rgba(15,34,64,0.82) 0%, rgba(15,34,64,0.92) 100%), url('images/ste-therese/permis-et-urbanisme-4b2f0d3d0eee26ec7bd7be32e157ce0f.jpg');
+            background-size: cover;
+            background-position: center;
+            padding: 140px 0 60px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        @media (min-width: 768px) { .hero { padding: 160px 0 80px; } }
+
+        /* Floating decorative circles like Prodmast */
+        .hero__orb {
+            position: absolute;
+            border-radius: 50%;
+            pointer-events: none;
+        }
+        .hero__orb--1 {
+            width: 60px; height: 60px;
+            background: rgba(200, 60, 52, 0.15);
+            top: 20%; left: 8%;
+        }
+        .hero__orb--2 {
+            width: 40px; height: 40px;
+            background: rgba(139, 163, 212, 0.15);
+            top: 30%; right: 12%;
+        }
+        .hero__orb--3 {
+            width: 80px; height: 80px;
+            background: rgba(38, 68, 126, 0.2);
+            bottom: 25%; left: 15%;
+        }
+        .hero__orb--4 {
+            width: 50px; height: 50px;
+            background: rgba(139, 163, 212, 0.12);
+            bottom: 30%; right: 8%;
+        }
+        /* Small icon bubbles like Prodmast */
+        .hero__bubble {
+            position: absolute;
+            width: 44px; height: 44px;
+            background: rgba(255,255,255,0.06);
+            border: 1px solid rgba(255,255,255,0.08);
+            border-radius: 12px;
+            display: flex; align-items: center; justify-content: center;
+        }
+        .hero__bubble svg { width: 20px; height: 20px; fill: var(--blue-200); }
+        .hero__bubble--1 { top: 22%; left: 5%; }
+        .hero__bubble--2 { top: 18%; right: 6%; }
+        .hero__bubble--3 { bottom: 35%; left: 10%; }
+        .hero__bubble--4 { bottom: 28%; right: 10%; }
+        @media (max-width: 767px) { .hero__bubble, .hero__orb { display: none; } }
+
+        .hero h1 { color: var(--white); max-width: 700px; margin: 0 auto 20px; position: relative; }
+        .hero h1 span { color: var(--blue-200); }
+        .hero__sub {
+            font-size: clamp(16px, 2vw, 18px); color: rgba(255,255,255,0.55);
+            max-width: 520px; margin: 0 auto 32px; line-height: 1.7;
+            position: relative;
+        }
+        .hero__actions { display: flex; flex-wrap: wrap; justify-content: center; gap: 12px; margin-bottom: 28px; position: relative; }
+        .hero__rating {
+            display: flex; align-items: center; justify-content: center; gap: 8px;
+            font-size: 14px; color: rgba(255,255,255,0.5); position: relative;
+        }
+        .hero__stars { color: #F5A623; font-size: 15px; letter-spacing: 2px; }
+
+        /* ═══ STATS IMAGE — Like Prodmast photo + overlaid cards ═══ */
+        .stats-banner {
+            background: var(--blue-deep);
+            padding: 0 0 80px;
+            position: relative;
+        }
+        .stats-banner__inner {
+            position: relative;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        .stats-banner__img {
+            width: 100%;
+            border-radius: var(--r-lg);
+            aspect-ratio: 16/7;
+            object-fit: cover;
+        }
+        .stats-banner__cards {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 12px;
+            margin-top: -40px;
+            position: relative;
+            z-index: 2;
+            padding: 0 16px;
+        }
+        @media (min-width: 768px) {
+            .stats-banner__cards {
+                grid-template-columns: repeat(4, 1fr);
+                margin-top: -50px;
+                gap: 16px;
+                padding: 0;
+            }
+        }
+        .scard {
+            background: var(--white);
+            border-radius: var(--r);
+            padding: 24px 16px;
+            text-align: center;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+            transition: transform 0.4s var(--ease);
+        }
+        .scard:hover { transform: translateY(-4px); }
+        .scard__num {
+            font-family: var(--display);
+            font-size: clamp(28px, 4vw, 36px);
+            font-weight: 700; color: var(--blue);
+            line-height: 1; margin-bottom: 4px;
+        }
+        .scard__label { font-size: 12px; font-weight: 500; color: var(--text2); }
+        .scard__src { font-size: 10px; color: #b0b0b0; margin-top: 2px; }
+        .scard--accent { background: var(--blue); }
+        .scard--accent .scard__num { color: var(--white); }
+        .scard--accent .scard__label { color: var(--blue-200); }
+        .scard--accent .scard__src { color: rgba(255,255,255,0.3); }
+
+        /* ═══ SERVICES — 6-card grid like Prodmast ═══ */
+        .services {
+            padding: 80px 0;
+            background: var(--cream);
+        }
+        @media (min-width: 768px) { .services { padding: 120px 0; } }
+        .services__header { text-align: center; margin-bottom: 56px; }
+        .services__header .eyebrow { color: var(--blue); }
+        .services__header h2 { max-width: 550px; margin: 0 auto 12px; }
+        .services__header p { color: var(--text2); max-width: 500px; margin: 0 auto; }
+
+        .services__grid {
+            display: grid; grid-template-columns: 1fr; gap: 16px;
+        }
+        @media (min-width: 600px) { .services__grid { grid-template-columns: repeat(2, 1fr); } }
+        @media (min-width: 900px) { .services__grid { grid-template-columns: repeat(3, 1fr); gap: 20px; } }
+
+        .svc {
+            background: var(--white);
+            border-radius: var(--r-lg);
+            padding: 32px 28px;
+            transition: transform 0.4s var(--ease), box-shadow 0.4s var(--ease);
+            position: relative;
+        }
+        .svc:hover { transform: translateY(-4px); box-shadow: 0 8px 32px rgba(38,68,126,0.08); }
+        .svc__icon {
+            width: 44px; height: 44px;
+            background: var(--blue-50); border-radius: 12px;
+            display: flex; align-items: center; justify-content: center;
+            margin-bottom: 20px;
+        }
+        .svc__icon svg { width: 22px; height: 22px; fill: var(--blue); }
+        .svc h3 { margin-bottom: 8px; font-size: 17px; }
+        .svc p { font-size: 14px; color: var(--text2); line-height: 1.6; }
+        .svc__arrow {
+            position: absolute; top: 28px; right: 28px;
+            width: 28px; height: 28px;
+            border-radius: 50%;
+            background: var(--blue-50);
+            display: flex; align-items: center; justify-content: center;
+            transition: background 0.3s, transform 0.3s;
+        }
+        .svc__arrow svg { width: 14px; height: 14px; fill: var(--blue); }
+        .svc:hover .svc__arrow { background: var(--blue); transform: translate(2px, -2px); }
+        .svc:hover .svc__arrow svg { fill: var(--white); }
+
+        /* ═══ BENEFITS — Split layout like Prodmast ═══ */
+        .benefits {
+            padding: 80px 0;
+            background: var(--white);
+        }
+        @media (min-width: 768px) { .benefits { padding: 120px 0; } }
+        .benefits__grid {
+            display: grid; grid-template-columns: 1fr; gap: 48px; align-items: center;
+        }
+        @media (min-width: 1024px) { .benefits__grid { grid-template-columns: 1fr 1fr; gap: 72px; } }
+
+        .benefits__visual {
+            position: relative;
+        }
+        .benefits__img-wrap {
+            border-radius: var(--r-lg);
+            overflow: hidden;
+            position: relative;
+        }
+        .benefits__img-wrap img {
+            width: 100%; aspect-ratio: 4/3; object-fit: cover;
+        }
+        /* Overlaid mini stat card like Prodmast dashboard */
+        .benefits__float {
+            position: absolute;
+            bottom: -16px; left: -16px;
+            background: var(--white);
+            border-radius: var(--r);
+            padding: 16px 20px;
+            box-shadow: 0 4px 24px rgba(0,0,0,0.1);
+            display: flex; align-items: center; gap: 12px;
+        }
+        .benefits__float-icon {
+            width: 40px; height: 40px;
+            background: var(--blue); border-radius: 10px;
+            display: flex; align-items: center; justify-content: center;
+        }
+        .benefits__float-icon svg { width: 20px; height: 20px; fill: var(--white); }
+        .benefits__float-num { font-family: var(--display); font-size: 22px; font-weight: 700; color: var(--text); }
+        .benefits__float-label { font-size: 11px; color: var(--text2); }
+
+        .benefits__text .eyebrow { color: var(--red); }
+        .benefits__text h2 { margin-bottom: 16px; }
+        .benefits__text > p { color: var(--text2); margin-bottom: 32px; }
+
+        .benefit-item {
+            display: flex; gap: 14px; align-items: flex-start;
+            padding: 16px 0; border-bottom: 1px solid var(--border);
+        }
+        .benefit-item:last-child { border-bottom: none; }
+        .benefit-item__dot {
+            width: 10px; height: 10px;
+            background: var(--blue); border-radius: 50%;
+            margin-top: 6px; flex-shrink: 0;
+        }
+        .benefit-item h3 { font-size: 16px; margin-bottom: 4px; }
+        .benefit-item p { font-size: 14px; color: var(--text2); line-height: 1.55; }
+
+        /* ═══ FORM SECTION ═══ */
+        .form-section {
+            padding: 80px 0;
+            background: var(--cream);
+        }
+        @media (min-width: 768px) { .form-section { padding: 120px 0; } }
+        .form-section__grid {
+            display: grid; grid-template-columns: 1fr; gap: 48px; align-items: center;
+        }
+        @media (min-width: 1024px) { .form-section__grid { grid-template-columns: 1fr 1fr; gap: 72px; } }
+
+        .form-section__text .eyebrow { color: var(--blue); }
+        .form-section__text h2 { margin-bottom: 16px; }
+        .form-section__text p { color: var(--text2); margin-bottom: 32px; max-width: 440px; }
+
+        .form-section__trust { display: flex; flex-direction: column; gap: 16px; }
+        .form-section__trust-item {
+            display: flex; align-items: center; gap: 12px;
+            font-size: 15px; font-weight: 500; color: #374151;
+        }
+        .form-section__trust-icon {
+            width: 36px; height: 36px; border-radius: 10px;
+            background: var(--blue-50);
+            display: flex; align-items: center; justify-content: center;
+            flex-shrink: 0;
+        }
+        .form-section__trust-icon svg { width: 18px; height: 18px; fill: var(--blue); }
+
+        .form-card {
+            background: var(--white);
+            border-radius: var(--r-lg);
+            padding: 36px 28px;
+            box-shadow: 0 1px 3px rgba(38,68,126,0.04), 0 8px 24px rgba(38,68,126,0.07), 0 24px 60px rgba(38,68,126,0.05);
+        }
+        @media (min-width: 768px) { .form-card { padding: 44px 36px; } }
+        .form-card__title { font-family: var(--display); font-size: 22px; font-weight: 700; margin-bottom: 4px; }
+        .form-card__sub { font-size: 14px; color: var(--text2); margin-bottom: 28px; }
+
+        .field { margin-bottom: 16px; }
+        .field label { display: block; font-size: 13px; font-weight: 600; margin-bottom: 6px; }
+        .field input {
+            width: 100%; padding: 13px 14px;
+            border: 1.5px solid var(--border); border-radius: 10px;
+            font-family: var(--sans); font-size: 15px; color: var(--text);
+            background: var(--cream); outline: none;
+            transition: border-color 0.25s, box-shadow 0.25s, background 0.25s;
+        }
+        .field input:focus { border-color: var(--blue); background: var(--white); box-shadow: 0 0 0 3px rgba(38,68,126,0.08); }
+        .field input::placeholder { color: #9ca3af; }
+        .form-card .btn--red { width: 100%; padding: 16px; border-radius: 50px; margin-top: 4px; }
+        .form-card__privacy { text-align: center; font-size: 11px; color: var(--text2); margin-top: 12px; }
+
+        /* ═══ TEAM ═══ */
+        .team { padding: 80px 0; background: var(--blue-deep); }
+        @media (min-width: 768px) { .team { padding: 120px 0; } }
+        .team__header { margin-bottom: 48px; }
+        .team__header .eyebrow { color: var(--blue-200); }
+        .team__header h2 { color: var(--white); margin-bottom: 12px; }
+        .team__header p { color: rgba(255,255,255,0.5); max-width: 500px; }
+
+        .team__grid { display: grid; grid-template-columns: 1fr; gap: 20px; }
+        @media (min-width: 768px) { .team__grid { grid-template-columns: 1fr 1fr; gap: 24px; } }
+
+        .agent {
+            background: rgba(255,255,255,0.04);
+            border: 1px solid rgba(255,255,255,0.06);
+            border-radius: var(--r-lg); overflow: hidden;
+            transition: transform 0.4s var(--ease), border-color 0.3s;
+        }
+        .agent:hover { transform: translateY(-4px); border-color: rgba(255,255,255,0.12); }
+        .agent__photo { width: 100%; aspect-ratio: 4/3; object-fit: cover; object-position: top; }
+        .agent__body { padding: 28px; }
+        .agent__name { font-family: var(--display); font-size: 24px; font-weight: 700; color: var(--white); margin-bottom: 2px; }
+        .agent__title { font-size: 12px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: rgba(255,255,255,0.3); margin-bottom: 14px; }
+        .agent__bio { font-size: 15px; color: rgba(255,255,255,0.5); line-height: 1.65; margin-bottom: 16px; }
+        .agent__tag {
+            display: inline-block; background: var(--blue); color: var(--white);
+            font-size: 12px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase;
+            padding: 6px 14px; border-radius: 100px;
+        }
+
+        /* ═══ TESTIMONIALS ═══ */
+        .reviews { padding: 80px 0; background: var(--cream); }
+        @media (min-width: 768px) { .reviews { padding: 120px 0; } }
+        .reviews__header { text-align: center; margin-bottom: 48px; }
+        .reviews__header .eyebrow { color: var(--blue); }
+        .reviews__grid { display: grid; grid-template-columns: 1fr; gap: 20px; }
+        @media (min-width: 768px) { .reviews__grid { grid-template-columns: 1fr 1fr; gap: 24px; } }
+
+        .tcard {
+            background: var(--white); border-left: 4px solid var(--blue); border-radius: 6px;
+            padding: 32px 28px;
+            box-shadow: 0 1px 4px rgba(0,0,0,0.03), 0 4px 16px rgba(38,68,126,0.05);
+            transition: transform 0.4s var(--ease), box-shadow 0.4s var(--ease);
+        }
+        .tcard:hover { transform: translateY(-4px); box-shadow: 0 2px 4px rgba(0,0,0,0.04), 0 12px 32px rgba(38,68,126,0.08); }
+        .tcard__stars { display: flex; gap: 2px; margin-bottom: 14px; }
+        .tcard__stars span { color: #F5A623; font-size: 15px; }
+        .tcard__quote { font-family: var(--display); font-style: italic; font-weight: 400; font-size: clamp(15px, 1.8vw, 17px); color: var(--text); line-height: 1.6; margin-bottom: 20px; }
+        .tcard__author { display: flex; align-items: center; gap: 12px; }
+        .tcard__avatar { width: 44px; height: 44px; border-radius: 50%; object-fit: cover; }
+        .tcard__name { font-weight: 600; font-size: 14px; color: var(--blue); }
+        .tcard__role { font-size: 12px; color: var(--text2); }
+
+        /* ═══ LOCAL — Sainte-Thérèse ═══ */
+        .local { padding: 80px 0; background: var(--white); }
+        @media (min-width: 768px) { .local { padding: 120px 0; } }
+        .local__header { text-align: center; margin-bottom: 24px; }
+        .local__header .eyebrow { color: var(--blue); }
+        .local__text { text-align: center; color: var(--text2); line-height: 1.75; max-width: 700px; margin: 0 auto 48px; font-size: 16px; }
+
+        .local__stats { display: grid; grid-template-columns: 1fr; gap: 16px; max-width: 800px; margin: 0 auto; }
+        @media (min-width: 600px) { .local__stats { grid-template-columns: repeat(3, 1fr); } }
+
+        .lstat { background: var(--cream); border-radius: var(--r); padding: 28px 20px; text-align: center; transition: transform 0.3s var(--ease); }
+        .lstat:hover { transform: translateY(-4px); }
+        .lstat__num { font-family: var(--display); font-size: clamp(28px, 4vw, 40px); font-weight: 700; color: var(--blue); line-height: 1; margin-bottom: 4px; }
+        .lstat__label { font-size: 13px; color: var(--text2); font-weight: 500; }
+        .lstat__src { font-size: 11px; color: #b0b0b0; margin-top: 4px; }
+        .local__source { text-align: center; font-size: 12px; color: #b0b0b0; margin-top: 24px; }
+
+        /* ═══ FAQ ═══ */
+        .faq { padding: 80px 0; background: var(--cream); }
+        @media (min-width: 768px) { .faq { padding: 120px 0; } }
+        .faq__header { text-align: center; margin-bottom: 48px; }
+        .faq__header .eyebrow { color: var(--blue); }
+        .faq__list { max-width: 720px; margin: 0 auto; }
+        .faq-item { border-bottom: 1px solid var(--border); }
+        .faq-item__q {
+            width: 100%; padding: 22px 0; background: none; border: none; cursor: pointer;
+            display: flex; justify-content: space-between; align-items: center; gap: 16px;
+            font-family: var(--sans); font-size: 16px; font-weight: 600; color: var(--text); text-align: left;
+            transition: color 0.2s;
+        }
+        .faq-item__q:hover { color: var(--blue); }
+        .faq-item__q svg { width: 20px; height: 20px; fill: var(--text2); flex-shrink: 0; transition: transform 0.4s var(--ease); }
+        .faq-item.on .faq-item__q svg { transform: rotate(45deg); }
+        .faq-item__a { max-height: 0; overflow: hidden; transition: max-height 0.5s var(--ease), opacity 0.3s; opacity: 0; }
+        .faq-item.on .faq-item__a { opacity: 1; }
+        .faq-item__a-inner { padding-bottom: 22px; font-size: 15px; color: var(--text2); line-height: 1.7; }
+
+        /* ═══ CTA FINAL — Dark banner like Prodmast ═══ */
+        .cta-final {
+            margin: 120px 20px 40px; padding: 64px 32px;
+            background: var(--blue-deep); border-radius: var(--r-lg);
+            text-align: center; position: relative; overflow: hidden;
+        }
+        @media (min-width: 768px) { .cta-final { margin: 120px 32px 40px; padding: 80px 48px; border-radius: 28px; } }
+        @media (min-width: 1200px) { .cta-final { margin: 120px auto 40px; max-width: 1200px; } }
+        .cta-final::before {
+            content: ''; position: absolute; top: -40%; right: -20%;
+            width: 400px; height: 400px;
+            background: radial-gradient(circle, rgba(200,60,52,0.12) 0%, transparent 70%);
+            border-radius: 50%;
+        }
+        .cta-final h2 { color: var(--white); margin-bottom: 12px; position: relative; }
+        .cta-final p { color: rgba(255,255,255,0.5); max-width: 420px; margin: 0 auto 32px; position: relative; }
+        .cta-final__btns { display: flex; flex-wrap: wrap; justify-content: center; gap: 12px; position: relative; }
+        .cta-final__note { font-size: 13px; color: rgba(255,255,255,0.25); margin-top: 20px; position: relative; }
+
+        /* ═══ FOOTER — Dark columns like Prodmast ═══ */
+        .footer {
+            padding: 48px 0 24px;
+            background: var(--blue-deep);
+            border-top: 1px solid rgba(255,255,255,0.06);
+        }
+        .footer__top {
+            display: grid; grid-template-columns: 1fr; gap: 32px;
+            padding-bottom: 32px; border-bottom: 1px solid rgba(255,255,255,0.06);
+        }
+        @media (min-width: 768px) { .footer__top { grid-template-columns: 1.5fr 1fr 1fr 1fr; gap: 40px; } }
+        .footer__brand p { font-size: 13px; color: rgba(255,255,255,0.35); margin-top: 12px; line-height: 1.6; }
+        .footer__col-title { font-size: 13px; font-weight: 700; color: rgba(255,255,255,0.5); letter-spacing: 0.06em; text-transform: uppercase; margin-bottom: 14px; }
+        .footer__col a { display: block; font-size: 14px; color: rgba(255,255,255,0.4); padding: 4px 0; transition: color 0.2s; }
+        .footer__col a:hover { color: var(--white); }
+        .footer__bottom { padding-top: 20px; display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 12px; }
+        .footer__copy { font-size: 12px; color: rgba(255,255,255,0.25); }
+        .footer__legal { display: flex; gap: 16px; }
+        .footer__legal a { font-size: 12px; color: rgba(255,255,255,0.25); transition: color 0.2s; }
+        .footer__legal a:hover { color: rgba(255,255,255,0.5); }
+
+        /* Mobile sticky CTA */
+        .mob-cta {
+            display: block; position: fixed; bottom: 0; left: 0; right: 0; z-index: 900;
+            padding: 10px 16px; background: var(--white); border-top: 1px solid var(--border);
+            transform: translateY(100%); transition: transform 0.5s var(--ease);
+        }
+        .mob-cta.on { transform: translateY(0); }
+        .mob-cta .btn--red { width: 100%; padding: 14px; border-radius: 50px; font-size: 14px; }
+        @media (min-width: 1024px) { .mob-cta { display: none; } }
+
+        /* ═══ SHOWCASE ═══ */
+        .showcase { padding: 0; background: var(--white); overflow: hidden; }
+        .showcase__grid { display: grid; grid-template-columns: 1fr; gap: 4px; }
+        @media (min-width: 768px) { .showcase__grid { grid-template-columns: 1fr 1fr; } }
+        .showcase__item { position: relative; overflow: hidden; aspect-ratio: 16/9; }
+        .showcase__item img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.6s var(--ease); }
+        .showcase__item:hover img { transform: scale(1.04); }
+        .showcase__overlay {
+            position: absolute; bottom: 0; left: 0; right: 0; padding: 24px;
+            background: linear-gradient(to top, rgba(0,0,0,0.6) 0%, transparent 100%);
+        }
+        .showcase__overlay p { font-family: var(--display); font-size: 18px; font-weight: 600; color: var(--white); }
+        .showcase__overlay span { font-size: 13px; color: rgba(255,255,255,0.6); }
+
+        /* ═══ CREW ═══ */
+        .crew { padding: 80px 0; background: var(--black); overflow: hidden; }
+        @media (min-width: 768px) { .crew { padding: 100px 0; } }
+        .crew__header { text-align: center; margin-bottom: 48px; }
+        .crew__header .eyebrow { color: rgba(255,255,255,0.4); }
+        .crew__header h2 { color: var(--white); }
+        .crew__strip { display: grid; grid-template-columns: repeat(2, 1fr); gap: 4px; }
+        @media (min-width: 768px) { .crew__strip { grid-template-columns: repeat(4, 1fr); } }
+        .crew__member { position: relative; overflow: hidden; aspect-ratio: 3/4; }
+        .crew__member img { width: 100%; height: 100%; object-fit: cover; object-position: top; transition: transform 0.6s var(--ease); }
+        .crew__member:hover img { transform: scale(1.05); }
+        .crew__member-info {
+            position: absolute; bottom: 0; left: 0; right: 0; padding: 20px;
+            background: linear-gradient(to top, rgba(0,0,0,0.7) 0%, transparent 100%);
+        }
+        .crew__member-name { font-family: var(--display); font-size: 18px; font-weight: 600; color: var(--white); }
+        .crew__member-role { font-size: 12px; color: rgba(255,255,255,0.5); font-weight: 500; }
+        /* ═══ CITY SHOWCASE BANNER ═══ */
+        .city-banner {
+            position: relative;
+            width: 100%;
+            max-height: 400px;
+            border-radius: 16px;
+            overflow: hidden;
+            margin-bottom: 32px;
+        }
+        .city-banner img {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+            display: block;
+        }
+        .city-banner__overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to top, rgba(15,34,64,0.6) 0%, rgba(15,34,64,0.1) 60%, transparent 100%);
+        }
+        .city-banner__card {
+            position: absolute;
+            bottom: 24px;
+            left: 24px;
+            background: rgba(255,255,255,0.95);
+            backdrop-filter: blur(12px);
+            padding: 20px 28px;
+            border-radius: 14px;
+            max-width: 420px;
+            box-shadow:
+                0 1px 2px rgba(15,34,64,0.08),
+                0 4px 12px rgba(15,34,64,0.12),
+                0 16px 40px rgba(15,34,64,0.08);
+        }
+        .city-banner__card h3 {
+            font-family: var(--display);
+            font-size: clamp(18px, 2.5vw, 24px);
+            font-weight: 600;
+            color: var(--blue);
+            margin-bottom: 6px;
+            letter-spacing: -0.02em;
+        }
+        .city-banner__card p {
+            font-size: 14px;
+            color: var(--text2);
+            line-height: 1.55;
+        }
+        @media (max-width: 600px) {
+            .city-banner img { height: 280px; }
+            .city-banner__card {
+                left: 16px; right: 16px; bottom: 16px;
+                padding: 16px 20px;
+                max-width: none;
+            }
+        }
+
+        .guide-photo {
+            border-radius: 16px;
+            overflow: hidden;
+            margin-top: 32px;
+            margin-bottom: 12px;
+        }
+        .guide-photo img {
+            width: 100%;
+            height: 280px;
+            object-fit: cover;
+            display: block;
+        }
+        @media (min-width: 768px) {
+            .guide-photo img { height: 340px; }
+        }
+    </style>
+</head>
+<body>
+
+<!-- ═══ NAV ═══ -->
+<nav class="nav">
+    <div class="w nav__inner">
+        <a href="#" class="nav__logo"><img src="../images/logo-blanc.png" alt="Fred & Max" height="60"></a>
+        <div class="nav__links">
+            <a href="../lorraine/">Lorraine</a>
+            <a href="../rosemere/">Rosemère</a>
+            <a href="../blainville/">Blainville</a>
+        </div>
+        <div class="nav__right">
+            <a href="tel:+15142193383" class="nav__phone">
+                <svg viewBox="0 0 24 24"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1-9.4 0-17-7.6-17-17 0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1L6.6 10.8z"/></svg>
+                514 219-3383
+            </a>
+            <a href="#estimation" class="btn btn--red btn--sm">Estimation gratuite</a>
+        </div>
+    </div>
+</nav>
+
+<!-- ═══ HERO ═══ -->
+<section class="hero">
+    <div class="hero__orb hero__orb--1"></div>
+    <div class="hero__orb hero__orb--2"></div>
+    <div class="hero__orb hero__orb--3"></div>
+    <div class="hero__orb hero__orb--4"></div>
+    <div class="hero__bubble hero__bubble--1"><svg viewBox="0 0 24 24"><path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/></svg></div>
+    <div class="hero__bubble hero__bubble--2"><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 22 12 18.27 5.82 22 7 14.14l-5-4.87 6.91-1.01z"/></svg></div>
+    <div class="hero__bubble hero__bubble--3"><svg viewBox="0 0 24 24"><path d="M3.5 18.49l6-6.01 4 4L22 6.92l-1.41-1.41-7.09 7.97-4-4L2 16.99z"/></svg></div>
+    <div class="hero__bubble hero__bubble--4"><svg viewBox="0 0 24 24"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4z"/></svg></div>
+
+    <div class="w">
+        <h1 class="rv">Votre courtier immobilier de confiance à Sainte-Thérèse</h1>
+        <p class="hero__sub rv">Courtiers, experts du marché de Sainte-Thérèse et de la Rive-Nord. Estimation gratuite, réponse en 24h.</p>
+        <div class="hero__actions rv">
+            <a href="#estimation" class="btn btn--red">Obtenir mon estimation</a>
+            <a href="tel:+15142193383" class="btn btn--outline-w">Nous appeler</a>
+        </div>
+        <div class="hero__rating rv">
+            <span class="hero__stars">★★★★★</span>
+            <span>5.0 — 47 avis Google</span>
+        </div>
+    </div>
+</section>
+
+
+<!-- ═══ SERVICES ═══ -->
+<section class="services">
+    <div class="w">
+        <div class="services__header rv">
+            <span class="eyebrow">Nos services</span>
+            <h2>Un accompagnement complet pour vendre à Sainte-Thérèse</h2>
+            <p>Chaque étape de la vente est prise en charge par des experts qui connaissent votre marché.</p>
+        </div>
+        <div class="services__grid">
+            <div class="svc rv">
+                <div class="svc__icon"><svg viewBox="0 0 24 24"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-7 3c1.93 0 3.5 1.57 3.5 3.5S13.93 13 12 13s-3.5-1.57-3.5-3.5S10.07 6 12 6zm7 13H5v-.23c0-.62.28-1.2.76-1.58C7.47 15.82 9.64 15 12 15s4.53.82 6.24 2.19c.48.38.76.97.76 1.58V19z"/></svg></div>
+                <span class="svc__arrow"><svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+                <h3>Estimation précise</h3>
+                <p>Analyse comparative de marché basée sur les ventes récentes à Sainte-Thérèse. Résultat en 24h.</p>
+            </div>
+            <div class="svc rv">
+                <div class="svc__icon"><svg viewBox="0 0 24 24"><path d="M21 3H3c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h18c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H3V5h18v14zm-5-7l-4 4.33L9 13l-3 4h12l-2-5z"/></svg></div>
+                <span class="svc__arrow"><svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+                <h3>Photos & vidéo HD</h3>
+                <p>Mise en valeur professionnelle de votre propriété pour attirer les acheteurs qualifiés.</p>
+            </div>
+            <div class="svc rv">
+                <div class="svc__icon"><svg viewBox="0 0 24 24"><path d="M3.5 18.49l6-6.01 4 4L22 6.92l-1.41-1.41-7.09 7.97-4-4L2 16.99z"/></svg></div>
+                <span class="svc__arrow"><svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+                <h3>Négociation stratégique</h3>
+                <p>Filtrage des offres et négociation experte pour maximiser votre prix de vente.</p>
+            </div>
+            <div class="svc rv">
+                <div class="svc__icon"><svg viewBox="0 0 24 24"><path d="M16 11c1.66 0 3-1.34 3-3s-1.34-3-3-3-3 1.34-3 3 1.34 3 3 3zm-8 0c1.66 0 3-1.34 3-3S9.66 5 8 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5z"/></svg></div>
+                <span class="svc__arrow"><svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+                <h3>Réseau d'acheteurs</h3>
+                <p>Accès à notre réseau d'acheteurs pré-qualifiés actifs sur toute la Rive-Nord.</p>
+            </div>
+            <div class="svc rv">
+                <div class="svc__icon"><svg viewBox="0 0 24 24"><path d="M18 2H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zM6 4h5v8l-2.5-1.5L6 12V4z"/></svg></div>
+                <span class="svc__arrow"><svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+                <h3>Visibilité Centris</h3>
+                <p>Inscription optimisée sur Centris et campagnes ciblées sur les réseaux sociaux.</p>
+            </div>
+            <div class="svc rv">
+                <div class="svc__icon"><svg viewBox="0 0 24 24"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm-2 16l-4-4 1.41-1.41L10 14.17l6.59-6.59L18 9l-8 8z"/></svg></div>
+                <span class="svc__arrow"><svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+                <h3>Accompagnement notaire</h3>
+                <p>Suivi complet jusqu'à la signature chez le notaire, sans stress et sans surprise.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ═══ SHOWCASE ═══ -->
+<section class="showcase rv" style="background:var(--blue);padding:80px 20px;">
+    <div style="max-width:1280px;margin:0 auto 32px;">
+        <h2 style="font-size:clamp(28px,4vw,44px);color:var(--white);">De belles ventes à Sainte-Thérèse.</h2>
+    </div>
+    <div class="showcase__grid" style="max-width:1280px;margin:0 auto;">
+        <div class="showcase__item" style="border-radius:24px;overflow:hidden;">
+            <img src="../images/ste-therese/stetherese1.png" alt="Propriété vendue à Sainte-Thérèse" loading="lazy" style="aspect-ratio:4/3;object-fit:cover;">
+        </div>
+        <div class="showcase__item" style="border-radius:24px;overflow:hidden;">
+            <img src="../images/ste-therese/stetherese2.png" alt="Propriété vendue à Sainte-Thérèse" loading="lazy" style="aspect-ratio:4/3;object-fit:cover;">
+        </div>
+    </div>
+</section>
+
+<!-- ═══ BENEFITS — Split like Prodmast ═══ -->
+<section class="benefits">
+    <div class="w">
+        <div class="benefits__grid">
+            <div class="benefits__visual rv">
+                <div class="benefits__img-wrap">
+                    <img src="../images/duo1.jpg" alt="Frédéric Gingras et Maxime Beaulac, courtiers immobiliers à Sainte-Thérèse" loading="lazy">
+                </div>
+            </div>
+            <div class="benefits__text rv">
+                <span class="eyebrow">Pourquoi Fred & Max</span>
+                <h2>L'expertise locale qui fait la différence</h2>
+                <p>Notre connaissance approfondie du marché de Sainte-Thérèse nous permet de positionner chaque propriété pour obtenir le meilleur résultat.</p>
+                <div class="benefit-item">
+                    <span class="benefit-item__dot"></span>
+                    <div>
+                        <h3>Connaissance terrain</h3>
+                        <p>Du Vieux Sainte-Thérèse aux quartiers familiaux, nous connaissons chaque secteur et ses acheteurs types.</p>
+                    </div>
+                </div>
+                <div class="benefit-item">
+                    <span class="benefit-item__dot"></span>
+                    <div>
+                        <h3>Marketing ciblé</h3>
+                        <p>Photos HD, vidéo, réseaux sociaux et Centris — votre propriété est vue par les bons acheteurs.</p>
+                    </div>
+                </div>
+                <div class="benefit-item">
+                    <span class="benefit-item__dot"></span>
+                    <div>
+                        <h3>Résultats prouvés</h3>
+                        <p>500+ propriétés vendues, 98% du prix demandé et 21 jours en moyenne. Des chiffres qui parlent.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ═══ FORM SECTION ═══ -->
+<section class="form-section" id="estimation">
+    <div class="w">
+        <div class="form-section__grid">
+            <div class="form-section__text rv">
+                <span class="eyebrow">Estimation gratuite</span>
+                <h2>Combien vaut votre propriété à Sainte-Thérèse?</h2>
+                <p>Recevez une analyse comparative de marché complète en 24h, basée sur les ventes récentes dans votre quartier.</p>
+                <div class="form-section__trust">
+                    <div class="form-section__trust-item">
+                        <span class="form-section__trust-icon"><svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg></span>
+                        Réponse garantie en moins de 24h
+                    </div>
+                    <div class="form-section__trust-item">
+                        <span class="form-section__trust-icon"><svg viewBox="0 0 24 24"><path d="M18 8h-1V6c0-2.76-2.24-5-5-5S7 3.24 7 6v2H6c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V10c0-1.1-.9-2-2-2zm-6 9c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2zm3.1-9H8.9V6c0-1.71 1.39-3.1 3.1-3.1 1.71 0 3.1 1.39 3.1 3.1v2z"/></svg></span>
+                        100% confidentiel, sans engagement
+                    </div>
+                    <div class="form-section__trust-item">
+                        <span class="form-section__trust-icon"><svg viewBox="0 0 24 24"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4z"/></svg></span>
+                        Courtiers
+                    </div>
+                </div>
+            </div>
+            <div class="form-card rv" id="hero-form">
+                <p class="form-card__title">Estimation gratuite en 24h</p>
+                <p class="form-card__sub">Sans engagement. Réponse garantie.</p>
+                <form onsubmit="event.preventDefault(); this.querySelector('.btn--red').textContent='Merci! On vous contacte sous 24h.'; this.querySelector('.btn--red').disabled=true;">
+                    <div class="field">
+                        <label for="name">Prénom et nom</label>
+                        <input type="text" id="name" name="name" placeholder="Marie Tremblay" required>
+                    </div>
+                    <div class="field">
+                        <label for="phone">Téléphone</label>
+                        <input type="tel" id="phone" name="phone" placeholder="514 219-3383" required>
+                    </div>
+                    <div class="field">
+                        <label for="address">Adresse de la propriété</label>
+                        <input type="text" id="address" name="address" placeholder="123 rue Turgeon, Sainte-Thérèse" required>
+                    </div>
+                    <button type="submit" class="btn btn--red">OBTENIR MON ESTIMATION GRATUITE</button>
+                </form>
+                <p class="form-card__privacy">Vos informations restent 100% confidentielles.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ═══ TEAM ═══ -->
+<section class="team">
+    <div class="w">
+        <div class="team__header rv">
+            <span class="eyebrow">Vos courtiers</span>
+            <h2>Experts locaux, résultats rapides</h2>
+            <p>Deux courtiers spécialisés sur la Rive-Nord. Leur mission : vendre votre propriété au meilleur prix.</p>
+        </div>
+        <div class="team__grid">
+            <div class="agent rv">
+                <img class="agent__photo" src="../images/fred.jpg" alt="Frédéric Gingras, courtier immobilier à Sainte-Thérèse" loading="lazy">
+                <div class="agent__body">
+                    <p class="agent__name">Frédéric Gingras</p>
+                    <p class="agent__title">Courtier immobilier résidentiel</p>
+                    <p class="agent__bio">Enraciné sur la Rive-Nord, Fred met son expertise en négociation et sa connaissance du marché de Sainte-Thérèse au service de chaque client.</p>
+                </div>
+            </div>
+            <div class="agent rv">
+                <img class="agent__photo" src="../images/max.jpg" alt="Maxime Beaulac, courtier immobilier à Sainte-Thérèse" loading="lazy">
+                <div class="agent__body">
+                    <p class="agent__name">Maxime Beaulac</p>
+                    <p class="agent__title">Courtier immobilier résidentiel et commercial</p>
+                    <p class="agent__bio">Spécialiste en mise en marché et marketing immobilier, Max maximise la visibilité de votre propriété avec des campagnes ciblées et une présence Centris optimisée.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ═══ TESTIMONIALS ═══ -->
+<section class="reviews">
+    <div class="w">
+        <div class="reviews__header rv">
+            <span class="eyebrow">Témoignages</span>
+            <h2>Ce que nos clients disent</h2>
+        </div>
+        <div class="reviews__grid">
+            <div class="tcard rv">
+                <div class="tcard__stars"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
+                <p class="tcard__quote">« Fred et Max ont pris en charge la vente de notre duplex à Sainte-Thérèse de A à Z. Résultat : vendu en 19 jours, au prix qu'on espérait. Leur professionnalisme a fait toute la différence. »</p>
+                <div class="tcard__author">
+                    <img class="tcard__avatar" src="../images/carl.JPG" alt="Carl Bhérer" loading="lazy">
+                    <div><p class="tcard__name">Carl Bhérer</p><p class="tcard__role">Vendeur à Sainte-Thérèse</p></div>
+                </div>
+            </div>
+            <div class="tcard rv">
+                <div class="tcard__stars"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
+                <p class="tcard__quote">« On avait essayé de vendre seuls sans succès. Dès que Fred et Max ont pris le relais, tout a changé. Mise en marché impeccable, acheteurs qualifiés et vente conclue en 3 semaines. »</p>
+                <div class="tcard__author">
+                    <img class="tcard__avatar" src="../images/marie.JPG" alt="Marie Delcourt" loading="lazy">
+                    <div><p class="tcard__name">Marie Delcourt</p><p class="tcard__role">Vendeuse à Sainte-Thérèse</p></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ═══ LOCAL ═══ -->
+<section class="local">
+    <div class="w">
+        <div class="local__header rv">
+            <span class="eyebrow">Sainte-Thérèse en chiffres</span>
+            <h2>Le cœur vibrant de la Rive-Nord</h2>
+        </div>
+        <p class="local__text rv">Sainte-Thérèse est une ville historique fondée en 1789, au cœur de la Rive-Nord de Montréal. Avec environ 27 000 habitants (Statistique Canada, Recensement 2021), elle fait partie de la MRC Thérèse-De Blainville. La ville est reconnue pour son centre-ville animé autour de la rue Turgeon, le Collège Lionel-Groulx, son offre culturelle riche et sa desserte par le train de banlieue exo vers Montréal. Le marché immobilier offre une diversité remarquable : des maisons centenaires du Vieux Sainte-Thérèse aux condos modernes, en passant par les bungalows familiaux. Fred et Max connaissent les particularités de chaque secteur.</p>
+        <div class="local__stats rv">
+            <div class="lstat">
+                <div class="lstat__num">~490 000 $</div>
+                <div class="lstat__label">Prix médian</div>
+                <div class="lstat__src">APCIQ / Centris, 2024</div>
+            </div>
+            <div class="lstat">
+                <div class="lstat__num">+3,5%</div>
+                <div class="lstat__label">Croissance annuelle</div>
+                <div class="lstat__src">APCIQ / Centris, 2024</div>
+            </div>
+            <div class="lstat">
+                <div class="lstat__num">340</div>
+                <div class="lstat__label">Transactions en 2024</div>
+                <div class="lstat__src">APCIQ / Centris, 2024</div>
+            </div>
+        </div>
+        <p class="local__source rv">Sources : APCIQ / Centris, baromètre du marché résidentiel 2024. Population : Statistique Canada, Recensement 2021.</p>
+    </div>
+</section>
+
+<!-- ═══ CITY SHOWCASE BANNER ═══ -->
+<section class="local" style="padding-top:0; padding-bottom:0;">
+    <div class="w">
+        <div class="city-banner rv">
+            <img src="../images/ste-therese/showcase-map-cta.jpg" alt="Carte de Sainte-Thérèse, Rive-Nord de Montréal — secteurs résidentiels" loading="lazy">
+            <div class="city-banner__overlay"></div>
+            <div class="city-banner__card">
+                <h3>Sainte-Thérèse — Le cœur de la Rive-Nord</h3>
+                <p>Ville dynamique au patrimoine riche, Sainte-Thérèse allie charme historique, vie culturelle animée et accessibilité exceptionnelle vers Montréal.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ═══ VIVRE À SAINTE-THÉRÈSE ═══ -->
+<section class="local" style="padding-top:0;">
+    <div class="w">
+        <div class="local__header rv">
+            <span class="eyebrow">Vivre à Sainte-Thérèse</span>
+            <h2>Vivre à Sainte-Thérèse — Le guide complet</h2>
+        </div>
+        <div class="rv" style="margin-top:24px;">
+            <h3 style="margin-bottom:10px;">Les quartiers prisés</h3>
+            <p class="local__text">Le Vieux Sainte-Thérèse avec ses maisons de caractère et sa vie culturelle animée, le secteur résidentiel près du Collège Lionel-Groulx, et les quartiers familiaux à l'est offrent une diversité de styles et de budgets.</p>
+        </div>
+        <div class="rv" style="margin-top:24px;">
+            <h3 style="margin-bottom:10px;">Écoles et familles</h3>
+            <p class="local__text">Le Séminaire Sainte-Thérèse (école secondaire privée renommée), le Collège Lionel-Groulx (cégep), les écoles primaires du CSSMI et l'école secondaire Sainte-Thérèse constituent un réseau éducatif complet de la maternelle au collégial.</p>
+        </div>
+        <div class="rv" style="margin-top:24px;">
+            <h3 style="margin-bottom:10px;">Transport et accessibilité</h3>
+            <p class="local__text">Sainte-Thérèse est le cœur du transport en commun de la Rive-Nord. La gare de train exo offre un service fréquent vers Montréal. Les autoroutes 15 et 640 sont à quelques minutes. Le réseau d'autobus EXO couvre toute la MRC Thérèse-De Blainville.</p>
+        </div>
+        <div class="guide-photo rv">
+            <img src="../images/ste-therese/permis-et-urbanisme-4b2f0d3d0eee26ec7bd7be32e157ce0f.jpg" alt="Vue urbaine de Sainte-Thérèse, Québec — urbanisme et développement" loading="lazy">
+        </div>
+        <div class="rv" style="margin-top:24px;">
+            <h3 style="margin-bottom:10px;">Qualité de vie</h3>
+            <p class="local__text">La rue Turgeon, artère commerciale et culturelle, regroupe boutiques, restaurants et cafés. Le Théâtre Lionel-Groulx, les festivals estivaux, le parc Ducharme et la proximité de la rivière des Mille-Îles en font une ville vivante et attachante.</p>
+        </div>
+    </div>
+</section>
+
+<!-- ═══ FAQ ═══ -->
+<section class="faq">
+    <div class="w">
+        <div class="faq__header rv">
+            <span class="eyebrow">Questions fréquentes</span>
+            <h2>Tout ce que vous devez savoir</h2>
+        </div>
+        <div class="faq__list">
+            <div class="faq-item rv"><button class="faq-item__q">Combien coûte la commission d'un courtier à Sainte-Thérèse?<svg viewBox="0 0 24 24"><path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"/></svg></button><div class="faq-item__a"><div class="faq-item__a-inner">Entre 4% et 6% du prix de vente (+ TPS/TVQ). L'estimation initiale est toujours gratuite et sans engagement.</div></div></div>
+            <div class="faq-item rv"><button class="faq-item__q">Combien de temps pour vendre à Sainte-Thérèse?<svg viewBox="0 0 24 24"><path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"/></svg></button><div class="faq-item__a"><div class="faq-item__a-inner">21 jours en moyenne avec Fred & Max. Le marché de Sainte-Thérèse est actif — une mise en marché professionnelle et un prix juste font la différence.</div></div></div>
+            <div class="faq-item rv"><button class="faq-item__q">Comment obtenez-vous une estimation précise?<svg viewBox="0 0 24 24"><path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"/></svg></button><div class="faq-item__a"><div class="faq-item__a-inner">Analyse comparative de marché (ACM) basée sur les ventes récentes de propriétés similaires à Sainte-Thérèse. Nous tenons compte de l'emplacement, l'état du bien et les tendances locales.</div></div></div>
+            <div class="faq-item rv"><button class="faq-item__q">Pourquoi un courtier plutôt que vendre seul?<svg viewBox="0 0 24 24"><path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"/></svg></button><div class="faq-item__a"><div class="faq-item__a-inner">Les courtiers obtiennent des prix supérieurs grâce à leur réseau, leur expertise en négociation et leur mise en marché professionnelle. Fred & Max obtiennent 98% du prix demandé.</div></div></div>
+            <div class="faq-item rv"><button class="faq-item__q">Quelles villes couvrez-vous?<svg viewBox="0 0 24 24"><path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"/></svg></button><div class="faq-item__a"><div class="faq-item__a-inner">Sainte-Thérèse, Lorraine, Blainville, Rosemère, Bois-des-Filion, Boisbriand, Deux-Montagnes et toute la Rive-Nord.</div></div></div>
+            <div class="faq-item rv"><button class="faq-item__q">Qu'est-ce qu'une analyse comparative de marché?<svg viewBox="0 0 24 24"><path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"/></svg></button><div class="faq-item__a"><div class="faq-item__a-inner">L'ACM évalue le prix de marché basé sur les ventes récentes de propriétés comparables. Nous la réalisons gratuitement pour fixer le bon prix dès le départ.</div></div></div>
+        </div>
+    </div>
+</section>
+
+<!-- ═══ CREW ═══ -->
+<section class="crew">
+    <div class="w">
+        <div class="crew__header rv">
+            <span class="eyebrow">Notre équipe</span>
+            <h2>Une équipe de professionnels pour bien vous servir</h2>
+        </div>
+    </div>
+    <div class="crew__strip rv">
+        <div class="crew__member">
+            <img src="../images/team1.jpg" alt="Frédéric Gingras" loading="lazy">
+            <div class="crew__member-info">
+                <p class="crew__member-name">Frédéric Gingras</p>
+                <p class="crew__member-role">Courtier immobilier résidentiel</p>
+            </div>
+        </div>
+        <div class="crew__member">
+            <img src="../images/team2.jpg" alt="Marie Côté" loading="lazy">
+            <div class="crew__member-info">
+                <p class="crew__member-name">Marie Côté</p>
+                <p class="crew__member-role">Courtier immobilier résidentiel</p>
+            </div>
+        </div>
+        <div class="crew__member">
+            <img src="../images/team3.jpg" alt="Carl Jobin-Shaw" loading="lazy">
+            <div class="crew__member-info">
+                <p class="crew__member-name">Carl Jobin-Shaw</p>
+                <p class="crew__member-role">Courtier immobilier résidentiel et commercial</p>
+            </div>
+        </div>
+        <div class="crew__member">
+            <img src="../images/team4.jpg" alt="Maxime Beaulac" loading="lazy">
+            <div class="crew__member-info">
+                <p class="crew__member-name">Maxime Beaulac</p>
+                <p class="crew__member-role">Courtier immobilier résidentiel et commercial</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ═══ CTA FINAL ═══ -->
+<section class="cta-final">
+    <h2 class="rv">Votre propriété à Sainte-Thérèse mérite le meilleur</h2>
+    <p class="rv" style="color:white;font-weight:700;">Estimation gratuite. Réponse en 24h. Sans engagement.</p>
+    <div class="cta-final__btns rv">
+        <a href="#estimation" class="btn btn--red" style="padding:18px 44px;font-size:16px;">Obtenir mon estimation gratuite</a>
+        <a href="tel:+15142193383" class="btn" style="background:white;color:var(--blue);font-weight:700;padding:18px 44px;font-size:16px;">514 219-3383</a>
+    </div>
+</section>
+
+<!-- ═══ FOOTER ═══ -->
+<footer class="footer">
+    <div class="w">
+        <div class="footer__top">
+            <div class="footer__brand">
+                <a href="#"><img src="../images/logo-blanc.png" alt="Fred & Max" height="48" loading="lazy" style="height:48px;width:auto;"></a>
+                <p>Courtiers Immobiliers. Experts de la Rive-Nord de Montréal. Contactez-nous pour une estimation gratuite.</p>
+            </div>
+            <div class="footer__col">
+                <p class="footer__col-title">Secteurs</p>
+                <a href="../lorraine/">Lorraine</a>
+                <a href="../rosemere/">Rosemère</a>
+                <a href="../blainville/">Blainville</a>
+                <a href="../boisbriand/">Boisbriand</a>
+            </div>
+            <div class="footer__col">
+                <p class="footer__col-title">Services</p>
+                <a href="../../evaluation-gratuite.html">Évaluation gratuite</a>
+                <a href="../../vendre.html">Vendre votre propriété</a>
+                <a href="../../acheter.html">Acheter une propriété</a>
+            </div>
+            <div class="footer__col">
+                <p class="footer__col-title">Contact</p>
+                <a href="tel:+15142193383">514 219-3383</a>
+                <a href="mailto:info@fredmax.ca">info@fredmax.ca</a>
+            </div>
+        </div>
+        <div class="footer__bottom">
+            <p class="footer__copy">© 2026 Fred & Max. Tous droits réservés.</p>
+            <div class="footer__legal">
+                <a href="#">Politique de confidentialité</a>
+                <a href="#">Mentions légales</a>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<div class="mob-cta" id="mobCta">
+    <a href="#estimation" class="btn btn--red">Estimation gratuite →</a>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    if (typeof gsap !== 'undefined' && typeof ScrollTrigger !== 'undefined') {
+        gsap.registerPlugin(ScrollTrigger);
+
+        gsap.utils.toArray('.rv').forEach(function(el, i) {
+            gsap.fromTo(el, { opacity: 0, y: 36 }, {
+                opacity: 1, y: 0, duration: 0.8, ease: 'power3.out',
+                scrollTrigger: { trigger: el, start: 'top 88%', once: true },
+                delay: (i % 4) * 0.06
+            });
+            el.classList.add('on');
+        });
+
+        /* Floating orbs */
+        gsap.utils.toArray('.hero__orb').forEach(function(orb, i) {
+            gsap.to(orb, { y: (i % 2 === 0 ? -15 : 15), x: (i % 2 === 0 ? 8 : -8), duration: 3 + i * 0.5, ease: 'sine.inOut', yoyo: true, repeat: -1 });
+        });
+        gsap.utils.toArray('.hero__bubble').forEach(function(b, i) {
+            gsap.to(b, { y: (i % 2 === 0 ? -10 : 10), duration: 2.5 + i * 0.4, ease: 'sine.inOut', yoyo: true, repeat: -1 });
+        });
+
+        /* Float the benefits card */
+        gsap.to('.benefits__float', { y: -6, duration: 2.5, ease: 'sine.inOut', yoyo: true, repeat: -1 });
+
+    } else {
+        var io = new IntersectionObserver(function(entries) {
+            entries.forEach(function(e) { if (e.isIntersecting) { e.target.classList.add('on'); io.unobserve(e.target); } });
+        }, { threshold: 0.1 });
+        document.querySelectorAll('.rv').forEach(function(el) { io.observe(el); });
+    }
+
+    /* Mobile CTA */
+    var mobCta = document.getElementById('mobCta');
+    window.addEventListener('scroll', function() {
+        if (window.scrollY > 600) { mobCta.classList.add('on'); } else { mobCta.classList.remove('on'); }
+    }, { passive: true });
+
+    /* FAQ */
+    document.querySelectorAll('.faq-item__q').forEach(function(btn) {
+        btn.addEventListener('click', function() {
+            var item = this.closest('.faq-item');
+            var ans = item.querySelector('.faq-item__a');
+            var open = item.classList.contains('on');
+            document.querySelectorAll('.faq-item.on').forEach(function(o) { o.classList.remove('on'); o.querySelector('.faq-item__a').style.maxHeight = '0'; });
+            if (!open) { item.classList.add('on'); ans.style.maxHeight = ans.scrollHeight + 'px'; }
+        });
+    });
+
+    /* Smooth scroll */
+    document.querySelectorAll('a[href^="#"]').forEach(function(a) {
+        a.addEventListener('click', function(e) {
+            var t = document.querySelector(this.getAttribute('href'));
+            if (t) { e.preventDefault(); t.scrollIntoView({ behavior: 'smooth', block: 'start' }); }
+        });
+    });
+});
+</script>
+</body>
+</html>
