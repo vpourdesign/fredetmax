@@ -821,7 +821,7 @@
             <div class="form-card rv" id="hero-form">
                 <p class="form-card__title">Estimation gratuite en 24h</p>
                 <p class="form-card__sub">Sans engagement. Réponse garantie.</p>
-                <form onsubmit="event.preventDefault(); this.querySelector('.btn--red').textContent='Merci! On vous contacte sous 24h.'; this.querySelector('.btn--red').disabled=true;">
+                <form action="https://formspree.io/f/xykbpoag" method="POST">
                     <div class="field">
                         <label for="name">Prénom et nom</label>
                         <input type="text" id="name" name="name" placeholder="Marie Tremblay" required>
