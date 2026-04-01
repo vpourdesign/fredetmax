@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Courtier Immobilier à Blainville | Estimation Gratuite — Fred & Max</title>
-    <meta name="description" content="Vendez votre maison à Blainville rapidement et au meilleur prix. Fred & Max, courtiers immobiliers agréés OACIQ. 200+ ventes, 21 jours en moyenne. Estimation gratuite en 24h.">
+    <meta name="description" content="Courtiers Immobiliers de Blainville. 500+ ventes, 21 jours en moyenne, 98% du prix demandé. Estimation gratuite en 24h. Fred & Max.">
     <link rel="canonical" href="https://www.fredmax.ca/blainville">
     <meta name="robots" content="index, follow">
     <meta name="geo.region" content="CA-QC">
@@ -14,11 +14,11 @@
     <meta property="og:locale" content="fr_CA">
     <meta property="og:url" content="https://www.fredmax.ca/blainville">
     <meta property="og:title" content="Courtier Immobilier à Blainville | Estimation Gratuite — Fred & Max">
-    <meta property="og:description" content="Vendez votre propriété à Blainville au meilleur prix. 200+ ventes, 98% du prix demandé. Estimation gratuite en 24h.">
+    <meta property="og:description" content="Vendez votre propriété à Blainville au meilleur prix. 500+ ventes, 98% du prix demandé. Estimation gratuite en 24h.">
     <meta property="og:site_name" content="Fred & Max — Courtiers immobiliers">
 
     <script type="application/ld+json">
-    {"@context":"https://schema.org","@type":"RealEstateAgent","name":"Fred & Max — Courtiers immobiliers","url":"https://www.fredmax.ca/blainville","telephone":"+14505055055","address":{"@type":"PostalAddress","addressLocality":"Blainville","addressRegion":"QC","addressCountry":"CA"},"areaServed":[{"@type":"City","name":"Blainville"},{"@type":"City","name":"Lorraine"},{"@type":"City","name":"Rosemère"},{"@type":"City","name":"Sainte-Thérèse"}],"aggregateRating":{"@type":"AggregateRating","ratingValue":"5","reviewCount":"47"}}
+    {"@context":"https://schema.org","@type":"RealEstateAgent","name":"Fred & Max — Courtiers immobiliers","url":"https://www.fredmax.ca/blainville","telephone":"+15142193383","address":{"@type":"PostalAddress","addressLocality":"Blainville","addressRegion":"QC","addressCountry":"CA"},"areaServed":[{"@type":"City","name":"Blainville"},{"@type":"City","name":"Lorraine"},{"@type":"City","name":"Rosemère"},{"@type":"City","name":"Sainte-Thérèse"}],"aggregateRating":{"@type":"AggregateRating","ratingValue":"5","reviewCount":"47"}}
     </script>
     <script type="application/ld+json">
     {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Combien coûte la commission d'un courtier à Blainville?","acceptedAnswer":{"@type":"Answer","text":"Entre 4% et 6% du prix de vente (+ TPS/TVQ). L'estimation est gratuite."}},{"@type":"Question","name":"Combien de temps pour vendre à Blainville?","acceptedAnswer":{"@type":"Answer","text":"21 jours en moyenne avec Fred & Max."}},{"@type":"Question","name":"Quelles villes couvrez-vous?","acceptedAnswer":{"@type":"Answer","text":"Blainville, Lorraine, Rosemère, Sainte-Thérèse et toute la Rive-Nord."}},{"@type":"Question","name":"Qu'est-ce qu'une ACM?","acceptedAnswer":{"@type":"Answer","text":"Évaluation du prix basée sur les ventes récentes. Gratuite et sans engagement."}}]}
@@ -105,13 +105,13 @@
         /* ═══ NAV ═══ */
         .nav {
             position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
-            padding: 16px 0;
+            padding: 20px 0;
             background: rgba(255,255,255,0.92);
             backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px);
             border-bottom: 1px solid rgba(0,0,0,0.04);
         }
         .nav__inner { display: flex; align-items: center; justify-content: space-between; }
-        .nav__logo img { height: 30px; }
+        .nav__logo img { height: 60px; }
         .nav__center { display: none; align-items: center; gap: 6px; font-size: 13px; font-weight: 500; color: var(--text2); }
         @media (min-width: 768px) { .nav__center { display: flex; } }
         .nav__center span { font-weight: 700; color: var(--text); }
@@ -121,7 +121,7 @@
 
         /* ═══ HERO — Rounded container like trvvrat ═══ */
         .hero {
-            margin-top: 72px;
+            margin-top: 110px;
             padding: 8px 16px 0;
             position: relative;
         }
@@ -165,14 +165,14 @@
 
         /* Scroll arrow inside hero — like trvvrat's down arrow */
         .hero__scroll {
-            position: absolute; bottom: 28px; left: 28px;
+            position: absolute; bottom: 28px; left: 50%; transform: translateX(-50%);
             width: 44px; height: 44px; border-radius: 50%;
             background: rgba(255,255,255,0.12); backdrop-filter: blur(8px);
             border: 1px solid rgba(255,255,255,0.15);
             display: flex; align-items: center; justify-content: center;
             cursor: pointer; transition: background 0.3s;
         }
-        @media (min-width: 768px) { .hero__scroll { bottom: 48px; left: 56px; } }
+        @media (min-width: 768px) { .hero__scroll { bottom: 48px; left: 50%; } }
         .hero__scroll:hover { background: rgba(255,255,255,0.25); }
         .hero__scroll svg { width: 18px; height: 18px; fill: var(--white); }
 
@@ -192,26 +192,24 @@
 
         /* Second floating element — pill tag overlapping top-right */
         .hero__tag-float {
-            position: absolute; top: -16px; right: 80px;
+            position: absolute; top: 16px; right: 80px;
             display: none;
         }
         @media (min-width: 1024px) { .hero__tag-float { display: block; } }
 
         /* Spacer for the float overflow */
-        .hero__spacer { height: 40px; }
-        @media (min-width: 1024px) { .hero__spacer { height: 72px; } }
+        .hero__spacer { height: 0; }
 
         /* ═══ EDITORIAL HEADLINE ═══ */
         .editorial {
             padding: 80px 0;
-            border-bottom: 1px solid var(--border);
         }
         @media (min-width: 768px) { .editorial { padding: 100px 0; } }
         .editorial__inner {
             display: flex; align-items: flex-end; justify-content: space-between;
             gap: 32px; flex-wrap: wrap;
         }
-        .editorial h2 { max-width: 600px; }
+        .editorial h2 { max-width: 900px; }
         .editorial h2 em { font-style: italic; color: var(--blue); }
 
         /* ═══ CONTENT GRID — Asymmetric like trvvrat ═══ */
@@ -290,37 +288,21 @@
         .asym-card--duo-text p { color: rgba(255,255,255,0.5); font-size: 15px; line-height: 1.65; }
 
         /* ═══ SHOWCASE — Large image with tags ═══ */
-        .showcase {
-            padding: 0 20px 80px;
+        .showcase { padding: 80px 20px; background: var(--blue); }
+        @media (min-width: 768px) { .showcase { padding: 100px 40px; } }
+        .showcase__heading { max-width: 1280px; margin: 0 auto 32px; }
+        .showcase__heading h2 { font-size: clamp(28px, 4vw, 44px); color: var(--white); }
+        .showcase__grid {
+            display: grid; grid-template-columns: 1fr;
+            gap: 16px; max-width: 1280px; margin: 0 auto;
         }
-        @media (min-width: 768px) { .showcase { padding: 0 40px 100px; } }
-        .showcase__inner {
-            position: relative;
-            border-radius: 32px;
+        @media (min-width: 768px) { .showcase__grid { grid-template-columns: 1fr 1fr; gap: 20px; } }
+        .showcase__card {
+            position: relative; border-radius: 24px;
             overflow: hidden;
-            max-width: 1280px;
-            margin: 0 auto;
         }
-        .showcase__inner img {
-            width: 100%;
-            aspect-ratio: 21/9;
-            object-fit: cover;
-        }
-        @media (max-width: 767px) { .showcase__inner img { aspect-ratio: 16/9; } }
-        .showcase__overlay {
-            position: absolute; inset: 0;
-            background: linear-gradient(135deg, rgba(0,0,0,0.4) 0%, transparent 50%);
-            display: flex; flex-direction: column; justify-content: flex-end;
-            padding: 32px;
-        }
-        @media (min-width: 768px) { .showcase__overlay { padding: 48px; } }
-        .showcase__overlay h2 { color: var(--white); font-size: clamp(24px, 4vw, 40px); margin-bottom: 8px; }
-        .showcase__overlay p { color: rgba(255,255,255,0.6); font-size: 15px; }
-
-        .showcase__tags {
-            position: absolute; top: 24px; left: 24px;
-            display: flex; gap: 8px;
-        }
+        .showcase__card img { width: 100%; aspect-ratio: 4/3; object-fit: cover; display: block; }
+        .showcase__tags { position: absolute; top: 24px; left: 24px; display: flex; gap: 8px; }
 
         /* ═══ FORM — Editorial ═══ */
         .form-section { padding: 80px 0; background: var(--off); }
@@ -358,7 +340,6 @@
         /* ═══ TESTIMONIALS — Asymmetric like trvvrat ═══ */
         .reviews {
             padding: 80px 0;
-            border-top: 1px solid var(--border);
         }
         @media (min-width: 768px) { .reviews { padding: 120px 0; } }
         .reviews__header { margin-bottom: 48px; }
@@ -439,7 +420,7 @@
         .crew__member-role { font-size: 12px; color: rgba(255,255,255,0.5); }
 
         /* ═══ LOCAL ═══ */
-        .local { padding: 80px 0; background: var(--white); border-top: 1px solid var(--border); }
+        .local { padding: 80px 0; background: var(--white); }
         @media (min-width: 768px) { .local { padding: 120px 0; } }
         .local__grid { display: grid; grid-template-columns: 1fr; gap: 48px; }
         @media (min-width: 1024px) { .local__grid { grid-template-columns: 1.2fr 1fr; gap: 72px; } }
@@ -490,6 +471,7 @@
         /* ═══ FOOTER ═══ */
         .footer { padding: 48px 0 24px; border-top: 1px solid var(--border); }
         .footer__top { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: flex-start; gap: 32px; padding-bottom: 32px; }
+        .footer__brand img { height: 48px; width: auto; max-height: 48px; display: block; }
         .footer__brand p { font-size: 13px; color: var(--text2); margin-top: 10px; max-width: 280px; line-height: 1.6; }
         .footer__links { display: flex; gap: 40px; }
         .footer__col-title { font-size: 12px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: var(--text2); margin-bottom: 12px; }
@@ -507,6 +489,59 @@
         .mob-cta.on { transform: translateY(0); }
         .mob-cta .btn--red { width: 100%; padding: 14px; border-radius: 100px; font-size: 14px; }
         @media (min-width: 1024px) { .mob-cta { display: none; } }
+
+        /* ═══ BLAINVILLE EN IMAGES ═══ */
+        .city-gallery {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 16px;
+            margin-top: 40px;
+            margin-bottom: 12px;
+        }
+        @media (min-width: 768px) {
+            .city-gallery {
+                grid-template-columns: 1.5fr 1fr;
+                gap: 20px;
+            }
+        }
+        .city-gallery__item {
+            position: relative;
+            border-radius: 16px;
+            overflow: hidden;
+        }
+        .city-gallery__item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.4s var(--ease);
+        }
+        .city-gallery__item:hover img {
+            transform: scale(1.03);
+        }
+        .city-gallery__item--left img {
+            aspect-ratio: 16/10;
+        }
+        .city-gallery__item--right img {
+            aspect-ratio: 16/10;
+        }
+        @media (min-width: 768px) {
+            .city-gallery__item--right img {
+                aspect-ratio: 3/4;
+            }
+        }
+        .city-gallery__caption {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            padding: 32px 20px 16px;
+            background: linear-gradient(to top, rgba(0,0,0,0.6) 0%, transparent 100%);
+            color: var(--white);
+            font-family: var(--sans);
+            font-size: 13px;
+            font-weight: 600;
+            letter-spacing: 0.01em;
+        }
     </style>
 </head>
 <body>
@@ -514,12 +549,12 @@
 <!-- ═══ NAV ═══ -->
 <nav class="nav">
     <div class="w nav__inner">
-        <a href="#" class="nav__logo"><img src="Logo-noir.png" alt="Fred & Max" height="30"></a>
+        <a href="#" class="nav__logo"><img src="images/Logo-noir.png" alt="Fred & Max" height="60"></a>
         <div class="nav__center">
             <span>Blainville</span> · Rive-Nord de Montréal
         </div>
         <div class="nav__right">
-            <a href="tel:+14505055055" class="nav__phone">(450) 505-5055</a>
+            <a href="tel:+15142193383" class="nav__phone">514 219-3383</a>
             <a href="#estimation" class="btn btn--dark btn--sm" style="padding:10px 20px;font-size:12px;border-radius:100px;">Estimation gratuite</a>
         </div>
     </div>
@@ -528,14 +563,14 @@
 <!-- ═══ HERO ═══ -->
 <section class="hero">
     <div class="hero__container">
-        <img class="hero__img" src="photos/house2.jpg" alt="Propriété à Blainville, Québec — vue aérienne en automne">
+        <img class="hero__img" src="images/blainville/hoteldeville.jpg" alt="Hôtel de ville de Blainville, Québec — centre administratif de la ville">
         <div class="hero__overlay">
-            <div class="hero__eyebrow rv">Courtiers agréés OACIQ · Blainville</div>
-            <h1 class="rv">Vendez à Blainville,<br>au meilleur prix.</h1>
+            <div class="hero__eyebrow rv">Courtiers · Blainville</div>
+            <h1 class="rv">Votre courtier immobilier de confiance à Blainville</h1>
             <p class="rv">Experts du marché de Blainville et de la Rive-Nord. Estimation gratuite, réponse en 24h.</p>
             <div class="hero__btns rv">
                 <a href="#estimation" class="btn btn--red">Obtenir mon estimation</a>
-                <a href="tel:+14505055055" class="btn" style="background:rgba(255,255,255,0.12);color:white;border:1.5px solid rgba(255,255,255,0.2);backdrop-filter:blur(8px);">Nous appeler</a>
+                <a href="tel:+15142193383" class="btn" style="background:rgba(255,255,255,0.12);color:white;border:1.5px solid rgba(255,255,255,0.2);backdrop-filter:blur(8px);">Nous appeler</a>
             </div>
         </div>
         <a href="#estimation" class="hero__scroll rv" aria-label="Défiler vers le bas">
@@ -546,13 +581,6 @@
             <span class="pill pill--dark" style="box-shadow: 0 4px 16px rgba(0,0,0,0.15);">★ 5.0 — 47 avis Google</span>
         </div>
     </div>
-    <!-- Card breaking out of the rounded hero -->
-    <div class="hero__float rv">
-        <div class="hero__float-stat">98%</div>
-        <div class="hero__float-label">du prix demandé obtenu</div>
-        <p>Résultats prouvés pour nos clients à Blainville.</p>
-        <div class="hero__float-src">Données Fred & Max, 2024</div>
-    </div>
     <div class="hero__spacer"></div>
 </section>
 
@@ -560,61 +588,23 @@
 <section class="editorial">
     <div class="w">
         <div class="editorial__inner rv">
-            <h2>Chaque propriété<br>est <em>unique.</em></h2>
-            <a href="#estimation" class="arrow-btn" aria-label="Obtenir mon estimation">
-                <svg viewBox="0 0 24 24"><path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z"/></svg>
-            </a>
-        </div>
-    </div>
-</section>
-
-<!-- ═══ ASYMMETRIC GRID ═══ -->
-<section class="grid-section">
-    <div class="w">
-        <div class="asym-grid">
-            <div class="asym-card asym-card--img rv">
-                <img src="photos/house1.jpg" alt="Propriété de prestige vendue par Fred & Max" loading="lazy">
-                <div class="asym-card__content">
-                    <span class="pill pill--blue" style="margin-bottom:8px;">Vendue en 14 jours</span>
-                    <p>Propriété de prestige — Rive-Nord</p>
-                </div>
-            </div>
-            <div class="asym-card asym-card--stat rv">
-                <div>
-                    <span class="pill pill--outline" style="margin-bottom:20px;">Résultats</span>
-                    <div class="big-num" data-count="200">200+</div>
-                    <div class="big-label">Propriétés vendues sur la Rive-Nord</div>
-                    <div class="big-src">Données Fred & Max, 2020-2024</div>
-                </div>
-                <div style="display:flex;gap:4px;margin-top:24px;">
-                    <span style="color:#F5A623;font-size:16px;">★★★★★</span>
-                    <span style="font-size:13px;color:var(--text2);">5.0 — 47 avis Google</span>
-                </div>
-            </div>
-            <div class="asym-card asym-card--duo rv">
-                <div class="asym-card--duo-inner">
-                    <img src="photos/duo1.jpg" alt="Fred et Max, courtiers immobiliers" loading="lazy">
-                    <div class="asym-card--duo-text">
-                        <h3>Votre projet. Notre expertise.</h3>
-                        <p>Fred et Max connaissent chaque quartier de Blainville, du Vieux-Blainville aux nouveaux développements. Leur ancrage local et leur réseau d'acheteurs qualifiés font la différence.</p>
-                    </div>
-                </div>
-            </div>
+            <h2>Chaque propriété est <em>unique.</em></h2>
+            <a href="#estimation" class="btn" style="background:var(--blue);color:var(--white);white-space:nowrap;display:inline-flex;align-items:center;gap:8px;">Estimation gratuite <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12l7 7 7-7"/></svg></a>
         </div>
     </div>
 </section>
 
 <!-- ═══ SHOWCASE ═══ -->
 <section class="showcase">
-    <div class="showcase__inner rv">
-        <img src="lorraine3.jpg" alt="Propriété à vendre à Blainville" loading="lazy">
-        <div class="showcase__tags">
-            <span class="pill pill--dark">21 jours en moyenne</span>
-            <span class="pill pill--dark">Sans engagement</span>
+    <div class="showcase__heading rv">
+        <h2>De belles ventes à Blainville.</h2>
+    </div>
+    <div class="showcase__grid">
+        <div class="showcase__card rv">
+            <img src="images/blainville/blainville1.jpg" alt="Propriété vendue à Blainville" loading="lazy">
         </div>
-        <div class="showcase__overlay">
-            <h2>L'immobilier autrement.</h2>
-            <p>Une approche humaine, des résultats concrets.</p>
+        <div class="showcase__card rv">
+            <img src="images/blainville/blainville2.png" alt="Propriété vendue à Blainville" loading="lazy">
         </div>
     </div>
 </section>
@@ -630,7 +620,7 @@
                 <div class="form-section__trust">
                     <div class="form-section__trust-item"><span class="dot"></span> Réponse garantie en moins de 24h</div>
                     <div class="form-section__trust-item"><span class="dot"></span> 100% confidentiel, sans engagement</div>
-                    <div class="form-section__trust-item"><span class="dot"></span> Courtiers agréés OACIQ</div>
+                    <div class="form-section__trust-item"><span class="dot"></span> Courtiers</div>
                 </div>
             </div>
             <div class="form-card rv" id="hero-form">
@@ -638,7 +628,7 @@
                 <p class="form-card__sub">Sans engagement. Réponse garantie.</p>
                 <form onsubmit="event.preventDefault();this.querySelector('.btn--red').textContent='Merci! On vous contacte sous 24h.';this.querySelector('.btn--red').disabled=true;">
                     <div class="field"><label for="name">Prénom et nom</label><input type="text" id="name" name="name" placeholder="Marie Tremblay" required></div>
-                    <div class="field"><label for="phone">Téléphone</label><input type="tel" id="phone" name="phone" placeholder="(450) 555-1234" required></div>
+                    <div class="field"><label for="phone">Téléphone</label><input type="tel" id="phone" name="phone" placeholder="514 219-3383" required></div>
                     <div class="field"><label for="address">Adresse de la propriété</label><input type="text" id="address" name="address" placeholder="123 rue des Érables, Blainville" required></div>
                     <button type="submit" class="btn btn--red">OBTENIR MON ESTIMATION GRATUITE</button>
                 </form>
@@ -661,7 +651,6 @@
                 <div class="tcard__stars"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
                 <p class="tcard__quote">« On hésitait entre vendre seuls ou avec un courtier. Fred et Max nous ont convaincus dès la première rencontre. Notre maison à Blainville s'est vendue en 15 jours, au prix demandé. »</p>
                 <div class="tcard__author">
-                    <img class="tcard__avatar" src="carl.JPG" alt="Carl Bhérer" loading="lazy">
                     <div><p class="tcard__name">Carl Bhérer</p><p class="tcard__role">Vendeur à Blainville</p></div>
                 </div>
             </div>
@@ -670,7 +659,6 @@
                 <div class="tcard__stars"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
                 <p class="tcard__quote">« La connaissance du marché de Blainville par Fred et Max est impressionnante. Ils ont su positionner notre propriété parfaitement et attirer des acheteurs sérieux dès la première semaine. »</p>
                 <div class="tcard__author">
-                    <img class="tcard__avatar" src="marie.JPG" alt="Marie Delcourt" loading="lazy">
                     <div><p class="tcard__name">Marie Delcourt</p><p class="tcard__role">Vendeuse à Blainville</p></div>
                 </div>
             </div>
@@ -726,14 +714,14 @@
     <div class="w">
         <div class="crew__header rv">
             <h2>Une équipe de professionnels pour bien vous servir</h2>
-            <p>Des courtiers agréés OACIQ dédiés à votre succès</p>
+            <p>Des courtiers dédiés à votre succès</p>
         </div>
     </div>
     <div class="crew__strip rv">
-        <div class="crew__member"><img src="photos/team1.jpg" alt="Frédéric Gingras" loading="lazy"><div class="crew__member-info"><p class="crew__member-name">Frédéric</p><p class="crew__member-role">Courtier immobilier agréé</p></div></div>
-        <div class="crew__member"><img src="photos/team2.jpg" alt="Membre de l'équipe" loading="lazy"><div class="crew__member-info"><p class="crew__member-name">Jessika</p><p class="crew__member-role">Coordonnatrice</p></div></div>
-        <div class="crew__member"><img src="photos/team3.jpg" alt="Membre de l'équipe" loading="lazy"><div class="crew__member-info"><p class="crew__member-name">Philippe</p><p class="crew__member-role">Courtier immobilier agréé</p></div></div>
-        <div class="crew__member"><img src="photos/team4.jpg" alt="Maxime Beaulac" loading="lazy"><div class="crew__member-info"><p class="crew__member-name">Maxime</p><p class="crew__member-role">Courtier immobilier agréé</p></div></div>
+        <div class="crew__member"><img src="images/team1.jpg" alt="Frédéric Gingras" loading="lazy"><div class="crew__member-info"><p class="crew__member-name">Frédéric Gingras</p><p class="crew__member-role">Courtier immobilier résidentiel</p></div></div>
+        <div class="crew__member"><img src="images/team2.jpg" alt="Marie Côté" loading="lazy"><div class="crew__member-info"><p class="crew__member-name">Marie Côté</p><p class="crew__member-role">Courtier immobilier résidentiel</p></div></div>
+        <div class="crew__member"><img src="images/team3.jpg" alt="Carl Jobin-Shaw" loading="lazy"><div class="crew__member-info"><p class="crew__member-name">Carl Jobin-Shaw</p><p class="crew__member-role">Courtier immobilier résidentiel et commercial</p></div></div>
+        <div class="crew__member"><img src="images/team4.jpg" alt="Maxime Beaulac" loading="lazy"><div class="crew__member-info"><p class="crew__member-name">Maxime Beaulac</p><p class="crew__member-role">Courtier immobilier résidentiel et commercial</p></div></div>
     </div>
 </section>
 
@@ -748,11 +736,56 @@
                 <p class="local__text" style="margin-top:12px;">Le marché immobilier de Blainville attire particulièrement les jeunes familles et les professionnels. Du Vieux-Blainville aux nouveaux développements du secteur est, Fred et Max connaissent chaque coin de la ville.</p>
                 <p class="local__source">Sources : APCIQ / Centris, baromètre 2024. Population : Statistique Canada, Recensement 2021.</p>
             </div>
-            <div class="local__stats rv">
+            <div class="local__stats rv" style="margin-bottom:0;">
                 <div class="lstat"><div class="lstat__num">~550 000 $</div><div class="lstat__label">Prix médian</div><div class="lstat__src">APCIQ / Centris, 2024</div></div>
                 <div class="lstat"><div class="lstat__num">+5,1%</div><div class="lstat__label">Croissance annuelle</div><div class="lstat__src">APCIQ / Centris, 2024</div></div>
                 <div class="lstat"><div class="lstat__num">480</div><div class="lstat__label">Transactions en 2024</div><div class="lstat__src">APCIQ / Centris, 2024</div></div>
             </div>
+        </div>
+    </div>
+</section>
+
+<!-- ═══ BLAINVILLE EN IMAGES ═══ -->
+<section class="local" style="padding-top:0;">
+    <div class="w">
+        <div class="rv">
+            <span class="pill pill--outline" style="margin-bottom:20px;">Blainville en images</span>
+        </div>
+        <div class="city-gallery reveal">
+            <div class="city-gallery__item city-gallery__item--left">
+                <img src="images/blainville/hoteldeville.jpg" alt="Hôtel de ville de Blainville, Québec — centre administratif de la ville" loading="lazy">
+                <div class="city-gallery__caption">Hôtel de ville de Blainville</div>
+            </div>
+            <div class="city-gallery__item city-gallery__item--right">
+                <img src="images/blainville/eglise.jpg" alt="Église historique de Blainville, patrimoine architectural des Laurentides" loading="lazy">
+                <div class="city-gallery__caption">Patrimoine architectural de Blainville</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ═══ VIVRE À BLAINVILLE ═══ -->
+<section class="local" style="padding-top:0;">
+    <div class="w">
+        <div class="rv">
+            <span class="pill pill--blue" style="margin-bottom:20px;">Vivre à Blainville</span>
+            <h2>Vivre à Blainville — Le guide complet</h2>
+        </div>
+        <div class="rv" style="margin-top:24px;">
+            <h3 style="margin-bottom:10px;">Les quartiers prisés</h3>
+            <p class="local__text">Blainville se démarque par des quartiers variés : le Vieux-Blainville avec son charme patrimonial, Fontainebleau et ses propriétés haut de gamme, le secteur du Domaine Vert pour les amoureux de la nature, et les nouveaux développements à l'est pour les jeunes familles.</p>
+        </div>
+        <div class="rv" style="margin-top:24px;">
+            <h3 style="margin-bottom:10px;">Écoles et familles</h3>
+            <p class="local__text">Les écoles primaires de la CSSMI (du Harfang, de l'Envolée, Le Tournesol) sont réputées. L'école secondaire des Érables et le Séminaire Sainte-Thérèse offrent un enseignement de qualité. Le Collège Lionel-Groulx est à 10 minutes.</p>
+        </div>
+        <div class="rv" style="margin-top:24px;">
+            <h3 style="margin-bottom:10px;">Transport et accessibilité</h3>
+            <p class="local__text">L'autoroute 15 traverse Blainville du nord au sud, et l'autoroute 640 d'est en ouest. La gare de train exo de Blainville offre un service régulier vers Montréal. Le futur prolongement du REM pourrait desservir le secteur.</p>
+        </div>
+        <div class="rv" style="margin-top:24px;">
+            <h3 style="margin-bottom:10px;">Qualité de vie</h3>
+            <p class="local__text">Le Centre équestre de Blainville, le parc régional du Domaine Vert (600 hectares), les sentiers de vélo et de randonnée, ainsi qu'une vie commerciale dynamique sur le boulevard du Curé-Labelle font de Blainville une ville complète.</p>
         </div>
     </div>
 </section>
@@ -779,12 +812,11 @@
 <section class="cta-final">
     <div class="cta-final__inner">
         <h2 class="rv">Votre propriété à Blainville mérite le meilleur</h2>
-        <p class="rv">Estimation gratuite. Réponse en 24h. Sans engagement.</p>
+        <p class="rv" style="color:white;font-weight:700;">Estimation gratuite. Réponse en 24h. Sans engagement.</p>
         <div class="cta-final__btns rv">
             <a href="#estimation" class="btn btn--red" style="padding:18px 44px;font-size:16px;">Obtenir mon estimation gratuite</a>
-            <a href="tel:+14505055055" class="btn btn--white" style="border-color:rgba(255,255,255,0.2);color:white;">Nous appeler</a>
+            <a href="tel:+15142193383" class="btn" style="background:white;color:var(--blue);font-weight:700;padding:18px 44px;font-size:16px;">514 219-3383</a>
         </div>
-        <p class="cta-final__note rv">(450) 505-5055</p>
     </div>
 </section>
 
@@ -793,8 +825,8 @@
     <div class="w">
         <div class="footer__top">
             <div class="footer__brand">
-                <a href="#"><img src="Logo-noir.png" alt="Fred & Max" height="24" loading="lazy"></a>
-                <p>Courtiers immobiliers agréés OACIQ. Experts de la Rive-Nord de Montréal.</p>
+                <a href="#"><img src="images/Logo-noir.png" alt="Fred & Max" height="24" loading="lazy"></a>
+                <p>Courtiers Immobiliers. Experts de la Rive-Nord de Montréal.</p>
             </div>
             <div class="footer__links">
                 <div class="footer__col">
@@ -802,10 +834,17 @@
                     <a href="index.html">Lorraine</a>
                     <a href="rosemere.html">Rosemère</a>
                     <a href="sainte-therese.html">Sainte-Thérèse</a>
+                    <a href="boisbriand.html">Boisbriand</a>
+                </div>
+                <div class="footer__col">
+                    <p class="footer__col-title">Services</p>
+                    <a href="../evaluation-gratuite.html">Évaluation gratuite</a>
+                    <a href="../vendre.html">Vendre votre propriété</a>
+                    <a href="../acheter.html">Acheter une propriété</a>
                 </div>
                 <div class="footer__col">
                     <p class="footer__col-title">Contact</p>
-                    <a href="tel:+14505055055">(450) 505-5055</a>
+                    <a href="tel:+15142193383">514 219-3383</a>
                     <a href="mailto:info@fredmax.ca">info@fredmax.ca</a>
                 </div>
             </div>

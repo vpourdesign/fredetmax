@@ -1,0 +1,833 @@
+<!DOCTYPE html>
+<html lang="fr-CA">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Acheter une propriété — Rive-Nord | Fred et Max, RE/MAX</title>
+    <meta name="description" content="Trouvez votre propriété idéale sur la Rive-Nord avec Fred et Max. Accompagnement complet, de la recherche à la signature chez le notaire.">
+    <link rel="canonical" href="https://www.fredmax.ca/acheter">
+    <meta name="robots" content="index, follow">
+    <meta name="geo.region" content="CA-QC">
+    <meta name="geo.placename" content="Sainte-Thérèse, Québec">
+    <meta name="geo.position" content="45.6406;-73.8517">
+    <meta name="ICBM" content="45.6406, -73.8517">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="fr_CA">
+    <meta property="og:url" content="https://www.fredmax.ca/acheter">
+    <meta property="og:title" content="Acheter une propriété — Rive-Nord | Fred et Max, RE/MAX">
+    <meta property="og:description" content="Trouvez votre propriété idéale sur la Rive-Nord avec Fred et Max. Accompagnement complet, de la recherche à la signature chez le notaire.">
+    <meta property="og:image" content="https://www.fredmax.ca/photos/house1.jpg">
+    <meta property="og:site_name" content="Fred & Max — Courtiers immobiliers">
+
+    <!-- JSON-LD: RealEstateAgent -->
+    <script type="application/ld+json">
+    {"@context":"https://schema.org","@type":"RealEstateAgent","name":"Fred & Max — Courtiers immobiliers RE/MAX Crystal","url":"https://www.fredmax.ca/acheter","telephone":"+14505055055","address":{"@type":"PostalAddress","addressLocality":"Sainte-Thérèse","addressRegion":"QC","addressCountry":"CA"},"areaServed":[{"@type":"City","name":"Lorraine"},{"@type":"City","name":"Rosemère"},{"@type":"City","name":"Blainville"},{"@type":"City","name":"Sainte-Thérèse"},{"@type":"City","name":"Boisbriand"}],"aggregateRating":{"@type":"AggregateRating","ratingValue":"5","reviewCount":"47"},"employee":[{"@type":"Person","name":"Frédéric Gingras","jobTitle":"Courtier immobilier agréé"},{"@type":"Person","name":"Maxime Beaulac","jobTitle":"Courtier immobilier agréé"}]}
+    </script>
+    <!-- JSON-LD: FAQPage -->
+    <script type="application/ld+json">
+    {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Combien coûte un courtier immobilier à l'achat?","acceptedAnswer":{"@type":"Answer","text":"En tant qu'acheteur, les services du courtier sont généralement payés par le vendeur via le partage de commission. Vous bénéficiez donc d'un accompagnement professionnel sans frais directs dans la grande majorité des transactions."}},{"@type":"Question","name":"Quel est le processus d'achat d'une maison au Québec?","acceptedAnswer":{"@type":"Answer","text":"Le processus comprend : la préqualification hypothécaire, la recherche de propriétés, les visites, la rédaction d'une promesse d'achat, la négociation, l'inspection préachat, l'obtention du financement et la signature chez le notaire."}},{"@type":"Question","name":"De quel montant de mise de fonds ai-je besoin?","acceptedAnswer":{"@type":"Answer","text":"Au Canada, la mise de fonds minimale est de 5% pour les propriétés de moins de 500 000$, 10% pour la portion entre 500 000$ et 999 999$, et 20% pour les propriétés de 1 million et plus. Une assurance hypothécaire SCHL est requise pour les mises de fonds inférieures à 20%."}},{"@type":"Question","name":"Qu'est-ce qu'une promesse d'achat?","acceptedAnswer":{"@type":"Answer","text":"La promesse d'achat est un document légal engageant l'acheteur à acquérir la propriété aux conditions spécifiées (prix, délais, conditions d'inspection et de financement). Une fois acceptée par le vendeur, elle lie les deux parties."}},{"@type":"Question","name":"Est-ce le bon moment pour acheter sur la Rive-Nord?","acceptedAnswer":{"@type":"Answer","text":"La Rive-Nord de Montréal offre un excellent rapport qualité-prix par rapport à l'île de Montréal. Le marché évolue constamment — contactez-nous pour une analyse personnalisée basée sur votre secteur et votre budget."}}]}
+    </script>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- GSAP -->
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3/dist/gsap.min.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3/dist/ScrollTrigger.min.js" defer></script>
+
+    <style>
+        /* ═══════════════════════════════════════
+           TOKENS
+           ═══════════════════════════════════════ */
+        :root {
+            --blue: #26447E;
+            --blue-light: #EEF1F7;
+            --blue-200: #8ba3d4;
+            --red: #C83C34;
+            --red-h: #A82E27;
+            --black: #0D0D0D;
+            --white: #FFFFFF;
+            --gray: #F5F5F5;
+            --text: #1a1a2e;
+            --text2: #6B7280;
+            --border: #E2E6EE;
+            --serif: 'Playfair Display', Georgia, serif;
+            --sans: 'Montserrat', system-ui, sans-serif;
+            --ease: cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        body {
+            font-family: var(--sans);
+            font-size: 16px;
+            line-height: 1.65;
+            color: var(--text);
+            background: var(--white);
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+        }
+        @media (min-width: 768px) { body { font-size: 17px; } }
+        img { max-width: 100%; height: auto; display: block; }
+        a { text-decoration: none; color: inherit; }
+
+        /* ── Layout ── */
+        .w { max-width: 1200px; margin: 0 auto; padding-inline: 20px; }
+        @media (min-width: 768px) { .w { padding-inline: 40px; } }
+        @media (min-width: 1280px) { .w { padding-inline: 0; } }
+
+        /* ── Type ── */
+        h1, h2 { font-family: var(--serif); letter-spacing: -0.03em; line-height: 1.08; color: var(--text); }
+        h1 { font-size: clamp(34px, 5.5vw, 58px); font-weight: 700; }
+        h2 { font-size: clamp(28px, 4vw, 46px); font-weight: 600; }
+        h3 { font-family: var(--sans); font-weight: 700; font-size: clamp(18px, 2vw, 22px); line-height: 1.3; }
+
+        .eyebrow {
+            font-family: var(--sans); font-size: 12px; font-weight: 700;
+            letter-spacing: 0.12em; text-transform: uppercase;
+            color: var(--blue); margin-bottom: 12px; display: block;
+        }
+
+        /* ── Buttons ── */
+        .btn {
+            display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+            font-family: var(--sans); font-weight: 600; font-size: 15px;
+            padding: 16px 36px; border-radius: 100px; border: none; cursor: pointer;
+            transition: transform 0.4s var(--ease), box-shadow 0.4s var(--ease), background 0.25s;
+        }
+        .btn:active { transform: translateY(0) !important; }
+        .btn:focus-visible { outline: 3px solid var(--blue-200); outline-offset: 2px; }
+        .btn--red { background: var(--red); color: var(--white); }
+        .btn--red:hover { background: var(--red-h); transform: translateY(-2px); box-shadow: 0 8px 28px rgba(200,60,52,0.25); }
+        .btn--outline { background: transparent; color: var(--white); border: 2px solid rgba(255,255,255,0.6); }
+        .btn--outline:hover { background: rgba(255,255,255,0.12); border-color: var(--white); transform: translateY(-2px); }
+        .btn--dark { background: var(--black); color: var(--white); }
+        .btn--dark:hover { background: #222; transform: translateY(-2px); box-shadow: 0 6px 20px rgba(0,0,0,0.2); }
+        .btn--white { background: var(--white); color: var(--text); }
+        .btn--white:hover { transform: translateY(-2px); box-shadow: 0 8px 28px rgba(0,0,0,0.12); }
+
+        /* ── Reveal ── */
+        .rv { opacity: 0; transform: translateY(30px); }
+
+        /* ═══════════════════════════════════════
+           NAV
+           ═══════════════════════════════════════ */
+        .nav {
+            position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
+            padding: 16px 0;
+            background: rgba(255,255,255,0.92);
+            backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px);
+            border-bottom: 1px solid rgba(0,0,0,0.04);
+        }
+        .nav__inner { display: flex; align-items: center; justify-content: space-between; }
+        .nav__logo img { height: 30px; }
+        .nav__center { display: none; align-items: center; gap: 6px; font-size: 13px; font-weight: 500; color: var(--text2); }
+        @media (min-width: 768px) { .nav__center { display: flex; } }
+        .nav__center span { font-weight: 700; color: var(--text); }
+        .nav__right { display: flex; align-items: center; gap: 12px; }
+        .nav__phone { font-size: 13px; font-weight: 600; color: var(--text); display: none; }
+        @media (min-width: 768px) { .nav__phone { display: block; } }
+
+        /* ═══════════════════════════════════════
+           HERO
+           ═══════════════════════════════════════ */
+        .hero {
+            position: relative;
+            min-height: 92vh;
+            display: flex; align-items: center;
+            overflow: hidden;
+        }
+        .hero__bg {
+            position: absolute; inset: 0;
+            background: url('photos/house1.jpg') center/cover no-repeat;
+        }
+        .hero__overlay {
+            position: absolute; inset: 0;
+            background: linear-gradient(160deg, rgba(13,13,13,0.35) 0%, rgba(13,13,13,0.7) 100%);
+        }
+        .hero__content {
+            position: relative; z-index: 2;
+            max-width: 720px;
+            padding-block: 140px 80px;
+        }
+        .hero h1 { color: var(--white); margin-bottom: 20px; }
+        .hero__sub {
+            font-size: clamp(16px, 2vw, 20px); color: rgba(255,255,255,0.85);
+            line-height: 1.6; margin-bottom: 36px; max-width: 540px;
+        }
+        .hero__btns { display: flex; flex-wrap: wrap; gap: 14px; }
+
+        /* ═══════════════════════════════════════
+           PROOF BAR
+           ═══════════════════════════════════════ */
+        .proof {
+            background: var(--blue);
+            padding: clamp(28px, 4vw, 44px) 0;
+        }
+        .proof__grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 24px 16px;
+            text-align: center;
+        }
+        @media (min-width: 768px) { .proof__grid { grid-template-columns: repeat(4, 1fr); } }
+        .proof__stat-num {
+            font-family: var(--serif); font-size: clamp(28px, 4vw, 42px);
+            font-weight: 700; color: var(--white); line-height: 1.1;
+        }
+        .proof__stat-label {
+            font-size: 13px; color: rgba(255,255,255,0.7); margin-top: 6px; font-weight: 500;
+        }
+
+        /* ═══════════════════════════════════════
+           PROCESS
+           ═══════════════════════════════════════ */
+        .process {
+            padding: clamp(64px, 8vw, 100px) 0;
+            background: var(--white);
+        }
+        .process__header {
+            text-align: center; margin-bottom: clamp(40px, 5vw, 64px);
+        }
+        .process__header h2 { margin-top: 4px; }
+        .process__steps {
+            display: grid; gap: 0;
+            max-width: 800px; margin: 0 auto;
+        }
+        .step {
+            display: grid;
+            grid-template-columns: 56px 1fr;
+            gap: 0 20px;
+            position: relative;
+        }
+        .step__num {
+            grid-row: 1 / 3;
+            width: 48px; height: 48px;
+            background: var(--blue); color: var(--white);
+            border-radius: 50%;
+            display: flex; align-items: center; justify-content: center;
+            font-family: var(--serif); font-weight: 700; font-size: 18px;
+            position: relative; z-index: 2;
+        }
+        .step__line {
+            position: absolute;
+            left: 23px; top: 48px; bottom: -1px;
+            width: 2px; background: var(--border);
+        }
+        .step:last-child .step__line { display: none; }
+        .step__title {
+            font-weight: 700; font-size: clamp(16px, 1.8vw, 19px);
+            padding-top: 12px;
+        }
+        .step__desc {
+            grid-column: 2; color: var(--text2); font-size: 15px; line-height: 1.65;
+            padding-bottom: 36px; padding-top: 6px;
+        }
+
+        /* ═══════════════════════════════════════
+           BUYER TYPES
+           ═══════════════════════════════════════ */
+        .buyers {
+            padding: clamp(64px, 8vw, 100px) 0;
+            background: var(--gray);
+        }
+        .buyers__header { text-align: center; margin-bottom: clamp(36px, 5vw, 56px); }
+        .buyers__grid {
+            display: grid; gap: 24px;
+        }
+        @media (min-width: 768px) { .buyers__grid { grid-template-columns: repeat(3, 1fr); } }
+        .buyer-card {
+            background: var(--white); border-radius: 20px; padding: clamp(28px, 3vw, 40px);
+            border: 1px solid var(--border);
+            transition: transform 0.4s var(--ease), box-shadow 0.4s var(--ease);
+        }
+        .buyer-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 1px 2px rgba(38,68,126,0.06), 0 4px 12px rgba(38,68,126,0.08), 0 16px 40px rgba(38,68,126,0.06);
+        }
+        .buyer-card__icon {
+            width: 52px; height: 52px; border-radius: 14px;
+            background: var(--blue-light); display: flex; align-items: center; justify-content: center;
+            margin-bottom: 20px;
+        }
+        .buyer-card__icon svg { width: 26px; height: 26px; fill: none; stroke: var(--blue); stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+        .buyer-card h3 { margin-bottom: 12px; }
+        .buyer-card p { color: var(--text2); font-size: 15px; line-height: 1.7; }
+
+        /* ═══════════════════════════════════════
+           LEAD MAGNET
+           ═══════════════════════════════════════ */
+        .magnet {
+            padding: clamp(64px, 8vw, 100px) 0;
+            background: var(--blue);
+        }
+        .magnet__inner {
+            display: grid; gap: 40px; align-items: center;
+        }
+        @media (min-width: 768px) { .magnet__inner { grid-template-columns: 1fr 1fr; gap: 60px; } }
+        .magnet h2 { color: var(--white); }
+        .magnet__sub { color: rgba(255,255,255,0.75); font-size: clamp(15px, 1.6vw, 18px); line-height: 1.65; margin-top: 16px; }
+        .magnet__form { display: flex; flex-direction: column; gap: 14px; }
+        .magnet__form input {
+            font-family: var(--sans); font-size: 15px;
+            padding: 16px 20px; border-radius: 12px; border: 1px solid rgba(255,255,255,0.2);
+            background: rgba(255,255,255,0.1); color: var(--white);
+            outline: none; transition: border-color 0.3s;
+        }
+        .magnet__form input::placeholder { color: rgba(255,255,255,0.5); }
+        .magnet__form input:focus { border-color: rgba(255,255,255,0.6); }
+        .magnet__form .btn--white { width: 100%; }
+
+        /* ═══════════════════════════════════════
+           CITIES
+           ═══════════════════════════════════════ */
+        .cities {
+            padding: clamp(64px, 8vw, 100px) 0;
+            background: var(--white);
+        }
+        .cities__header { text-align: center; margin-bottom: clamp(36px, 5vw, 56px); }
+        .cities__grid {
+            display: grid; gap: 20px;
+            grid-template-columns: repeat(2, 1fr);
+        }
+        @media (min-width: 768px) { .cities__grid { grid-template-columns: repeat(3, 1fr); } }
+        @media (min-width: 960px) { .cities__grid { grid-template-columns: repeat(5, 1fr); } }
+        .city-card {
+            background: var(--gray); border-radius: 16px; padding: clamp(24px, 2.5vw, 32px) 20px;
+            text-align: center; border: 1px solid transparent;
+            transition: transform 0.4s var(--ease), border-color 0.3s, box-shadow 0.4s var(--ease);
+        }
+        .city-card:hover {
+            transform: translateY(-3px); border-color: var(--blue);
+            box-shadow: 0 4px 16px rgba(38,68,126,0.1);
+        }
+        .city-card h3 { font-size: 17px; margin-bottom: 6px; }
+        .city-card p { font-size: 13px; color: var(--text2); line-height: 1.5; }
+
+        /* ═══════════════════════════════════════
+           TESTIMONIALS
+           ═══════════════════════════════════════ */
+        .testimonials {
+            padding: clamp(64px, 8vw, 100px) 0;
+            background: var(--gray);
+        }
+        .testimonials__header { text-align: center; margin-bottom: clamp(36px, 5vw, 56px); }
+        .testimonials__grid { display: grid; gap: 24px; }
+        @media (min-width: 768px) { .testimonials__grid { grid-template-columns: repeat(2, 1fr); } }
+        .testi-card {
+            background: var(--white); border-radius: 20px; padding: clamp(28px, 3vw, 40px);
+            border: 1px solid var(--border);
+        }
+        .testi-card__stars { color: #F59E0B; font-size: 18px; margin-bottom: 16px; letter-spacing: 2px; }
+        .testi-card__text { font-size: 15px; line-height: 1.75; color: var(--text); margin-bottom: 20px; font-style: italic; }
+        .testi-card__author {
+            display: flex; align-items: center; gap: 14px;
+        }
+        .testi-card__photo {
+            width: 48px; height: 48px; border-radius: 50%; object-fit: cover;
+        }
+        .testi-card__name { font-weight: 700; font-size: 15px; }
+        .testi-card__loc { font-size: 13px; color: var(--text2); }
+
+        /* ═══════════════════════════════════════
+           FAQ
+           ═══════════════════════════════════════ */
+        .faq {
+            padding: clamp(64px, 8vw, 100px) 0;
+            background: var(--white);
+        }
+        .faq__header { text-align: center; margin-bottom: clamp(36px, 5vw, 56px); }
+        .faq__list { max-width: 800px; margin: 0 auto; }
+        .faq-item { border-bottom: 1px solid var(--border); }
+        .faq-item__q {
+            width: 100%; text-align: left; background: none; border: none; cursor: pointer;
+            font-family: var(--sans); font-size: clamp(15px, 1.6vw, 17px); font-weight: 600;
+            padding: 22px 0; display: flex; justify-content: space-between; align-items: center; gap: 16px;
+            color: var(--text); line-height: 1.4;
+        }
+        .faq-item__q:hover { color: var(--blue); }
+        .faq-item__q:focus-visible { outline: 2px solid var(--blue-200); outline-offset: 2px; }
+        .faq-item__icon {
+            flex-shrink: 0; width: 28px; height: 28px;
+            border-radius: 50%; background: var(--gray);
+            display: flex; align-items: center; justify-content: center;
+            transition: transform 0.35s var(--ease), background 0.3s;
+        }
+        .faq-item.on .faq-item__icon { transform: rotate(45deg); background: var(--blue-light); }
+        .faq-item__icon svg { width: 14px; height: 14px; stroke: var(--text); stroke-width: 2; }
+        .faq-item__a {
+            max-height: 0; overflow: hidden;
+            transition: max-height 0.45s var(--ease);
+        }
+        .faq-item__a p {
+            padding-bottom: 22px; font-size: 15px; line-height: 1.75; color: var(--text2);
+            max-width: 680px;
+        }
+
+        /* ═══════════════════════════════════════
+           CTA FINAL
+           ═══════════════════════════════════════ */
+        .cta-final {
+            padding: clamp(64px, 8vw, 100px) 0;
+            background: var(--black);
+        }
+        .cta-final__inner {
+            display: grid; gap: 48px; align-items: center;
+        }
+        @media (min-width: 768px) { .cta-final__inner { grid-template-columns: 1fr 1fr; gap: 64px; } }
+        .cta-final h2 { color: var(--white); }
+        .cta-final__sub { color: rgba(255,255,255,0.6); font-size: clamp(15px, 1.6vw, 18px); line-height: 1.65; margin-top: 16px; }
+        .cta-final__phone {
+            display: inline-flex; align-items: center; gap: 10px;
+            margin-top: 24px; color: var(--white); font-weight: 600; font-size: 18px;
+            transition: color 0.3s;
+        }
+        .cta-final__phone:hover { color: var(--red); }
+        .cta-final__phone svg { width: 20px; height: 20px; fill: none; stroke: currentColor; stroke-width: 2; }
+
+        .cta-final__form { display: flex; flex-direction: column; gap: 14px; }
+        .cta-final__form input,
+        .cta-final__form select {
+            font-family: var(--sans); font-size: 15px;
+            padding: 16px 20px; border-radius: 12px; border: 1px solid rgba(255,255,255,0.15);
+            background: rgba(255,255,255,0.07); color: var(--white);
+            outline: none; transition: border-color 0.3s;
+            -webkit-appearance: none; appearance: none;
+        }
+        .cta-final__form select {
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' fill='none'%3E%3Cpath d='M1 1.5l5 5 5-5' stroke='%23999' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+            background-repeat: no-repeat; background-position: right 16px center;
+            padding-right: 40px;
+        }
+        .cta-final__form select option { background: var(--black); color: var(--white); }
+        .cta-final__form input::placeholder { color: rgba(255,255,255,0.4); }
+        .cta-final__form input:focus,
+        .cta-final__form select:focus { border-color: rgba(255,255,255,0.5); }
+        .cta-final__form .btn--red { width: 100%; }
+
+        /* ═══════════════════════════════════════
+           FOOTER
+           ═══════════════════════════════════════ */
+        .footer { padding: 48px 0 24px; border-top: 1px solid var(--border); }
+        .footer__top { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: flex-start; gap: 32px; padding-bottom: 32px; }
+        .footer__brand p { font-size: 13px; color: var(--text2); margin-top: 10px; max-width: 280px; line-height: 1.6; }
+        .footer__links { display: flex; gap: 40px; }
+        .footer__col-title { font-size: 12px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: var(--text2); margin-bottom: 12px; }
+        .footer__col a { display: block; font-size: 14px; color: var(--text2); padding: 3px 0; transition: color 0.2s; }
+        .footer__col a:hover { color: var(--blue); }
+        .footer__bottom { border-top: 1px solid var(--border); padding-top: 20px; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 8px; }
+        .footer__copy { font-size: 12px; color: var(--text2); }
+
+        /* ═══════════════════════════════════════
+           MOBILE CTA
+           ═══════════════════════════════════════ */
+        .mob-cta {
+            position: fixed; bottom: 0; left: 0; right: 0; z-index: 900;
+            padding: 12px 16px; background: var(--white);
+            box-shadow: 0 -2px 16px rgba(0,0,0,0.08);
+            transform: translateY(100%); transition: transform 0.4s var(--ease);
+            display: none;
+        }
+        .mob-cta.on { transform: translateY(0); }
+        .mob-cta .btn { width: 100%; }
+        @media (max-width: 767px) { .mob-cta { display: block; } }
+    </style>
+</head>
+<body>
+
+<!-- ═══ NAV ═══ -->
+<nav class="nav">
+    <div class="w nav__inner">
+        <a href="/" class="nav__logo"><img src="Logo-noir.png" alt="Fred & Max" height="30" loading="eager"></a>
+        <div class="nav__center">
+            <span>Fred & Max</span> — Courtiers immobiliers, RE/MAX Crystal
+        </div>
+        <div class="nav__right">
+            <a href="tel:+14505055055" class="nav__phone">(450) 505-5055</a>
+            <a href="#contact" class="btn btn--red" style="padding: 10px 24px; font-size: 13px;">Nous joindre</a>
+        </div>
+    </div>
+</nav>
+
+<!-- ═══ HERO ═══ -->
+<section class="hero" id="hero">
+    <div class="hero__bg" role="img" aria-label="Maison sur la Rive-Nord de Montréal"></div>
+    <div class="hero__overlay"></div>
+    <div class="w hero__content">
+        <span class="eyebrow" style="color: rgba(255,255,255,0.7);">Achat immobilier — Rive-Nord</span>
+        <h1>Trouvez votre prochaine propriété sur la Rive-Nord de Montréal</h1>
+        <p class="hero__sub">Premier achat ou déménagement? On vous accompagne à chaque étape.</p>
+        <div class="hero__btns">
+            <a href="#contact" class="btn btn--red">Parler à un expert acheteur</a>
+            <a href="#villes" class="btn btn--outline">Voir les villes desservies</a>
+        </div>
+    </div>
+</section>
+
+<!-- ═══ PROOF BAR ═══ -->
+<section class="proof">
+    <div class="w">
+        <div class="proof__grid">
+            <div class="rv">
+                <div class="proof__stat-num">1000+</div>
+                <div class="proof__stat-label">familles servies</div>
+            </div>
+            <div class="rv">
+                <div class="proof__stat-num">5</div>
+                <div class="proof__stat-label">villes couvertes</div>
+            </div>
+            <div class="rv">
+                <div class="proof__stat-num">30+</div>
+                <div class="proof__stat-label">ans d'expérience</div>
+            </div>
+            <div class="rv">
+                <div class="proof__stat-num">5.0 &#9733;</div>
+                <div class="proof__stat-label">avis Google</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ═══ PROCESS ═══ -->
+<section class="process" id="processus">
+    <div class="w">
+        <div class="process__header rv">
+            <span class="eyebrow">Notre accompagnement acheteur</span>
+            <h2>Comment on vous aide à acheter</h2>
+        </div>
+        <div class="process__steps">
+            <div class="step rv">
+                <div class="step__num">1</div>
+                <div class="step__line"></div>
+                <div class="step__title">Définir vos critères et votre budget</div>
+                <p class="step__desc">Rencontre personnalisée pour comprendre vos besoins, vos priorités et déterminer votre capacité d'achat avec nos partenaires hypothécaires.</p>
+            </div>
+            <div class="step rv">
+                <div class="step__num">2</div>
+                <div class="step__line"></div>
+                <div class="step__title">Accès aux propriétés en primeur</div>
+                <p class="step__desc">Grâce au réseau RE/MAX et Centris, vous voyez les nouvelles inscriptions avant tout le monde. On filtre pour vous, selon vos critères.</p>
+            </div>
+            <div class="step rv">
+                <div class="step__num">3</div>
+                <div class="step__line"></div>
+                <div class="step__title">Visites accompagnées avec expertise terrain</div>
+                <p class="step__desc">On connaît chaque quartier de la Rive-Nord. À chaque visite, on identifie les forces et les points d'attention de la propriété.</p>
+            </div>
+            <div class="step rv">
+                <div class="step__num">4</div>
+                <div class="step__line"></div>
+                <div class="step__title">Négociation et offre d'achat</div>
+                <p class="step__desc">Rédaction de la promesse d'achat, stratégie de négociation et protection de vos intérêts à chaque étape.</p>
+            </div>
+            <div class="step rv">
+                <div class="step__num">5</div>
+                <div class="step__title">Accompagnement inspection et financement jusqu'au notaire</div>
+                <p class="step__desc">On coordonne l'inspection préachat, le suivi hypothécaire et la préparation pour la signature chez le notaire. Vous n'êtes jamais seul.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ═══ BUYER TYPES ═══ -->
+<section class="buyers">
+    <div class="w">
+        <div class="buyers__header rv">
+            <span class="eyebrow">Pour chaque situation</span>
+            <h2>On accompagne tous les acheteurs</h2>
+        </div>
+        <div class="buyers__grid">
+            <div class="buyer-card rv">
+                <div class="buyer-card__icon">
+                    <svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+                </div>
+                <h3>Premier acheteur</h3>
+                <p>Premier achat? On démystifie chaque étape. Budget, mise de fonds, préqualification hypothécaire, inspection — on vous guide pas à pas.</p>
+            </div>
+            <div class="buyer-card rv">
+                <div class="buyer-card__icon">
+                    <svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                </div>
+                <h3>Famille en déménagement</h3>
+                <p>Vous cherchez plus grand, un meilleur quartier, de meilleures écoles? On connaît chaque rue de la Rive-Nord.</p>
+            </div>
+            <div class="buyer-card rv">
+                <div class="buyer-card__icon">
+                    <svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+                </div>
+                <h3>Investisseur</h3>
+                <p>Plex, duplex, immeuble locatif? Notre courtier commercial Maxime Beaulac analyse la rentabilité et vous conseille stratégiquement.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ═══ LEAD MAGNET ═══ -->
+<section class="magnet" id="guide">
+    <div class="w">
+        <div class="magnet__inner">
+            <div class="rv">
+                <span class="eyebrow" style="color: rgba(255,255,255,0.6);">Ressource gratuite</span>
+                <h2>Téléchargez notre Guide de l'acheteur gratuit</h2>
+                <p class="magnet__sub">Tout ce que vous devez savoir avant d'acheter sur la Rive-Nord. Gratuit, sans engagement.</p>
+            </div>
+            <form class="magnet__form rv" onsubmit="return false;">
+                <input type="text" name="prenom" placeholder="Prénom" required>
+                <input type="email" name="courriel" placeholder="Courriel" required>
+                <button type="submit" class="btn btn--white">Télécharger le guide &rarr;</button>
+            </form>
+        </div>
+    </div>
+</section>
+
+<!-- ═══ CITIES ═══ -->
+<section class="cities" id="villes">
+    <div class="w">
+        <div class="cities__header rv">
+            <span class="eyebrow">Nos secteurs</span>
+            <h2>Villes et quartiers populaires</h2>
+        </div>
+        <div class="cities__grid">
+            <a href="landings/index.html" class="city-card rv">
+                <h3>Lorraine</h3>
+                <p>Quartiers paisibles, grands terrains boisés et écoles recherchées.</p>
+            </a>
+            <a href="landings/rosemere.html" class="city-card rv">
+                <h3>Rosemère</h3>
+                <p>Charme familial, proximité des services et accès rapide aux autoroutes.</p>
+            </a>
+            <a href="landings/blainville.html" class="city-card rv">
+                <h3>Blainville</h3>
+                <p>Ville dynamique avec de nombreux développements résidentiels neufs.</p>
+            </a>
+            <a href="landings/sainte-therese.html" class="city-card rv">
+                <h3>Sainte-Thérèse</h3>
+                <p>Centre-ville animé, transport en commun et vie culturelle active.</p>
+            </a>
+            <a class="city-card rv">
+                <h3>Boisbriand</h3>
+                <p>Secteur en croissance avec un excellent rapport qualité-prix.</p>
+            </a>
+        </div>
+    </div>
+</section>
+
+<!-- ═══ TESTIMONIALS ═══ -->
+<section class="testimonials">
+    <div class="w">
+        <div class="testimonials__header rv">
+            <span class="eyebrow">Témoignages</span>
+            <h2>Ce que nos acheteurs disent de nous</h2>
+        </div>
+        <div class="testimonials__grid">
+            <div class="testi-card rv">
+                <div class="testi-card__stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                <p class="testi-card__text">&laquo;&nbsp;Fred et Max ont rendu notre premier achat tellement simple. Ils nous ont guidés du début à la fin, de la préqualification hypothécaire jusqu'au notaire. On a trouvé notre maison de rêve en moins d'un mois!&nbsp;&raquo;</p>
+                <div class="testi-card__author">
+                    <img src="carl.JPG" alt="Carl" class="testi-card__photo" loading="lazy" width="48" height="48">
+                    <div>
+                        <div class="testi-card__name">Carl</div>
+                        <div class="testi-card__loc">Acheteur — Lorraine</div>
+                    </div>
+                </div>
+            </div>
+            <div class="testi-card rv">
+                <div class="testi-card__stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                <p class="testi-card__text">&laquo;&nbsp;On cherchait une maison familiale à Blainville et Max a tout coordonné avec une efficacité remarquable. Inspection, financement, négociation — tout était fluide. Je recommande sans hésitation.&nbsp;&raquo;</p>
+                <div class="testi-card__author">
+                    <img src="marie.JPG" alt="Marie" class="testi-card__photo" loading="lazy" width="48" height="48">
+                    <div>
+                        <div class="testi-card__name">Marie</div>
+                        <div class="testi-card__loc">Acheteuse — Blainville</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ═══ FAQ ═══ -->
+<section class="faq" id="faq">
+    <div class="w">
+        <div class="faq__header rv">
+            <span class="eyebrow">Foire aux questions</span>
+            <h2>Questions fréquentes sur l'achat immobilier</h2>
+        </div>
+        <div class="faq__list">
+            <div class="faq-item rv">
+                <button class="faq-item__q" aria-expanded="false">
+                    Combien coûte un courtier immobilier à l'achat?
+                    <span class="faq-item__icon"><svg viewBox="0 0 14 14"><line x1="7" y1="0" x2="7" y2="14"/><line x1="0" y1="7" x2="14" y2="7"/></svg></span>
+                </button>
+                <div class="faq-item__a"><p>En tant qu'acheteur, les services du courtier sont généralement payés par le vendeur via le partage de commission. Vous bénéficiez donc d'un accompagnement professionnel sans frais directs dans la grande majorité des transactions.</p></div>
+            </div>
+            <div class="faq-item rv">
+                <button class="faq-item__q" aria-expanded="false">
+                    Quel est le processus d'achat d'une maison au Québec?
+                    <span class="faq-item__icon"><svg viewBox="0 0 14 14"><line x1="7" y1="0" x2="7" y2="14"/><line x1="0" y1="7" x2="14" y2="7"/></svg></span>
+                </button>
+                <div class="faq-item__a"><p>Le processus comprend la préqualification hypothécaire, la recherche de propriétés, les visites, la rédaction d'une promesse d'achat, la négociation, l'inspection préachat, l'obtention du financement et la signature chez le notaire. Avec Fred & Max, chaque étape est accompagnée.</p></div>
+            </div>
+            <div class="faq-item rv">
+                <button class="faq-item__q" aria-expanded="false">
+                    De quel montant de mise de fonds ai-je besoin?
+                    <span class="faq-item__icon"><svg viewBox="0 0 14 14"><line x1="7" y1="0" x2="7" y2="14"/><line x1="0" y1="7" x2="14" y2="7"/></svg></span>
+                </button>
+                <div class="faq-item__a"><p>Au Canada, la mise de fonds minimale est de 5% pour les propriétés de moins de 500 000$, 10% pour la portion entre 500 000$ et 999 999$, et 20% pour les propriétés de 1 million et plus. Une assurance hypothécaire (SCHL) est requise si votre mise de fonds est inférieure à 20%.</p></div>
+            </div>
+            <div class="faq-item rv">
+                <button class="faq-item__q" aria-expanded="false">
+                    Qu'est-ce qu'une promesse d'achat?
+                    <span class="faq-item__icon"><svg viewBox="0 0 14 14"><line x1="7" y1="0" x2="7" y2="14"/><line x1="0" y1="7" x2="14" y2="7"/></svg></span>
+                </button>
+                <div class="faq-item__a"><p>La promesse d'achat est un document légal qui engage l'acheteur à acquérir la propriété aux conditions spécifiées (prix, délais, conditions d'inspection et de financement). Une fois acceptée par le vendeur, elle lie les deux parties contractuellement.</p></div>
+            </div>
+            <div class="faq-item rv">
+                <button class="faq-item__q" aria-expanded="false">
+                    Est-ce le bon moment pour acheter sur la Rive-Nord?
+                    <span class="faq-item__icon"><svg viewBox="0 0 14 14"><line x1="7" y1="0" x2="7" y2="14"/><line x1="0" y1="7" x2="14" y2="7"/></svg></span>
+                </button>
+                <div class="faq-item__a"><p>La Rive-Nord de Montréal offre un excellent rapport qualité-prix comparé à l'île de Montréal. Le marché évolue constamment — contactez-nous pour une analyse personnalisée basée sur votre secteur et votre budget. On vous conseille en toute transparence.</p></div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ═══ CTA FINAL ═══ -->
+<section class="cta-final" id="contact">
+    <div class="w">
+        <div class="cta-final__inner">
+            <div class="rv">
+                <h2>Prêt à trouver votre prochaine propriété?</h2>
+                <p class="cta-final__sub">Remplissez le formulaire et un de nos courtiers vous contactera dans les 24 heures pour discuter de votre projet d'achat.</p>
+                <a href="tel:+14505055055" class="cta-final__phone">
+                    <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                    (450) 505-5055
+                </a>
+            </div>
+            <form class="cta-final__form rv" onsubmit="return false;">
+                <input type="text" name="nom" placeholder="Nom complet" required>
+                <input type="tel" name="telephone" placeholder="Téléphone" required>
+                <select name="ville" required>
+                    <option value="" disabled selected>Ville souhaitée</option>
+                    <option value="lorraine">Lorraine</option>
+                    <option value="rosemere">Rosemère</option>
+                    <option value="blainville">Blainville</option>
+                    <option value="sainte-therese">Sainte-Thérèse</option>
+                    <option value="boisbriand">Boisbriand</option>
+                    <option value="autre">Autre</option>
+                </select>
+                <button type="submit" class="btn btn--red">Parler à un expert</button>
+            </form>
+        </div>
+    </div>
+</section>
+
+<!-- ═══ FOOTER ═══ -->
+<footer class="footer">
+    <div class="w">
+        <div class="footer__top">
+            <div class="footer__brand">
+                <a href="/"><img src="Logo-noir.png" alt="Fred & Max" height="24" loading="lazy"></a>
+                <p>Courtiers immobiliers agréés OACIQ. Experts de la Rive-Nord de Montréal.</p>
+            </div>
+            <div class="footer__links">
+                <div class="footer__col">
+                    <p class="footer__col-title">Secteurs</p>
+                    <a href="landings/index.html">Lorraine</a>
+                    <a href="landings/rosemere.html">Rosemère</a>
+                    <a href="landings/blainville.html">Blainville</a>
+                    <a href="landings/sainte-therese.html">Sainte-Thérèse</a>
+                </div>
+                <div class="footer__col">
+                    <p class="footer__col-title">Services</p>
+                    <a href="acheter.html">Acheter</a>
+                </div>
+                <div class="footer__col">
+                    <p class="footer__col-title">Contact</p>
+                    <a href="tel:+14505055055">(450) 505-5055</a>
+                    <a href="mailto:info@fredmax.ca">info@fredmax.ca</a>
+                </div>
+            </div>
+        </div>
+        <div class="footer__bottom">
+            <p class="footer__copy">&copy; 2026 Fred & Max. Tous droits réservés.</p>
+            <p class="footer__copy">Informations à titre indicatif.</p>
+        </div>
+    </div>
+</footer>
+
+<div class="mob-cta" id="mobCta"><a href="#contact" class="btn btn--red">Parler à un expert &rarr;</a></div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    /* ── GSAP scroll reveals ── */
+    if (typeof gsap !== 'undefined' && typeof ScrollTrigger !== 'undefined') {
+        gsap.registerPlugin(ScrollTrigger);
+        gsap.utils.toArray('.rv').forEach(function(el, i) {
+            gsap.fromTo(el, { opacity: 0, y: 36 }, {
+                opacity: 1, y: 0, duration: 0.9, ease: 'power3.out',
+                scrollTrigger: { trigger: el, start: 'top 88%', once: true },
+                delay: (i % 4) * 0.06
+            });
+        });
+        /* Parallax hero background */
+        gsap.to('.hero__bg', {
+            yPercent: 20, ease: 'none',
+            scrollTrigger: { trigger: '.hero', start: 'top top', end: 'bottom top', scrub: true }
+        });
+    } else {
+        /* Fallback: IntersectionObserver */
+        var io = new IntersectionObserver(function(entries) {
+            entries.forEach(function(e) {
+                if (e.isIntersecting) {
+                    e.target.style.opacity = '1';
+                    e.target.style.transform = 'translateY(0)';
+                    e.target.style.transition = 'opacity 0.7s cubic-bezier(0.16,1,0.3,1), transform 0.7s cubic-bezier(0.16,1,0.3,1)';
+                    io.unobserve(e.target);
+                }
+            });
+        }, { threshold: 0.1 });
+        document.querySelectorAll('.rv').forEach(function(el) { io.observe(el); });
+    }
+
+    /* ── Mobile CTA bar ── */
+    var mobCta = document.getElementById('mobCta');
+    window.addEventListener('scroll', function() {
+        if (window.scrollY > 500) { mobCta.classList.add('on'); } else { mobCta.classList.remove('on'); }
+    }, { passive: true });
+
+    /* ── FAQ accordion ── */
+    document.querySelectorAll('.faq-item__q').forEach(function(btn) {
+        btn.addEventListener('click', function() {
+            var item = this.closest('.faq-item');
+            var ans = item.querySelector('.faq-item__a');
+            var open = item.classList.contains('on');
+            /* Close all */
+            document.querySelectorAll('.faq-item.on').forEach(function(o) {
+                o.classList.remove('on');
+                o.querySelector('.faq-item__q').setAttribute('aria-expanded', 'false');
+                o.querySelector('.faq-item__a').style.maxHeight = '0';
+            });
+            /* Toggle clicked */
+            if (!open) {
+                item.classList.add('on');
+                btn.setAttribute('aria-expanded', 'true');
+                ans.style.maxHeight = ans.scrollHeight + 'px';
+            }
+        });
+    });
+
+    /* ── Smooth scroll for anchor links ── */
+    document.querySelectorAll('a[href^="#"]').forEach(function(a) {
+        a.addEventListener('click', function(e) {
+            var t = document.querySelector(this.getAttribute('href'));
+            if (t) { e.preventDefault(); t.scrollIntoView({ behavior: 'smooth', block: 'start' }); }
+        });
+    });
+});
+</script>
+</body>
+</html>
