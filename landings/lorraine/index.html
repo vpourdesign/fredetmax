@@ -907,5 +907,13 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 </script>
+<script>
+  // Meta Pixel — événement Lead au submit des formulaires Formspree
+  document.querySelectorAll('form[action*="formspree.io"]').forEach(function (form) {
+    form.addEventListener('submit', function () {
+      if (typeof fbq === 'function') fbq('track', 'Lead');
+    });
+  });
+</script>
 </body>
 </html>
