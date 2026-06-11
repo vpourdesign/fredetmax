@@ -674,23 +674,60 @@
             0%, 100% { filter: invert(1) brightness(0.7) drop-shadow(0 0 0px rgba(200,170,110,0)); }
             50% { filter: invert(1) brightness(1.25) drop-shadow(0 0 14px rgba(200,170,110,0.6)); }
         }
+    
+        /* ── Barre de consentement témoins ── */
+        .cookie-consent {
+            position: fixed; left: 16px; right: 16px; bottom: 16px; z-index: 1200;
+            margin-inline: auto; max-width: 720px;
+            display: flex; flex-direction: column; gap: 14px;
+            padding: 18px 20px;
+            background: rgba(13, 13, 13, 0.92);
+            -webkit-backdrop-filter: blur(12px); backdrop-filter: blur(12px);
+            border: 1px solid rgba(255,255,255,0.08); border-radius: 14px;
+            box-shadow: 0 1px 2px rgba(0,0,0,0.18), 0 8px 24px rgba(0,0,0,0.28), 0 24px 64px rgba(0,0,0,0.22);
+            opacity: 0; transform: translateY(24px); pointer-events: none;
+            transition: opacity 0.4s cubic-bezier(0.16,1,0.3,1), transform 0.4s cubic-bezier(0.16,1,0.3,1);
+        }
+        .cookie-consent.visible { opacity: 1; transform: translateY(0); pointer-events: auto; }
+        .cookie-consent__text {
+            margin: 0; font-size: clamp(0.8rem, 1.8vw, 0.875rem); line-height: 1.6;
+            color: rgba(255,255,255,0.85);
+        }
+        .cookie-consent__actions { display: flex; gap: 10px; justify-content: flex-end; }
+        .cookie-consent__btn {
+            font: inherit; font-size: 0.85rem; font-weight: 600; cursor: pointer;
+            padding: 10px 22px; border-radius: 100px; border: 1px solid transparent;
+            transition: transform 0.2s cubic-bezier(0.16,1,0.3,1), opacity 0.2s, background-color 0.2s;
+        }
+        .cookie-consent__btn:active { transform: scale(0.96); }
+        .cookie-consent__btn:focus-visible { outline: 2px solid #fff; outline-offset: 2px; }
+        .cookie-consent__btn--ghost {
+            background: transparent; color: rgba(255,255,255,0.7); border-color: rgba(255,255,255,0.25);
+        }
+        .cookie-consent__btn--ghost:hover { color: #fff; border-color: rgba(255,255,255,0.5); }
+        .cookie-consent__btn--accept { background: #C83C34; color: #fff; }
+        .cookie-consent__btn--accept:hover { background: #A82E27; }
+        @media (min-width: 640px) {
+            .cookie-consent { flex-direction: row; align-items: center; }
+            .cookie-consent__text { flex: 1; }
+        }
     </style>
-<!-- Meta Pixel Code -->
+<!-- Meta Pixel Code (chargé après consentement) -->
 <script>
-!function(f,b,e,v,n,t,s)
-{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-n.queue=[];t=b.createElement(e);t.async=!0;
-t.src=v;s=b.getElementsByTagName(e)[0];
-s.parentNode.insertBefore(t,s)}(window, document,'script',
-'https://connect.facebook.net/en_US/fbevents.js');
-fbq('init', '1470415654387868');
-fbq('track', 'PageView');
+function fmLoadMetaPixel() {
+  if (window.fbq) return;
+  !function(f,b,e,v,n,t,s)
+  {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+  n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+  if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+  n.queue=[];t=b.createElement(e);t.async=!0;
+  t.src=v;s=b.getElementsByTagName(e)[0];
+  s.parentNode.insertBefore(t,s)}(window, document,'script',
+  'https://connect.facebook.net/en_US/fbevents.js');
+  fbq('init', '1470415654387868');
+  fbq('track', 'PageView');
+}
 </script>
-<noscript><img height="1" width="1" style="display:none"
-src="https://www.facebook.com/tr?id=1470415654387868&ev=PageView&noscript=1"
-/></noscript>
 <!-- End Meta Pixel Code -->
 </head>
 <body>
@@ -1197,6 +1234,36 @@ document.addEventListener('DOMContentLoaded', function() {
       if (typeof fbq === 'function') fbq('track', 'Lead');
     });
   });
+</script>
+<div id="cookie-consent" class="cookie-consent" role="dialog" aria-live="polite" aria-label="Consentement aux témoins (cookies)">
+    <p class="cookie-consent__text">Ce site utilise des témoins (cookies) à des fins de mesure d’audience et de publicité. En cliquant « Accepter », vous consentez à leur utilisation.</p>
+    <div class="cookie-consent__actions">
+        <button type="button" id="cc-refuse" class="cookie-consent__btn cookie-consent__btn--ghost">Refuser</button>
+        <button type="button" id="cc-accept" class="cookie-consent__btn cookie-consent__btn--accept">Accepter</button>
+    </div>
+</div>
+<script>
+  (function () {
+    var KEY = 'fredmax-consent';
+    var choice = null;
+    try { choice = localStorage.getItem(KEY); } catch (e) {}
+    if (choice === 'accepted') { fmLoadMetaPixel(); return; }
+    if (choice === 'refused') { document.getElementById('cookie-consent').remove(); return; }
+    var bar = document.getElementById('cookie-consent');
+    setTimeout(function () { bar.classList.add('visible'); }, 800);
+    function close() {
+      bar.classList.remove('visible');
+      setTimeout(function () { bar.remove(); }, 450);
+    }
+    document.getElementById('cc-accept').addEventListener('click', function () {
+      try { localStorage.setItem(KEY, 'accepted'); } catch (e) {}
+      close(); fmLoadMetaPixel();
+    });
+    document.getElementById('cc-refuse').addEventListener('click', function () {
+      try { localStorage.setItem(KEY, 'refused'); } catch (e) {}
+      close();
+    });
+  })();
 </script>
 </body>
 </html>
