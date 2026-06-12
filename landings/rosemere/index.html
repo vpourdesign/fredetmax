@@ -1301,6 +1301,8 @@
             .cookie-consent { flex-direction: row; align-items: center; }
             .cookie-consent__text { flex: 1; }
         }
+    
+        .form-success { margin: 0; padding: 24px 8px; text-align: center; font-weight: 600; line-height: 1.6; }
     </style>
 <!-- Meta Pixel Code (chargé après consentement) -->
 <script>
@@ -1367,7 +1369,10 @@ function fmLoadMetaPixel() {
       <div class="hero__form-card reveal" style="transition-delay:0.15s" id="hero-form">
         <p class="form-title">Estimation gratuite en 24h</p>
         <p class="form-sub">Remplissez le formulaire et recevez votre analyse de marché.</p>
-        <form action="https://formspree.io/f/xykbpoag" method="POST">
+        <form name="estimation-rosemere" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+                    <input type="hidden" name="form-name" value="estimation-rosemere">
+                    <input type="hidden" name="ville" value="Rosemère">
+                    <p hidden aria-hidden="true"><label>Ne pas remplir : <input name="bot-field"></label></p>
           <div class="form-group">
             <label for="name">Nom complet</label>
             <input type="text" id="name" name="name" placeholder="Marie Tremblay" required />
@@ -1816,10 +1821,27 @@ function fmLoadMetaPixel() {
 </script>
 
 <script>
-  // Meta Pixel — événement Lead au submit des formulaires Formspree
-  document.querySelectorAll('form[action*="formspree.io"]').forEach(function (form) {
-    form.addEventListener('submit', function () {
-      if (typeof fbq === 'function') fbq('track', 'Lead');
+  // Netlify Forms — envoi AJAX + événement Lead Meta au succès
+  document.querySelectorAll('form[data-netlify="true"]').forEach(function (form) {
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+      var btn = form.querySelector('button[type="submit"]');
+      var label = btn.textContent;
+      btn.disabled = true;
+      btn.textContent = 'Envoi en cours…';
+      fetch('/', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        body: new URLSearchParams(new FormData(form)).toString()
+      }).then(function (res) {
+        if (!res.ok) throw new Error(res.status);
+        if (typeof fbq === 'function') fbq('track', 'Lead');
+        form.innerHTML = '<p class="form-success">Merci! Votre demande a bien été envoyée.<br>Fred et Max vous contacteront d&rsquo;ici 24&nbsp;h.</p>';
+      }).catch(function () {
+        btn.disabled = false;
+        btn.textContent = label;
+        alert('Une erreur est survenue lors de l\u2019envoi. Réessayez ou appelez-nous au 514 219-3383.');
+      });
     });
   });
 </script>
