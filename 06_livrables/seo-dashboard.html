@@ -1,0 +1,654 @@
+<!DOCTYPE html>
+<html lang="fr-CA">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Landing pages vs site principal — Fred &amp; Max · juillet 2026</title>
+<meta name="robots" content="noindex, nofollow">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='7' fill='%23C83C34'/><text x='16' y='22' font-family='Georgia,serif' font-size='14' font-weight='700' text-anchor='middle' fill='white'>F</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,700;0,900;1,500&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    /* Neutres teintés vers le bleu de marque, jamais de blanc pur */
+    --paper:      oklch(97.8% 0.006 265);
+    --paper-deep: oklch(95.2% 0.010 265);
+    --surface:    oklch(99.2% 0.004 265);
+    --line:       oklch(89% 0.014 265);
+    --line-soft:  oklch(93.5% 0.010 265);
+    --ink:        oklch(21% 0.020 265);
+    --ink-soft:   oklch(44% 0.022 265);
+    --muted:      oklch(58% 0.018 265);
+
+    /* Marque Fred & Max */
+    --blue:       oklch(70.5% 0.078 268);   /* #8ba3d4 */
+    --blue-deep:  oklch(48% 0.098 268);
+    --blue-wash:  oklch(95.5% 0.022 268);
+    --red:        oklch(53.5% 0.152 27);    /* #C83C34 */
+    --red-deep:   oklch(46% 0.155 27);
+    --red-wash:   oklch(95.5% 0.030 27);
+    --gold:       oklch(74% 0.130 78);
+    --gold-wash:  oklch(96% 0.038 82);
+    --green:      oklch(55% 0.115 158);
+    --green-wash: oklch(95.5% 0.030 158);
+
+    --ease: cubic-bezier(0.16, 1, 0.3, 1);
+    --shadow-card:
+      0 1px 2px oklch(35% 0.05 265 / 0.05),
+      0 4px 14px oklch(35% 0.05 265 / 0.055),
+      0 18px 44px oklch(35% 0.05 265 / 0.04);
+    --shadow-lift:
+      0 2px 4px oklch(35% 0.05 265 / 0.07),
+      0 10px 26px oklch(35% 0.05 265 / 0.09),
+      0 30px 70px oklch(35% 0.05 265 / 0.06);
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --paper:      oklch(19% 0.018 265);
+      --paper-deep: oklch(16% 0.018 265);
+      --surface:    oklch(23% 0.020 265);
+      --line:       oklch(33% 0.022 265);
+      --line-soft:  oklch(28% 0.020 265);
+      --ink:        oklch(95% 0.008 265);
+      --ink-soft:   oklch(78% 0.014 265);
+      --muted:      oklch(63% 0.016 265);
+      --blue:       oklch(75% 0.082 268);
+      --blue-deep:  oklch(80% 0.090 268);
+      --blue-wash:  oklch(30% 0.036 268);
+      --red:        oklch(66% 0.150 27);
+      --red-deep:   oklch(72% 0.148 27);
+      --red-wash:   oklch(30% 0.048 27);
+      --gold:       oklch(80% 0.120 82);
+      --gold-wash:  oklch(30% 0.045 82);
+      --green:      oklch(70% 0.110 158);
+      --green-wash: oklch(28% 0.040 158);
+      --shadow-card: 0 1px 2px oklch(0% 0 0 / 0.3), 0 6px 20px oklch(0% 0 0 / 0.28);
+      --shadow-lift: 0 3px 6px oklch(0% 0 0 / 0.35), 0 16px 44px oklch(0% 0 0 / 0.36);
+    }
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    margin: 0;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: 'Montserrat', system-ui, sans-serif;
+    font-size: 15px;
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+    position: relative;
+  }
+
+  /* Grain SVG, pas d'image externe */
+  body::before {
+    content: '';
+    position: fixed; inset: 0; z-index: 0; pointer-events: none;
+    opacity: 0.030;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3'/%3E%3C/filter%3E%3Crect width='200' height='200' filter='url(%23n)'/%3E%3C/svg%3E");
+  }
+  main { position: relative; z-index: 1; }
+
+  h1, h2, h3 { font-family: 'Playfair Display', Georgia, serif; font-weight: 700; }
+
+  .wrap { max-width: 1120px; margin-inline: auto; padding-inline: clamp(1rem, 4vw, 2.75rem); }
+
+  /* ── Entête ─────────────────────────────────────────── */
+  .masthead {
+    padding-block: clamp(2.5rem, 7vw, 5rem) clamp(1.75rem, 4vw, 3rem);
+    border-bottom: 1px solid var(--line);
+  }
+  .eyebrow {
+    font-size: 11px; font-weight: 700; letter-spacing: 0.16em;
+    text-transform: uppercase; color: var(--red);
+    display: flex; align-items: center; gap: 0.7rem; margin-bottom: 1.1rem;
+  }
+  .eyebrow::after { content: ''; flex: 1; height: 1px; background: var(--line); }
+  h1 {
+    font-size: clamp(2.1rem, 5.6vw, 3.9rem);
+    line-height: 1.02; letter-spacing: -0.025em; margin: 0 0 1.1rem;
+    max-width: 19ch;
+  }
+  h1 em { font-style: italic; color: var(--red); }
+  .standfirst {
+    font-size: clamp(1rem, 1.7vw, 1.16rem); color: var(--ink-soft);
+    max-width: 62ch; line-height: 1.68; margin: 0;
+  }
+  .meta-row {
+    display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 1.9rem;
+  }
+  .tag {
+    font-size: 11px; font-weight: 600; letter-spacing: 0.045em;
+    text-transform: uppercase; padding: 5px 11px; border-radius: 100px;
+    border: 1px solid var(--line); color: var(--muted); background: var(--surface);
+  }
+  .tag.live { color: var(--green); border-color: color-mix(in oklch, var(--green) 35%, var(--line)); background: var(--green-wash); }
+
+  /* ── Sections ───────────────────────────────────────── */
+  section { padding-block: clamp(2.5rem, 6vw, 4.25rem); }
+  section + section { border-top: 1px solid var(--line-soft); }
+  .sec-head { margin-bottom: 2rem; }
+  .sec-num {
+    font-family: 'Playfair Display', serif; font-size: 13px; font-weight: 700;
+    font-style: italic; color: var(--red); display: block; margin-bottom: 0.35rem;
+  }
+  h2 { font-size: clamp(1.5rem, 3.1vw, 2.15rem); letter-spacing: -0.02em; line-height: 1.15; margin: 0 0 0.6rem; }
+  .sec-sub { color: var(--ink-soft); max-width: 66ch; margin: 0; font-size: 15px; }
+
+  /* ── Comparaison à l'échelle ────────────────────────── */
+  .scale {
+    background: var(--surface); border: 1px solid var(--line);
+    border-radius: 20px; padding: clamp(1.5rem, 4vw, 2.75rem);
+    box-shadow: var(--shadow-lift);
+  }
+  .scale-row + .scale-row { margin-top: 2.1rem; padding-top: 2.1rem; border-top: 1px dashed var(--line); }
+  .scale-label {
+    display: flex; align-items: baseline; justify-content: space-between;
+    gap: 1rem; flex-wrap: wrap; margin-bottom: 0.85rem;
+  }
+  .scale-name { font-weight: 700; font-size: 14px; letter-spacing: 0.02em; }
+  .scale-name span { display: block; font-weight: 500; font-size: 12px; color: var(--muted); letter-spacing: 0; margin-top: 2px; }
+  .scale-val { font-family: 'Playfair Display', serif; font-size: clamp(1.9rem, 5vw, 3rem); line-height: 1; letter-spacing: -0.02em; }
+  .scale-val small { font-family: 'Montserrat', sans-serif; font-size: 12px; font-weight: 600; color: var(--muted); letter-spacing: 0.04em; margin-left: 0.5rem; }
+  .bar-track { height: 34px; background: var(--paper-deep); border-radius: 6px; overflow: hidden; position: relative; }
+  .bar-fill {
+    height: 100%; border-radius: 6px; transform-origin: left center;
+    animation: grow 1.15s var(--ease) both;
+  }
+  .bar-fill.meta { width: 100%; background: linear-gradient(100deg, var(--red-deep), var(--red)); animation-delay: 0.15s; }
+  .bar-fill.seo  { width: 0.08%; min-width: 3px; background: var(--blue-deep); animation-delay: 0.5s; }
+  @keyframes grow { from { transform: scaleX(0); } to { transform: scaleX(1); } }
+  @media (prefers-reduced-motion: reduce) { .bar-fill { animation: none; } }
+  .bar-note {
+    margin-top: 0.7rem; font-size: 12.5px; color: var(--muted);
+    display: flex; align-items: center; gap: 0.45rem;
+  }
+  .verdict {
+    margin-top: 2.4rem; padding: 1.4rem 1.6rem; border-radius: 14px;
+    background: var(--red-wash); border: 1px solid color-mix(in oklch, var(--red) 22%, transparent);
+  }
+  .verdict p { margin: 0; font-size: 15.5px; line-height: 1.62; color: var(--ink); }
+  .verdict strong { font-family: 'Playfair Display', serif; font-size: 1.22em; font-weight: 700; }
+
+  /* ── Tableaux ───────────────────────────────────────── */
+  .table-shell {
+    background: var(--surface); border: 1px solid var(--line);
+    border-radius: 16px; box-shadow: var(--shadow-card); overflow: hidden;
+  }
+  .scroll-x { overflow-x: auto; }
+  table { border-collapse: collapse; width: 100%; min-width: 640px; }
+  th {
+    text-align: right; font-size: 10.5px; font-weight: 700; color: var(--muted);
+    text-transform: uppercase; letter-spacing: 0.07em;
+    padding: 13px 14px; border-bottom: 1px solid var(--line); white-space: nowrap;
+    background: var(--paper-deep);
+  }
+  th:first-child, td:first-child { text-align: left; }
+  td { padding: 13px 14px; border-bottom: 1px solid var(--line-soft); text-align: right; font-variant-numeric: tabular-nums; }
+  tbody tr:last-child td { border-bottom: none; }
+  tbody tr { transition: background 0.22s var(--ease); }
+  tbody tr:hover { background: var(--blue-wash); }
+  .city { font-weight: 600; }
+  td small { display: block; font-weight: 400; font-size: 11.5px; color: var(--muted); margin-top: 1px; }
+  tr.total { background: var(--paper-deep); }
+  tr.total td { font-weight: 700; border-top: 2px solid var(--line); }
+  tr.dim td { color: var(--muted); }
+  .zero { color: var(--muted); }
+
+  .pill {
+    display: inline-block; font-size: 10.5px; font-weight: 700;
+    letter-spacing: 0.05em; text-transform: uppercase;
+    padding: 3px 9px; border-radius: 100px; white-space: nowrap;
+  }
+  .pill.bad   { background: var(--red-wash);   color: var(--red-deep); }
+  .pill.warn  { background: var(--gold-wash);  color: oklch(48% 0.115 68); }
+  .pill.good  { background: var(--green-wash); color: var(--green); }
+  .pill.info  { background: var(--blue-wash);  color: var(--blue-deep); }
+
+  /* ── Grille de constats ─────────────────────────────── */
+  .findings { display: grid; gap: 1.1rem; grid-template-columns: repeat(auto-fit, minmax(275px, 1fr)); }
+  .card {
+    background: var(--surface); border: 1px solid var(--line);
+    border-radius: 16px; padding: 1.5rem 1.6rem; box-shadow: var(--shadow-card);
+    transition: transform 0.3s var(--ease), box-shadow 0.3s var(--ease);
+  }
+  .card:hover { transform: translateY(-3px); box-shadow: var(--shadow-lift); }
+  .card h3 { font-size: 1.08rem; margin: 0.6rem 0 0.5rem; letter-spacing: -0.01em; line-height: 1.25; }
+  .card p { margin: 0; font-size: 14px; color: var(--ink-soft); line-height: 1.62; }
+  .card p + p { margin-top: 0.6rem; }
+  .card .num {
+    font-family: 'Playfair Display', serif; font-size: 2.1rem; font-weight: 700;
+    line-height: 1; letter-spacing: -0.02em; color: var(--red);
+  }
+  .card.b .num { color: var(--blue-deep); }
+  .card.g .num { color: var(--green); }
+
+  /* ── Position des requêtes ──────────────────────────── */
+  .queries { display: grid; gap: 0.55rem; }
+  .q-row {
+    display: grid; grid-template-columns: 1fr auto; gap: 1rem; align-items: center;
+    padding: 0.8rem 1.1rem; background: var(--surface);
+    border: 1px solid var(--line-soft); border-radius: 11px;
+  }
+  .q-term { font-size: 14px; font-weight: 500; }
+  .q-term small { display: block; font-size: 11.5px; color: var(--muted); margin-top: 1px; }
+  .q-pos { display: flex; align-items: center; gap: 0.75rem; }
+  .q-gauge { width: clamp(70px, 16vw, 170px); height: 7px; background: var(--paper-deep); border-radius: 100px; overflow: hidden; }
+  .q-gauge i { display: block; height: 100%; border-radius: 100px; }
+  .q-num { font-family: 'Playfair Display', serif; font-weight: 700; font-size: 1.02rem; min-width: 2.6ch; text-align: right; }
+
+  /* ── Correctif / chronologie ────────────────────────── */
+  .fix {
+    display: grid; gap: 1.6rem; grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+    align-items: start;
+  }
+  .code-note {
+    background: var(--paper-deep); border: 1px solid var(--line);
+    border-radius: 13px; padding: 1.2rem 1.35rem; font-size: 12.5px;
+  }
+  .code-note b { display: block; font-size: 10.5px; text-transform: uppercase; letter-spacing: 0.07em; color: var(--muted); margin-bottom: 0.6rem; font-weight: 700; }
+  code {
+    font-family: ui-monospace, 'SF Mono', Menlo, monospace; font-size: 12px;
+    background: var(--surface); border: 1px solid var(--line-soft);
+    padding: 2px 6px; border-radius: 5px;
+    /* Ne casse qu'en dernier recours, jamais au milieu d'un mot qui tient */
+    word-break: normal; overflow-wrap: break-word;
+  }
+  .code-note .was { color: var(--red-deep); }
+  .code-note .now { color: var(--green); }
+  .code-note div + div { margin-top: 0.75rem; }
+
+  /* ── Pied ───────────────────────────────────────────── */
+  footer {
+    border-top: 1px solid var(--line); padding-block: 2.5rem 3.5rem;
+    font-size: 12.5px; color: var(--muted);
+  }
+  footer h4 { font-family: 'Montserrat', sans-serif; font-size: 10.5px; text-transform: uppercase; letter-spacing: 0.08em; color: var(--ink-soft); margin: 0 0 0.6rem; }
+  .foot-grid { display: grid; gap: 1.8rem; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); }
+  footer ul { margin: 0; padding-left: 1.05rem; }
+  footer li + li { margin-top: 0.3rem; }
+  .credit { margin-top: 2.5rem; padding-top: 1.3rem; border-top: 1px solid var(--line-soft); display: flex; justify-content: space-between; gap: 1rem; flex-wrap: wrap; }
+
+  /* Révélation échelonnée au chargement */
+  .reveal { animation: rise 0.75s var(--ease) both; }
+  @keyframes rise { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: none; } }
+  section:nth-of-type(1) .reveal { animation-delay: 0.05s; }
+  section:nth-of-type(2) .reveal { animation-delay: 0.10s; }
+  @media (prefers-reduced-motion: reduce) { .reveal { animation: none; } }
+</style>
+</head>
+<body>
+<main>
+
+<!-- ═══ ENTÊTE ═══════════════════════════════════════════ -->
+<header class="masthead">
+  <div class="wrap">
+    <div class="eyebrow">Fred &amp; Max · Rapport de performance</div>
+    <h1>Ce qui a fait vivre les landing pages, ce n'est pas <em>Google</em>.</h1>
+    <p class="standfirst">
+      Du 1<sup>er</sup> juillet au 3 août 2026, les quatre landing pages de villes ont reçu
+      1 249 visites venues des publicités Meta, et 1 seule venue de la recherche organique.
+      Voici le détail, la raison technique derrière ce déséquilibre, et ce qui vient d'être corrigé.
+    </p>
+    <div class="meta-row">
+      <span class="tag live">● Données réelles</span>
+      <span class="tag">Google Search Console</span>
+      <span class="tag">Meta Ads API</span>
+      <span class="tag">1<sup>er</sup> juil. → 3 août 2026 · 34 jours</span>
+    </div>
+  </div>
+</header>
+
+<!-- ═══ 1. LA COMPARAISON ════════════════════════════════ -->
+<section>
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="sec-num">01</span>
+      <h2>Meta contre organique, à l'échelle réelle</h2>
+      <p class="sec-sub">
+        Les deux barres ci-dessous sont proportionnelles. Celle de l'organique n'est pas une erreur
+        d'affichage : à cette échelle, 1 visite mesure moins d'un pixel.
+      </p>
+    </div>
+
+    <div class="scale reveal">
+      <div class="scale-row">
+        <div class="scale-label">
+          <div class="scale-name">Publicités Meta
+            <span>Vues de page d'atterrissage, campagne FREDETMAX_P1_TRAFIC</span>
+          </div>
+          <div class="scale-val">1 249<small>VISITES</small></div>
+        </div>
+        <div class="bar-track"><div class="bar-fill meta"></div></div>
+        <div class="bar-note">664,70 $ investis · 0,53 $ par visite · 2 019 clics · CTR 2,41 %</div>
+      </div>
+
+      <div class="scale-row">
+        <div class="scale-label">
+          <div class="scale-name">Recherche organique
+            <span>Clics Google vers les 4 sous-domaines, même période</span>
+          </div>
+          <div class="scale-val">1<small>CLIC</small></div>
+        </div>
+        <div class="bar-track"><div class="bar-fill seo"></div></div>
+        <div class="bar-note">247 impressions · position moyenne 19,4 · CTR 0,4 %</div>
+      </div>
+
+      <div class="verdict">
+        <p>
+          <strong>99,92 %</strong> du trafic reçu par les landing pages provient de la publicité Meta.
+          Sans elle, ces quatre pages auraient été vues une fois en cinq semaines.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ 2. VILLE PAR VILLE ═══════════════════════════════ -->
+<section>
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="sec-num">02</span>
+      <h2>Ville par ville</h2>
+      <p class="sec-sub">
+        Chaque landing page a son propre sous-domaine et son propre adset Meta, sauf Sainte-Thérèse,
+        qui a une page en ligne mais aucune publicité derrière.
+      </p>
+    </div>
+
+    <div class="table-shell reveal">
+      <div class="scroll-x">
+        <table>
+          <thead>
+            <tr>
+              <th>Ville</th>
+              <th>Invest. Meta</th>
+              <th>Visites Meta</th>
+              <th>Coût / visite</th>
+              <th>Clics SEO</th>
+              <th>Impr. SEO</th>
+              <th>Position</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="city">Rosemère<small>rosemere.fredetmax.com</small></td>
+              <td>331,71 $</td><td>592</td><td>0,56 $</td>
+              <td class="zero">0</td><td>54</td><td>13,1</td>
+            </tr>
+            <tr>
+              <td class="city">Lorraine<small>lorraine.fredetmax.com</small></td>
+              <td>152,65 $</td><td>345</td><td>0,44 $</td>
+              <td>1</td><td>47</td><td>14,8</td>
+            </tr>
+            <tr>
+              <td class="city">Blainville<small>blainville.fredetmax.com</small></td>
+              <td>180,65 $</td><td>312</td><td>0,58 $</td>
+              <td class="zero">0</td><td>77</td><td>27,5</td>
+            </tr>
+            <tr class="dim">
+              <td class="city">Sainte-Thérèse<small>stetherese.fredetmax.com</small></td>
+              <td><span class="pill warn">Aucune pub</span></td>
+              <td class="zero">0</td><td>—</td>
+              <td class="zero">0</td><td>69</td><td>22,0</td>
+            </tr>
+            <tr class="total">
+              <td>Total landings</td>
+              <td>664,70 $</td><td>1 249</td><td>0,53 $</td>
+              <td>1</td><td>247</td><td>19,4</td>
+            </tr>
+            <tr class="total">
+              <td>www.fredetmax.com<small>75 pages indexées · site principal</small></td>
+              <td>—</td><td>—</td><td>—</td>
+              <td>151</td><td>4 513</td><td>10,2</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="findings reveal" style="margin-top:1.6rem">
+      <div class="card">
+        <div class="num">151×</div>
+        <h3>Le site principal capte tout l'organique</h3>
+        <p>
+          151 clics pour le site principal contre 1 pour les quatre landings réunies.
+          Les landings représentent 5 % des impressions du domaine, mais 0,7 % des clics.
+        </p>
+      </div>
+      <div class="card b">
+        <div class="num">0,53 $</div>
+        <h3>Le coût d'une visite achetée</h3>
+        <p>
+          Chaque visite sur une landing page coûte 53 sous en publicité Meta.
+          C'est le prix actuel d'un visiteur sur ces pages, puisque l'organique n'en livre pas.
+        </p>
+      </div>
+      <div class="card g">
+        <div class="num">7</div>
+        <h3>Conversations Messenger amorcées</h3>
+        <p>
+          Sept échanges directs sont nés de la campagne, à 94,96 $ chacun.
+          C'est la seule conversion actuellement mesurable, voir la réserve au point 05.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ 3. POURQUOI L'ORGANIQUE NE SORT PAS ══════════════ -->
+<section>
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="sec-num">03</span>
+      <h2>Pourquoi l'organique ne décolle pas</h2>
+      <p class="sec-sub">
+        Les pages sont construites pour la requête « courtier immobilier + ville ».
+        Google les y place en page 2 à 4. La seule requête qu'elles gagnent est le nom de la marque,
+        tapé par des gens qui connaissent déjà Fred &amp; Max.
+      </p>
+      <p class="sec-sub" style="margin-top:0.8rem; font-size:13px; color:var(--muted)">
+        Le chiffre à droite est la position moyenne dans Google. Plus la jauge est longue,
+        plus la page est loin des premiers résultats. La première page s'arrête autour de 10.
+      </p>
+    </div>
+
+    <div class="queries reveal">
+      <div class="q-row">
+        <div class="q-term">courtier immobilier blainville<small>45 impressions · Blainville</small></div>
+        <div class="q-pos">
+          <div class="q-gauge"><i style="width:87%;background:var(--red)"></i></div>
+          <span class="q-num">30,6</span>
+        </div>
+      </div>
+      <div class="q-row">
+        <div class="q-term">courtier immobilier sainte-thérèse<small>35 impressions · Sainte-Thérèse</small></div>
+        <div class="q-pos">
+          <div class="q-gauge"><i style="width:96%;background:var(--red)"></i></div>
+          <span class="q-num">33,7</span>
+        </div>
+      </div>
+      <div class="q-row">
+        <div class="q-term">courtier immobilier lorraine<small>16 impressions · Lorraine</small></div>
+        <div class="q-pos">
+          <div class="q-gauge"><i style="width:54%;background:var(--gold)"></i></div>
+          <span class="q-num">18,9</span>
+        </div>
+      </div>
+      <div class="q-row">
+        <div class="q-term">courtier immobilier rosemère<small>15 impressions · Rosemère</small></div>
+        <div class="q-pos">
+          <div class="q-gauge"><i style="width:53%;background:var(--gold)"></i></div>
+          <span class="q-num">18,5</span>
+        </div>
+      </div>
+      <div class="q-row">
+        <div class="q-term">agent immobilier blainville<small>6 impressions · Blainville</small></div>
+        <div class="q-pos">
+          <div class="q-gauge"><i style="width:71%;background:var(--red)"></i></div>
+          <span class="q-num">25,0</span>
+        </div>
+      </div>
+      <div class="q-row" style="border-color:color-mix(in oklch, var(--green) 30%, transparent); background:var(--green-wash)">
+        <div class="q-term">fred et max <span class="pill good">Marque</span><small>Requête de notoriété, déjà acquise</small></div>
+        <div class="q-pos">
+          <div class="q-gauge"><i style="width:4%;background:var(--green)"></i></div>
+          <span class="q-num">1,5</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="verdict reveal" style="background:var(--blue-wash); border-color:color-mix(in oklch, var(--blue) 30%, transparent); margin-top:1.6rem">
+      <p>
+        L'écart est net : position <strong>1,5</strong> sur le nom de la marque,
+        position <strong>18 à 34</strong> sur les requêtes commerciales que ces pages visent.
+        La demande à forte intention se trouve en haut de la première page, hors de portée pour l'instant.
+        C'est exactement l'espace que la publicité Meta occupe.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ 4. LE CORRECTIF ══════════════════════════════════ -->
+<section>
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="sec-num">04</span>
+      <h2>Un blocage technique levé le 3 août</h2>
+      <p class="sec-sub">
+        Les quatre pages déclaraient à Google que leur version officielle se trouvait sur
+        <code>www.fredmax.ca</code>, un domaine qui n'a jamais existé : aucun serveur de noms,
+        aucune adresse IP, aucun enregistrement de courriel. Google suivait ce renvoi, ne trouvait
+        rien, et refusait d'indexer la page.
+      </p>
+    </div>
+
+    <div class="fix">
+      <div class="code-note reveal">
+        <b>Avant · balise canonique</b>
+        <div class="was">
+          <code>&lt;link rel="canonical" href="https://www.fredmax.ca/rosemere"&gt;</code>
+        </div>
+        <div style="margin-top:1.1rem"><b>Après</b></div>
+        <div class="now">
+          <code>&lt;link rel="canonical" href="https://rosemere.fredetmax.com/"&gt;</code>
+        </div>
+        <div style="margin-top:1.1rem; color:var(--muted)">
+          Corrigé aussi : <code>og:url</code>, <code>og:image</code> et les données structurées
+          JSON-LD, qui pointaient toutes vers le même domaine mort. Les aperçus de lien
+          partagés sur Facebook étaient donc cassés eux aussi.
+        </div>
+      </div>
+
+      <div class="findings reveal" style="grid-template-columns:1fr">
+        <div class="card">
+          <span class="pill bad">Signal observé</span>
+          <h3>Google avait cessé de repasser</h3>
+          <p>
+            Au 3 août, Search Console montrait une dernière lecture du sitemap le
+            <b>29 juillet</b> pour Sainte-Thérèse et le <b>28 juillet</b> pour Blainville,
+            mais le <b>5 juillet</b> pour Lorraine et Rosemère, soit près d'un mois sans visite.
+          </p>
+          <p>
+            C'est le comportement d'un robot qui se désintéresse d'une page dont le renvoi
+            canonique ne mène nulle part.
+          </p>
+        </div>
+        <div class="card g">
+          <span class="pill good">Fait le 3 août</span>
+          <h3>Réindexation demandée</h3>
+          <p>
+            Les quatre URL ont été soumises manuellement à Google après correction.
+            Le compteur repart de zéro : cette page sert de point de référence daté
+            pour mesurer ce que l'organique produira une fois débloqué.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ 5. RÉSERVES ══════════════════════════════════════ -->
+<section>
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="sec-num">05</span>
+      <h2>Ce que ce rapport ne peut pas encore dire</h2>
+      <p class="sec-sub">Trois angles morts à corriger pour la prochaine édition.</p>
+    </div>
+
+    <div class="findings reveal">
+      <div class="card">
+        <span class="pill warn">Mesure</span>
+        <h3>Les soumissions de formulaire ne remontent pas</h3>
+        <p>
+          L'API Meta ne rapporte aucun événement <code>Lead</code> sur la période, alors que
+          les quatre pages ont un formulaire. Le pixel est conditionné au bandeau de consentement :
+          un visiteur qui ne clique pas « accepter » remplit le formulaire sans être compté.
+        </p>
+        <p>Les vraies demandes reçues sont donc à valider dans Netlify Forms et dans la boîte courriel.</p>
+      </div>
+      <div class="card">
+        <span class="pill warn">Mesure</span>
+        <h3>Google Analytics démarre aujourd'hui</h3>
+        <p>
+          Le code de suivi GA4 a été posé sur les quatre pages le 3 août 2026. Avant cette date,
+          aucune donnée de comportement n'existe pour ces pages : ni durée de visite, ni taux de rebond,
+          ni parcours. Le site principal, lui, est suivi depuis septembre 2025.
+        </p>
+      </div>
+      <div class="card">
+        <span class="pill bad">Action</span>
+        <h3>Sainte-Thérèse tourne à vide</h3>
+        <p>
+          La page est en ligne, indexée, et récolte 69 impressions en position 22.
+          Aucun adset Meta ne la soutient. C'est la seule des quatre villes sans budget,
+          et donc sans visite.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ PIED ═════════════════════════════════════════════ -->
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <h4>Sources</h4>
+        <ul>
+          <li>Google Search Console, propriété de domaine <code>sc-domain:fredetmax.com</code></li>
+          <li>Meta Marketing API v23.0, compte <code>act_129396217452544</code></li>
+          <li>Google Analytics 4, propriété 506571069</li>
+        </ul>
+      </div>
+      <div>
+        <h4>Méthode</h4>
+        <ul>
+          <li>Période : 1<sup>er</sup> juillet au 3 août 2026</li>
+          <li>« Visites Meta » = <code>landing_page_view</code>, la mesure la plus proche d'une visite réelle</li>
+          <li>« Clics SEO » = clics Google organiques, hors publicité</li>
+          <li>Position moyenne pondérée par les impressions</li>
+        </ul>
+      </div>
+      <div>
+        <h4>Portée des données</h4>
+        <ul>
+          <li>Search Console ne remonte pas avant le 3 juillet 2026</li>
+          <li>Les landings ont reçu leur première impression les 4 et 5 juillet</li>
+          <li>Aucune donnée organique n'existe avant le lancement des pages</li>
+        </ul>
+      </div>
+    </div>
+    <div class="credit">
+      <span>Rapport généré le 3 août 2026 · données extraites en direct des API</span>
+      <span>Stratégie web <b>vpourdesign</b></span>
+    </div>
+  </div>
+</footer>
+
+</main>
+</body>
+</html>
